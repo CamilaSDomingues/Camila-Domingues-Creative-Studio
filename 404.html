@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Página não encontrada — Camila Domingues.">
+    <meta name="theme-color" content="#080808">
+
+    <title>404 — Página não encontrada | Camila Domingues</title>
+
+    <link rel="icon" href="assets/icons/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --fundo: #080808;
+            --fundo-secundario: #101010;
+            --branco: #f5f5f2;
+            --branco-suave: #d8d8d2;
+            --cinza: #969690;
+            --cinza-escuro: #5d5d59;
+            --borda: rgba(255, 255, 255, 0.12);
+            --roxo: #9D5CFF;
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "Manrope", "Inter", sans-serif;
+            --transicao: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: var(--fundo);
+        }
+
+        body {
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--branco);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .pagina-404 {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+}
+
+        .pagina-404::before {
+            content: "";
+            position: absolute;
+            top: -25%;
+            right: -10%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(
+                circle,
+                rgba(157, 92, 255, 0.18) 0%,
+                rgba(157, 92, 255, 0.06) 35%,
+                transparent 70%
+            );
+            pointer-events: none;
+        }
+
+        .pagina-404::after {
+            content: "";
+            position: absolute;
+            left: -20%;
+            bottom: -35%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(
+                circle,
+                rgba(157, 92, 255, 0.08) 0%,
+                transparent 68%
+            );
+            pointer-events: none;
+        }
+
+        .cabecalho-404 {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 28px 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .logo-404 {
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+
+        .logo-404 span {
+            color: var(--roxo);
+        }
+
+        .cabecalho-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cinza);
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .status-ponto {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--roxo);
+            box-shadow: 0 0 12px rgba(157, 92, 255, 0.8);
+        }
+
+        .conteudo-404 {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 70px 5vw;
+        }
+
+        .conteudo-central {
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .codigo-erro {
+            position: relative;
+            display: inline-block;
+            color: transparent;
+            font-size: clamp(170px, 28vw, 390px);
+            font-weight: 700;
+            line-height: 0.72;
+            letter-spacing: -0.11em;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+            user-select: none;
+        }
+
+        .codigo-erro::after {
+            content: "404";
+            position: absolute;
+            top: 5px;
+            left: 8px;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(157, 92, 255, 0.28);
+            pointer-events: none;
+        }
+
+        .mensagem-404 {
+            position: relative;
+            margin-top: 45px;
+        }
+
+        .mensagem-404 small {
+            display: block;
+            margin-bottom: 20px;
+            color: var(--roxo);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .mensagem-404 h1 {
+            font-size: clamp(38px, 5vw, 70px);
+            font-weight: 400;
+            line-height: 0.95;
+            letter-spacing: -0.055em;
+        }
+
+        .mensagem-404 h1 em {
+            color: var(--cinza);
+            font-family: var(--serif);
+            font-weight: 400;
+        }
+
+        .mensagem-404 p {
+            max-width: 430px;
+            margin: 28px auto 0;
+            color: var(--cinza);
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .acoes-404 {
+            margin-top: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .botao-404 {
+            display: inline-flex;
+            align-items: center;
+            gap: 25px;
+            padding: 16px 20px;
+            background: var(--branco);
+            color: #080808;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            transition: var(--transicao);
+        }
+
+        .botao-404 span {
+            color: var(--roxo);
+            font-size: 17px;
+            transition: transform var(--transicao);
+        }
+
+        .botao-404:hover {
+            background: var(--roxo);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .botao-404:hover span {
+            color: #ffffff;
+            transform: translate(4px, -4px);
+        }
+
+        .botao-voltar {
+            padding-bottom: 7px;
+            border-bottom: 1px solid var(--borda);
+            color: var(--cinza);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            transition: var(--transicao);
+        }
+
+        .botao-voltar:hover {
+            color: var(--branco);
+            border-color: var(--roxo);
+        }
+
+        .rodape-404 {
+            position: relative;
+            z-index: 2;
+            padding: 25px 5vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--borda);
+            color: var(--cinza-escuro);
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .rodape-404 strong {
+            color: var(--cinza);
+            font-weight: 500;
+        }
+
+        .decoracao-404 {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: min(60vw, 800px);
+            height: min(60vw, 800px);
+            border: 1px solid rgba(157, 92, 255, 0.08);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .decoracao-404::before,
+        .decoracao-404::after {
+            content: "";
+            position: absolute;
+            inset: 12%;
+            border: 1px solid rgba(255, 255, 255, 0.035);
+            border-radius: 50%;
+        }
+
+        .decoracao-404::after {
+            inset: 25%;
+            border-color: rgba(157, 92, 255, 0.05);
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                overflow: auto;
+            }
+
+            .cabecalho-404 {
+                padding: 22px 6vw;
+            }
+
+            .cabecalho-status {
+                display: none;
+            }
+
+            .conteudo-404 {
+                padding: 50px 6vw;
+            }
+
+            .codigo-erro {
+                font-size: clamp(140px, 42vw, 230px);
+            }
+
+            .mensagem-404 {
+                margin-top: 35px;
+            }
+
+            .mensagem-404 h1 {
+                font-size: 39px;
+            }
+
+            .mensagem-404 p {
+                font-size: 11px;
+            }
+
+            .acoes-404 {
+                flex-direction: column;
+                gap: 22px;
+            }
+
+            .botao-404 {
+                width: max-content;
+            }
+
+            .rodape-404 {
+                padding: 22px 6vw;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .decoracao-404 {
+                width: 100vw;
+                height: 100vw;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            * {
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="pagina-404">
+
+        <header class="cabecalho-404">
+
+            <a href="index.html" class="logo-404">
+                Camila<span>.</span>
+            </a>
+
+            <div class="cabecalho-status">
+                <span class="status-ponto"></span>
+                Página indisponível
+            </div>
+
+        </header>
+
+
+        <div class="decoracao-404"></div>
+
+
+        <section class="conteudo-404">
+
+            <div class="conteudo-central">
+
+                <div class="codigo-erro">
+                    404
+                </div>
+
+                <div class="mensagem-404">
+
+                    <small>Lost in the creative process</small>
+
+                    <h1>
+                        Parece que essa página
+                        <em>tomou outro caminho.</em>
+                    </h1>
+
+                    <p>
+                        O endereço que você tentou acessar não existe,
+                        foi movido ou simplesmente decidiu desaparecer
+                        por trás das câmeras.
+                    </p>
+
+                    <div class="acoes-404">
+
+                        <a href="index.html" class="botao-404">
+                            Voltar para o início
+                            <span>↗</span>
+                        </a>
+
+                        <a href="portfolio.html" class="botao-voltar">
+                            Explorar projetos
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="rodape-404">
+
+            <span>
+                © 2026 Camila Domingues
+            </span>
+
+            <span>
+                <strong>Creative Professional</strong>
+                · São Paulo — Brasil
+            </span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

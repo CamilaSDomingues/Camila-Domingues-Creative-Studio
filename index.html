@@ -1,0 +1,2761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camila Domingues — Filmmaker, Social Media, Designer e Editora de Vídeo. Estratégia, estética e narrativa para transformar ideias em presença.">
+    <meta name="author" content="Camila Domingues">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Camila Domingues • Creative Studio</title>
+
+    <link rel="icon" href="Mila 1.jpeg" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/SEU-KIT-ID.js" crossorigin="anonymous"></script>
+
+    <style>
+
+:root {
+    --fundo: #080808;
+    --fundo-secundario: #101010;
+    --fundo-terciario: #151515;
+    --branco: #f5f5f2;
+    --branco-suave: #d8d8d2;
+    --cinza: #969690;
+    --cinza-escuro: #5d5d59;
+    --borda: rgba(255, 255, 255, 0.12);
+    --borda-suave: rgba(255, 255, 255, 0.07);
+    --destaque: #9D5CFF;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Manrope", "Inter", sans-serif;
+    --raio: 2px;
+    --transicao: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--fundo);
+}
+
+body {
+    background: var(--fundo);
+    color: var(--branco);
+    font-family: var(--sans);
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--fundo);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--destaque);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+}
+
+img,
+video {
+    display: block;
+    width: 100%;
+}
+
+img {
+    height: auto;
+    object-fit: cover;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.pagina {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 24px 4vw;
+    transition: var(--transicao);
+}
+
+.cabecalho::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 8, 0);
+    backdrop-filter: blur(0);
+    transition: var(--transicao);
+    z-index: -1;
+}
+
+.cabecalho.scrolled {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.cabecalho.scrolled::before {
+    background: rgba(8, 8, 8, 0.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--borda-suave);
+}
+
+.cabecalho-conteudo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: baseline;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -1.4px;
+    line-height: 1;
+}
+
+.logo span {
+    color: var(--destaque);
+}
+
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    margin-left: auto;
+}
+
+.navegacao a {
+    position: relative;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color var(--transicao);
+}
+
+.navegacao a::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--destaque);
+    transition: width var(--transicao);
+}
+
+.navegacao a:hover {
+    color: var(--branco);
+}
+
+.navegacao a:hover::after {
+    width: 100%;
+}
+
+.cabecalho-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 17px;
+    border: 1px solid var(--borda);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: var(--transicao);
+}
+
+.cabecalho-contato span {
+    color: var(--destaque);
+    font-size: 15px;
+    transition: transform var(--transicao);
+}
+
+.cabecalho-contato:hover {
+    border-color: rgba(217, 255, 0, 0.5);
+    background: rgba(217, 255, 0, 0.05);
+}
+
+.cabecalho-contato:hover span {
+    transform: translate(3px, -3px);
+}
+
+.menu-mobile {
+    display: none;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
+    border: 1px solid var(--borda);
+    cursor: pointer;
+}
+
+.menu-mobile span {
+    display: block;
+    width: 16px;
+    height: 1px;
+    background: var(--branco);
+    transition: var(--transicao);
+}
+
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #111;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+    filter: grayscale(100%);
+    transform: scale(1.03);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.15) 32%, rgba(0, 0, 0, 0.35) 62%, rgba(0, 0, 0, 0.94) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent 65%);
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: 100svh;
+    padding: 135px 4vw 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-superior,
+.hero-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-superior span,
+.hero-inferior span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+.hero-centro {
+    max-width: 1000px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 70px 0;
+}
+
+.hero-legenda {
+    margin-bottom: 22px;
+    color: var(--destaque);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 1000px;
+    font-size: clamp(72px, 11vw, 170px);
+    font-weight: 500;
+    line-height: 0.82;
+    letter-spacing: -0.075em;
+}
+
+.hero h1 em {
+    display: block;
+    margin-left: 11vw;
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.06em;
+}
+
+.hero-descricao {
+    max-width: 450px;
+    margin: 48px 0 32px 11vw;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+.hero-acoes {
+    margin-left: 11vw;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.botao-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    padding: 16px 20px;
+    background: var(--branco);
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: var(--transicao);
+}
+
+.botao-principal span {
+    font-size: 17px;
+    transition: transform var(--transicao);
+}
+
+.botao-principal:hover {
+    background: var(--destaque);
+    transform: translateY(-3px);
+}
+
+.botao-principal:hover span {
+    transform: translate(4px, -4px);
+}
+
+.botao-secundario {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    padding-bottom: 7px;
+    transition: var(--transicao);
+}
+
+.botao-secundario:hover {
+    color: var(--destaque);
+    border-color: var(--destaque);
+}
+
+.hero-inferior {
+    align-items: flex-end;
+}
+
+.hero-indicador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.linha-indicadora {
+    width: 45px;
+    height: 1px;
+    background: var(--destaque);
+}
+
+.hero-especialidades {
+    display: flex;
+    gap: 24px;
+}
+
+.hero-especialidades span {
+    font-size: 8px;
+}
+
+.numero-secao,
+.titulo-secao {
+    color: var(--cinza);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.numero-secao {
+    color: var(--destaque);
+    margin-right: 18px;
+}
+
+.manifesto {
+    padding: 170px 8vw;
+    background: var(--fundo);
+}
+
+.manifesto-cabecalho,
+.especialidades-cabecalho,
+.projetos-cabecalho,
+.processo-cabecalho,
+.camila-cabecalho,
+.depoimentos-cabecalho,
+.contato-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.manifesto-conteudo {
+    max-width: 1250px;
+    margin: 120px auto 0;
+}
+
+.manifesto h2 {
+    max-width: 1100px;
+    font-size: clamp(48px, 7vw, 105px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+}
+
+.manifesto h2 span {
+    display: block;
+    margin-left: 17vw;
+    color: var(--cinza);
+    font-family: var(--serif);
+    font-style: italic;
+}
+
+.manifesto-textos {
+    max-width: 800px;
+    margin: 100px 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.manifesto-textos p {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.manifesto-textos .manifesto-destaque {
+    color: var(--branco-suave);
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.45;
+}
+
+.especialidades {
+    padding: 130px 8vw;
+    background: var(--fundo-secundario);
+}
+
+.especialidades-cabecalho > p {
+    color: var(--cinza);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.35;
+    text-align: right;
+}
+
+.especialidades-lista {
+    margin-top: 100px;
+    border-top: 1px solid var(--borda);
+}
+
+.especialidade {
+    display: grid;
+    grid-template-columns: 100px 1fr 60px;
+    gap: 30px;
+    align-items: center;
+    min-height: 150px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--borda);
+    transition: var(--transicao);
+}
+
+.especialidade-numero {
+    color: var(--cinza-escuro);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    transition: var(--transicao);
+}
+
+.especialidade-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.especialidade h3 {
+    min-width: 300px;
+    font-size: clamp(32px, 4vw, 58px);
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    transition: var(--transicao);
+}
+
+.especialidade p {
+    max-width: 400px;
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ==============================
+   SETAS — MOBILE
+============================== */
+
+@media (max-width: 800px) {
+
+    .especialidade-seta {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .projeto-link {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .botao-principal > span {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .texto-link > span {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .contato-links a > span {
+        font-size: 18px;
+        line-height: 1;
+    }
+
+    .contato-email > span {
+        font-size: 18px;
+        line-height: 1;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .especialidade-seta {
+        font-size: 22px;
+    }
+
+    .projeto-link {
+        font-size: 19px;
+    }
+
+    .botao-principal > span,
+    .texto-link > span,
+    .contato-links a > span,
+    .contato-email > span {
+        font-size: 17px;
+    }
+}
+
+.projetos {
+    padding: 170px 8vw;
+    background: var(--fundo);
+}
+
+.projetos-cabecalho {
+    align-items: flex-start;
+}
+
+.projetos-introducao {
+    max-width: 650px;
+}
+
+.projetos-introducao h2 {
+    font-size: clamp(45px, 6vw, 88px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.projetos-introducao h2 em {
+    display: block;
+    color: var(--cinza);
+    font-family: var(--serif);
+}
+
+.projetos-introducao p {
+    max-width: 390px;
+    margin-top: 35px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.projetos-galeria {
+    margin-top: 120px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    row-gap: 120px;
+}
+
+.projeto {
+    display: block;
+}
+
+.projeto-grande:nth-child(1) {
+    grid-column: 1 / 9;
+}
+
+.projeto-pequeno:nth-child(2) {
+    grid-column: 10 / 13;
+    margin-top: 180px;
+}
+
+.projeto-pequeno:nth-child(3) {
+    grid-column: 1 / 5;
+}
+
+.projeto-grande:nth-child(4) {
+    grid-column: 6 / 13;
+    margin-top: 100px;
+}
+
+.projeto-imagem {
+    position: relative;
+    overflow: hidden;
+    background: var(--fundo-terciario);
+}
+
+.projeto-grande .projeto-imagem {
+    aspect-ratio: 16 / 10;
+}
+
+.projeto-pequeno .projeto-imagem {
+    aspect-ratio: 4 / 5;
+}
+
+.projeto-imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(217, 255, 0, 0.08);
+    opacity: 0;
+    transition: var(--transicao);
+}
+
+.projeto-imagem img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    transform: scale(1.01);
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
+}
+
+.projeto:hover .projeto-imagem img {
+    filter: grayscale(0%);
+    transform: scale(1.06);
+}
+
+.projeto:hover .projeto-imagem::after {
+    opacity: 1;
+}
+
+.projeto-informacoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 18px;
+}
+
+.projeto-informacoes span {
+    color: var(--cinza);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+}
+
+.projeto-informacoes h3 {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.projeto-link {
+    color: var(--destaque) !important;
+    font-size: 20px !important;
+    transition: transform var(--transicao);
+}
+
+.projeto:hover .projeto-link {
+    transform: translate(4px, -4px);
+}
+
+.projetos-rodape {
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+}
+
+.processo {
+    padding: 160px 8vw;
+    background: var(--fundo-secundario);
+}
+
+.processo-cabecalho {
+    align-items: flex-end;
+}
+
+.processo-cabecalho h2 {
+    max-width: 700px;
+    font-size: clamp(46px, 6vw, 85px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.processo-cabecalho h2 em {
+    display: block;
+    color: var(--cinza);
+    font-family: var(--serif);
+}
+
+.processo-etapas {
+    margin-top: 120px;
+    border-top: 1px solid var(--borda);
+}
+
+.processo-etapa {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 40px;
+    padding: 45px 0;
+    border-bottom: 1px solid var(--borda);
+    transition: var(--transicao);
+}
+
+.processo-etapa > span {
+    color: var(--destaque);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+}
+
+.processo-etapa h3 {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.processo-etapa p {
+    max-width: 480px;
+    margin-top: 14px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.processo-etapa:hover {
+    padding-left: 20px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.camila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 850px;
+    background: var(--fundo);
+}
+
+.camila-imagem {
+    min-height: 700px;
+    overflow: hidden;
+}
+
+.camila-imagem img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
+}
+
+.camila:hover .camila-imagem img {
+    transform: scale(1.04);
+    filter: grayscale(0%);
+}
+
+.camila-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 10vw 100px 8vw;
+}
+
+.camila-cabecalho {
+    justify-content: flex-start;
+}
+
+.camila-conteudo h2 {
+    max-width: 650px;
+    margin-top: 100px;
+    font-size: clamp(45px, 5vw, 75px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+}
+
+.camila-conteudo h2 em {
+    display: block;
+    color: var(--cinza);
+    font-family: var(--serif);
+}
+
+.camila-conteudo p {
+    max-width: 500px;
+    margin-top: 32px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.camila-conteudo p + p {
+    margin-top: 15px;
+}
+
+.texto-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    width: max-content;
+    margin-top: 50px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--borda);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition: var(--transicao);
+}
+
+.texto-link span {
+    color: var(--destaque);
+    font-size: 17px;
+}
+
+.texto-link:hover {
+    border-color: var(--destaque);
+    color: var(--destaque);
+}
+
+.biografia {
+    padding: 170px 8vw;
+    background: var(--fundo-secundario);
+}
+
+.biografia-cabecalho {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.biografia-introducao {
+    max-width: 850px;
+}
+
+.biografia-introducao h2 {
+    font-size: clamp(45px, 6vw, 85px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.biografia-introducao h2 em {
+    display: block;
+    color: var(--cinza);
+    font-family: var(--serif);
+    font-weight: 400;
+}
+
+.biografia-introducao p {
+    max-width: 430px;
+    margin-top: 35px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.biografia-linha {
+    position: relative;
+    margin-top: 130px;
+    border-top: 1px solid var(--borda);
+}
+
+.biografia-linha::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 160px;
+    width: 1px;
+    background: var(--borda);
+}
+
+.biografia-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 70px;
+    padding: 65px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.biografia-periodo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 30px;
+}
+
+.biografia-periodo span {
+    color: var(--destaque);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.biografia-periodo strong {
+    color: var(--cinza);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+.biografia-conteudo {
+    max-width: 720px;
+}
+
+.biografia-area {
+    color: var(--cinza);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.biografia-conteudo h3 {
+    margin-top: 18px;
+    font-size: clamp(28px, 3vw, 45px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.045em;
+    transition: var(--transicao);
+}
+
+.biografia-conteudo p {
+    max-width: 570px;
+    margin-top: 22px;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.biografia-item::after {
+    content: "";
+    position: absolute;
+    top: 77px;
+    left: 154px;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--destaque);
+    background: var(--fundo-secundario);
+    border-radius: 50%;
+    transition: var(--transicao);
+}
+
+.biografia-item:hover::after {
+    background: var(--destaque);
+    box-shadow: 0 0 0 7px rgba(157, 92, 255, 0.1);
+}
+
+.biografia-item:hover .biografia-conteudo h3 {
+    color: var(--destaque);
+    transform: translateX(8px);
+}
+
+.biografia-atual {
+    padding-bottom: 80px;
+}
+
+.biografia-atual .biografia-periodo strong {
+    color: var(--destaque);
+}
+
+.biografia-frase {
+    max-width: 900px;
+    margin: 130px auto 0;
+    text-align: center;
+}
+
+.biografia-frase > span {
+    color: var(--destaque);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+}
+
+.biografia-frase p {
+    margin-top: 30px;
+    color: var(--branco-suave);
+    font-family: var(--serif);
+    font-size: clamp(25px, 3vw, 42px);
+    font-style: italic;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+}
+
+@media (max-width: 800px) {
+
+    .biografia {
+        padding: 110px 8vw;
+    }
+
+    .biografia-cabecalho {
+        display: block;
+    }
+
+    .biografia-introducao {
+        margin-top: 70px;
+    }
+
+    .biografia-introducao h2 {
+        font-size: clamp(43px, 10vw, 75px);
+    }
+
+    .biografia-linha {
+        margin-top: 85px;
+    }
+
+    .biografia-linha::before {
+        left: 35px;
+    }
+
+    .biografia-item {
+        grid-template-columns: 70px 1fr;
+        gap: 25px;
+        padding: 50px 0;
+    }
+
+    .biografia-periodo {
+        padding-right: 0;
+    }
+
+    .biografia-periodo strong {
+        font-size: 9px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .biografia-item::after {
+        top: 61px;
+        left: 29px;
+        width: 11px;
+        height: 11px;
+    }
+
+    .biografia-conteudo h3 {
+        font-size: 28px;
+    }
+
+    .biografia-conteudo p {
+        font-size: 12px;
+    }
+
+    .biografia-frase {
+        margin-top: 90px;
+    }
+
+    .biografia-frase p {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .biografia {
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+
+    .biografia-item {
+        grid-template-columns: 45px 1fr;
+        gap: 20px;
+    }
+
+    .biografia-linha::before {
+        left: 22px;
+    }
+
+    .biografia-item::after {
+        left: 17px;
+    }
+
+    .biografia-periodo span {
+        font-size: 8px;
+    }
+
+    .biografia-conteudo h3 {
+        font-size: 25px;
+    }
+
+    .biografia-conteudo p {
+        font-size: 11px;
+        line-height: 1.75;
+    }
+
+    .biografia-frase p {
+        font-size: 24px;
+    }
+}
+
+.numeros {
+    padding: 120px 8vw;
+    background: var(--fundo-terciario);
+}
+
+.numeros-lista {
+    margin-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+.numero-item {
+    padding: 50px 25px 50px 0;
+    border-right: 1px solid var(--borda);
+}
+
+.numero-item:not(:first-child) {
+    padding-left: 35px;
+}
+
+.numero-item:last-child {
+    border-right: 0;
+}
+
+.numero-item strong {
+    display: block;
+    color: var(--branco);
+    font-size: clamp(50px, 6vw, 85px);
+    font-weight: 400;
+    letter-spacing: -0.06em;
+}
+
+.numero-item span {
+    display: block;
+    margin-top: 8px;
+    color: var(--cinza);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.depoimentos {
+    padding: 170px 8vw;
+    background: var(--fundo);
+}
+
+.depoimentos-cabecalho {
+    align-items: flex-start;
+}
+
+.depoimentos-cabecalho p {
+    max-width: 330px;
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+.depoimento {
+    max-width: 1050px;
+    margin: 130px auto 0;
+}
+
+.aspas {
+    display: block;
+    color: var(--destaque);
+    font-family: Georgia, serif;
+    font-size: 100px;
+    line-height: 0.5;
+}
+
+.depoimento blockquote {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.035em;
+}
+
+.depoimento-autor {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.depoimento-autor strong {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.depoimento-autor span {
+    color: var(--cinza);
+    font-size: 10px;
+}
+
+.contato {
+    position: relative;
+    padding: 160px 8vw 110px;
+    background: var(--destaque);
+    color: #0a0a0a;
+    overflow: hidden;
+}
+
+.contato::after {
+    content: "CAMILA";
+    position: absolute;
+    right: -30px;
+    bottom: -110px;
+    color: rgba(0, 0, 0, 0.06);
+    font-size: clamp(180px, 28vw, 500px);
+    font-weight: 700;
+    letter-spacing: -0.09em;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.contato .numero-secao,
+.contato .titulo-secao {
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.contato .numero-secao {
+    color: #0a0a0a;
+}
+
+.contato-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 1050px;
+    margin: 120px auto 0;
+}
+
+.contato-conteudo > p {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contato h2 {
+    margin-top: 20px;
+    font-size: clamp(55px, 8vw, 125px);
+    font-weight: 500;
+    line-height: 0.88;
+    letter-spacing: -0.075em;
+}
+
+.contato h2 em {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 400;
+}
+
+.contato-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 65px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+    font-size: clamp(16px, 2vw, 24px);
+    transition: var(--transicao);
+}
+
+.contato-email span {
+    font-size: 22px;
+    transition: transform var(--transicao);
+}
+
+.contato-email:hover {
+    border-color: #0a0a0a;
+}
+
+.contato-email:hover span {
+    transform: translate(5px, -5px);
+}
+
+.contato-links {
+    position: relative;
+    z-index: 1;
+    margin-top: 130px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.contato-links a {
+    padding-top: 18px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    transition: var(--transicao);
+}
+
+.contato-links a span {
+    margin-left: 7px;
+}
+
+.contato-links a:hover {
+    transform: translateY(-4px);
+}
+
+.rodape {
+    padding: 90px 8vw 30px;
+    background: #050505;
+}
+
+.rodape-superior {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    padding-bottom: 100px;
+}
+
+.rodape-marca .logo {
+    font-size: 34px;
+}
+
+.rodape-marca p {
+    max-width: 250px;
+    margin-top: 25px;
+    color: var(--cinza);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.rodape-navegacao,
+.rodape-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.rodape-navegacao > span,
+.rodape-social > span {
+    margin-bottom: 10px;
+    color: var(--cinza-escuro);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.rodape-navegacao a,
+.rodape-social a {
+    color: var(--cinza);
+    font-size: 10px;
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.rodape-navegacao a:hover,
+.rodape-social a:hover {
+    color: var(--destaque);
+    transform: translateX(4px);
+}
+
+.rodape-inferior {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    border-top: 1px solid var(--borda-suave);
+    color: var(--cinza-escuro);
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1100px) {
+
+    .navegacao {
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(65px, 10vw, 125px);
+    }
+
+    .manifesto,
+    .especialidades,
+    .projetos,
+    .processo,
+    .depoimentos {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .projeto-grande:nth-child(1) {
+        grid-column: 1 / 9;
+    }
+
+    .projeto-pequeno:nth-child(2) {
+        grid-column: 10 / 13;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .cabecalho {
+        padding: 18px 5vw;
+    }
+
+    .cabecalho.scrolled {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .navegacao,
+    .cabecalho-contato {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: flex;
+    }
+
+    .hero-conteudo {
+        padding: 110px 5vw 25px;
+    }
+
+    .hero-superior span:last-child {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 16vw, 105px);
+    }
+
+    .hero h1 em {
+        margin-left: 8vw;
+    }
+
+    .hero-descricao,
+    .hero-acoes {
+        margin-left: 8vw;
+    }
+
+    .hero-descricao {
+        margin-top: 35px;
+        font-size: 13px;
+    }
+
+    .hero-acoes {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .hero-especialidades {
+        display: none;
+    }
+
+    .manifesto {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .manifesto-conteudo {
+        margin-top: 75px;
+    }
+
+    .manifesto h2 {
+        font-size: clamp(43px, 10vw, 75px);
+    }
+
+    .manifesto h2 span {
+        margin-left: 8vw;
+    }
+
+    .manifesto-textos {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 65px;
+    }
+
+    .especialidades {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .especialidades-cabecalho > p {
+        display: none;
+    }
+
+    .especialidades-lista {
+        margin-top: 70px;
+    }
+
+    .especialidade {
+        grid-template-columns: 45px 1fr 30px;
+        gap: 15px;
+        min-height: 125px;
+    }
+
+    .especialidade-conteudo {
+        display: block;
+    }
+
+    .especialidade h3 {
+        min-width: auto;
+        font-size: 30px;
+    }
+
+    .especialidade p {
+        margin-top: 9px;
+        font-size: 11px;
+    }
+
+    .projetos {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .projetos-cabecalho {
+        display: block;
+    }
+
+    .projetos-introducao {
+        margin-top: 70px;
+    }
+
+    .projetos-introducao h2 {
+        font-size: clamp(43px, 10vw, 75px);
+    }
+
+    .projetos-galeria {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .projeto-grande:nth-child(1),
+    .projeto-pequeno:nth-child(2),
+    .projeto-pequeno:nth-child(3),
+    .projeto-grande:nth-child(4) {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .projeto-pequeno .projeto-imagem {
+        aspect-ratio: 16 / 10;
+    }
+
+    .processo {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .processo-cabecalho {
+        display: block;
+    }
+
+    .processo-cabecalho h2 {
+        margin-top: 70px;
+        font-size: clamp(43px, 10vw, 75px);
+    }
+
+    .processo-etapas {
+        margin-top: 80px;
+    }
+
+    .processo-etapa {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+        padding: 35px 0;
+    }
+
+    .processo-etapa h3 {
+        font-size: 28px;
+    }
+
+    .camila {
+        grid-template-columns: 1fr;
+    }
+
+    .camila-imagem {
+        min-height: 100vw;
+        max-height: 700px;
+    }
+
+    .camila-conteudo {
+        padding: 90px 8vw;
+    }
+
+    .camila-conteudo h2 {
+        margin-top: 70px;
+        font-size: clamp(43px, 10vw, 75px);
+    }
+
+    .numeros {
+        padding: 100px 8vw;
+    }
+
+    .numeros-lista {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .numero-item {
+        padding: 35px 15px 35px 0;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .numero-item:nth-child(2) {
+        border-right: 0;
+        padding-left: 20px;
+    }
+
+    .numero-item:nth-child(3) {
+        padding-left: 0;
+        border-bottom: 0;
+    }
+
+    .numero-item:nth-child(4) {
+        border-right: 0;
+        border-bottom: 0;
+        padding-left: 20px;
+    }
+
+    .depoimentos {
+        padding-top: 110px;
+        padding-bottom: 110px;
+    }
+
+    .depoimentos-cabecalho {
+        display: block;
+    }
+
+    .depoimentos-cabecalho p {
+        margin-top: 40px;
+        text-align: left;
+    }
+
+    .depoimento {
+        margin-top: 90px;
+    }
+
+    .contato {
+        padding: 110px 7vw 70px;
+    }
+
+    .contato-conteudo {
+        margin-top: 90px;
+    }
+
+    .contato h2 {
+        font-size: clamp(50px, 13vw, 90px);
+    }
+
+    .contato-email {
+        margin-top: 50px;
+        font-size: 15px;
+    }
+
+    .contato-links {
+        margin-top: 90px;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .rodape {
+        padding: 70px 7vw 25px;
+    }
+
+    .rodape-superior {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px 30px;
+        padding-bottom: 70px;
+    }
+
+    .rodape-marca {
+        grid-column: 1 / -1;
+    }
+
+    .rodape-inferior {
+        flex-wrap: wrap;
+        gap: 12px 25px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero-video video {
+        opacity: 0.5;
+    }
+
+    .hero-centro {
+        padding: 40px 0;
+    }
+
+    .hero h1 {
+        font-size: clamp(53px, 17vw, 78px);
+    }
+
+    .hero-descricao {
+        max-width: 330px;
+    }
+
+    .botao-principal {
+        padding: 15px 17px;
+    }
+
+    .especialidade {
+        grid-template-columns: 35px 1fr 20px;
+        gap: 10px;
+    }
+
+    .especialidade h3 {
+        font-size: 25px;
+    }
+
+    .especialidade p {
+        max-width: 260px;
+    }
+
+    .especialidade-seta {
+        font-size: 18px;
+    }
+
+    .numero-item strong {
+        font-size: 46px;
+    }
+
+    .numero-item span {
+        font-size: 8px;
+        line-height: 1.5;
+    }
+
+    .depoimento blockquote {
+        font-size: 31px;
+    }
+
+    .aspas {
+        font-size: 75px;
+    }
+
+    .contato h2 {
+        font-size: 49px;
+    }
+
+    .contato-email {
+        font-size: 13px;
+        gap: 12px;
+    }
+
+    .rodape-superior {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-marca {
+        grid-column: auto;
+    }
+
+    .rodape-inferior {
+        flex-direction: column;
+    }
+
+    .rodape-inferior a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+    <div class="pagina">
+
+        <header class="cabecalho">
+            <div class="cabecalho-conteudo">
+
+                <a href="Mila 1.jpeg" class="logo">
+                    Camila<span>.</span>
+                </a>
+
+                <nav class="navegacao" aria-label="Navegação principal">
+                    <a href="#sobre">Sobre</a>
+                    <a href="#especialidades">Especialidades</a>
+                    <a href="portfolio.html">Projetos</a>
+                    <a href="#processo">Processo</a>
+                    <a href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%seus%20serviços">Contato</a>
+                </nav>
+
+                <a href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%seus%20serviços" class="WhatsApp" target="_blank" rel="noopener noreferrer">
+                    Vamos conversar
+                    <span>↗</span>
+                </a>
+
+                <button class="menu-mobile" type="button" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+        </header>
+
+
+        <main>
+
+            <section class="hero" id="inicio">
+
+                <div class="hero-video">
+                    <video autoplay muted loop playsinline poster="Mila 1.jpeg">
+                        <source src="404.html".mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="hero-overlay"></div>
+
+                <div class="hero-conteudo">
+
+                    <div class="hero-superior">
+                        <span>CREATIVE PROFESSIONAL</span>
+                        <span>BRASIL — 2026</span>
+                    </div>
+
+                    <div class="hero-centro">
+
+                        <p class="hero-legenda">
+                            Estratégia · Imagem · Narrativa
+                        </p>
+
+                        <h1>
+                            Camila
+                            <em>Domingues</em>
+                        </h1>
+
+                        <p class="hero-descricao">
+                            Filmmaker, social media, designer e editora de vídeo.
+                            Criando experiências visuais que transformam ideias
+                            em presença.
+                        </p>
+
+                        <div class="hero-acoes">
+                            <a href="portfolio.html" class="botao-principal">
+                                Explorar projetos
+                                <span>↗</span>
+                            </a>
+
+                            <a href="#sobre" class="botao-secundario">
+                                Conheça meu trabalho
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-inferior">
+
+                        <div class="hero-indicador">
+                            <span class="linha-indicadora"></span>
+                            <span>SCROLL TO EXPLORE</span>
+                        </div>
+
+                        <div class="hero-especialidades">
+                            <span>FILMMAKING</span>
+                            <span>SOCIAL MEDIA</span>
+                            <span>DESIGN</span>
+                            <span>EDITING</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="manifesto" id="sobre">
+
+                <div class="manifesto-cabecalho">
+                    <span class="numero-secao">01</span>
+                    <span class="titulo-secao">MANIFESTO</span>
+                </div>
+
+                <div class="manifesto-conteudo">
+
+                    <h2>
+                        Por trás de cada imagem,
+                        <span>existe uma intenção.</span>
+                    </h2>
+
+                    <div class="manifesto-textos">
+
+                        <p class="manifesto-destaque">
+                            Comunicação não é apenas aquilo que se vê.
+                            É aquilo que permanece depois que a imagem desaparece.
+                        </p>
+
+                        <p>
+                            Meu trabalho nasce do encontro entre estratégia,
+                            estética e narrativa. Cada projeto é uma oportunidade
+                            de transformar uma ideia em algo visualmente relevante,
+                            emocionalmente conectado e genuinamente memorável.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="especialidades" id="especialidades">
+
+                <div class="especialidades-cabecalho">
+
+                    <div>
+                        <span class="numero-secao">02</span>
+                        <span class="titulo-secao">ESPECIALIDADES</span>
+                    </div>
+
+                    <p>
+                        Diferentes ferramentas.
+                        <br>
+                        Uma mesma visão criativa.
+                    </p>
+
+                </div>
+
+                <div class="especialidades-lista">
+
+                    <article class="especialidade">
+
+                        <div class="especialidade-numero">01</div>
+
+                        <div class="especialidade-conteudo">
+
+                            <h3>Filmmaker</h3>
+
+                            <p>
+                                Imagem em movimento, direção, captação e construção
+                                de narrativas que transformam momentos em histórias.
+                            </p>
+
+                        </div>
+
+                        <span class="especialidade-seta">↗</span>
+
+                    </article>
+
+
+                    <article class="especialidade">
+
+                        <div class="especialidade-numero">02</div>
+
+                        <div class="especialidade-conteudo">
+
+                            <h3>Social Media</h3>
+
+                            <p>
+                                Estratégia, planejamento e criação de conteúdo
+                                para marcas que querem construir presença de verdade.
+                            </p>
+
+                        </div>
+
+                        <span class="especialidade-seta">↗</span>
+
+                    </article>
+
+
+                    <article class="especialidade">
+
+                        <div class="especialidade-numero">03</div>
+
+                        <div class="especialidade-conteudo">
+
+                            <h3>Designer</h3>
+
+                            <p>
+                                Identidade visual, direção estética e peças que
+                                transformam conceitos em comunicação visual.
+                            </p>
+
+                        </div>
+
+                        <span class="especialidade-seta">↗</span>
+
+                    </article>
+
+
+                    <article class="especialidade">
+
+                        <div class="especialidade-numero">04</div>
+
+                        <div class="especialidade-conteudo">
+
+                            <h3>Video Editor</h3>
+
+                            <p>
+                                Montagem, ritmo, storytelling e acabamento para
+                                transformar imagens em experiências.
+                            </p>
+
+                        </div>
+
+                        <span class="especialidade-seta">↗</span>
+
+                    </article>
+
+
+                    <article class="especialidade especialidade-extra">
+
+                        <div class="especialidade-numero">05</div>
+
+                        <div class="especialidade-conteudo">
+
+                            <h3>Creative+</h3>
+
+                            <p>
+                                Um espaço para tudo aquilo que acontece quando
+                                criatividade, estratégia e curiosidade se encontram.
+                            </p>
+
+                        </div>
+
+                        <span class="especialidade-seta">↗</span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <section class="projetos" id="projetos">
+
+                <div class="projetos-cabecalho">
+
+                    <div>
+                        <span class="numero-secao">03</span>
+                        <span class="titulo-secao">SELECTED WORKS</span>
+                    </div>
+
+                    <div class="projetos-introducao">
+
+                        <h2>
+                            Ideias que
+                            <em>ganharam forma.</em>
+                        </h2>
+
+                        <p>
+                            Uma seleção de trabalhos que traduzem diferentes
+                            momentos, desafios e possibilidades criativas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="projetos-galeria">
+
+                    <a href="#" class="projeto projeto-grande">
+
+                        <div class="projeto-imagem">
+                            <img src="Mila 1.jpeg" alt="Projeto audiovisual de Camila Domingues">
+                        </div>
+
+                        <div class="projeto-informacoes">
+
+                            <div>
+                                <span>01 / FILMMAKING</span>
+                                <h3>Projeto Audiovisual</h3>
+                            </div>
+
+                            <span class="projeto-link">↗</span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="projeto projeto-pequeno">
+
+                        <div class="projeto-imagem">
+                            <img src="Mila 2.jpeg" alt="Projeto de social media de Camila Domingues">
+                        </div>
+
+                        <div class="projeto-informacoes">
+
+                            <div>
+                                <span>02 / SOCIAL MEDIA</span>
+                                <h3>Digital Presence</h3>
+                            </div>
+
+                            <span class="projeto-link">↗</span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="projeto projeto-pequeno">
+
+                        <div class="projeto-imagem">
+                            <img src="Mila 3.jpeg" alt="Projeto de design de Camila Domingues">
+                        </div>
+
+                        <div class="projeto-informacoes">
+
+                            <div>
+                                <span>03 / DESIGN</span>
+                                <h3>Visual Identity</h3>
+                            </div>
+
+                            <span class="projeto-link">↗</span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="projeto projeto-grande">
+
+                        <div class="projeto-imagem">
+                            <img src="Mila 1.jpeg" alt="Projeto de edição de vídeo de Camila Domingues">
+                        </div>
+
+                        <div class="projeto-informacoes">
+
+                            <div>
+                                <span>04 / VIDEO EDITING</span>
+                                <h3>Visual Storytelling</h3>
+                            </div>
+
+                            <span class="projeto-link">↗</span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <div class="projetos-rodape">
+                    <a href="portfolio.html" class="botao-principal">
+                        Ver todos os projetos
+                        <span>↗</span>
+                    </a>
+                </div>
+
+            </section>
+
+
+            <section class="processo" id="processo">
+
+                <div class="processo-cabecalho">
+
+                    <div>
+                        <span class="numero-secao">04</span>
+                        <span class="titulo-secao">PROCESSO</span>
+                    </div>
+
+                    <h2>
+                        Do primeiro rabisco
+                        <em>ao resultado final.</em>
+                    </h2>
+
+                </div>
+
+
+                <div class="processo-etapas">
+
+                    <article class="processo-etapa">
+
+                        <span>01</span>
+
+                        <div>
+                            <h3>Discover</h3>
+                            <p>
+                                Entender a marca, o público, o contexto e aquilo
+                                que precisa ser comunicado.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="processo-etapa">
+
+                        <span>02</span>
+
+                        <div>
+                            <h3>Concept</h3>
+                            <p>
+                                Transformar informações em conceito, direção
+                                criativa e linguagem visual.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="processo-etapa">
+
+                        <span>03</span>
+
+                        <div>
+                            <h3>Create</h3>
+                            <p>
+                                Produção, captação, design, edição e desenvolvimento
+                                da solução criativa.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="processo-etapa">
+
+                        <span>04</span>
+
+                        <div>
+                            <h3>Refine</h3>
+                            <p>
+                                Ajustar cada detalhe para encontrar equilíbrio
+                                entre intenção, estética e resultado.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="processo-etapa">
+
+                        <span>05</span>
+
+                        <div>
+                            <h3>Deliver</h3>
+                            <p>
+                                Entregar uma experiência pronta para comunicar,
+                                conectar e gerar presença.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <section class="camila" >
+
+                <div class="camila-imagem">
+                    <img src="Mila 3.jpeg" alt="Camila Domingues">
+                </div>
+
+                <div class="camila-conteudo">
+
+                    <div class="camila-cabecalho">
+                        <span class="numero-secao">05</span>
+                        <span class="titulo-secao">ABOUT CAMILA</span>
+                    </div>
+
+                    <h2>
+                        Muito além
+                        <em>do que aparece na tela.</em>
+                    </h2>
+
+                    <p>
+                        Sou Camila Domingues, uma profissional criativa apaixonada
+                        por transformar ideias em experiências visuais.
+                    </p>
+
+                    <p>
+                        Entre câmeras, telas, conceitos e histórias, encontrei
+                        diferentes formas de comunicar aquilo que palavras nem
+                        sempre conseguem dizer.
+                    </p>
+
+                    <a href="#biografia" class="texto-link">
+                        Conheça minha trajetória
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </section>
+            
+            <section class="biografia" id="biografia">
+
+    <div class="biografia-cabecalho">
+
+        <div>
+            <span class="numero-secao">06</span>
+            <span class="titulo-secao">PROFESSIONAL BIOGRAPHY</span>
+        </div>
+
+        <div class="biografia-introducao">
+            <h2>
+                Uma trajetória construída entre
+                <em>criatividade, estratégia e imagem.</em>
+            </h2>
+
+            <p>
+                Cada experiência acrescentou uma nova perspectiva à forma
+                de criar, comunicar e enxergar projetos.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="biografia-linha">
+
+
+        <article class="biografia-item">
+
+            <div class="biografia-periodo">
+                <span>01</span>
+                <strong>20XX</strong>
+            </div>
+
+            <div class="biografia-conteudo">
+
+                <span class="biografia-area">INÍCIO</span>
+
+                <h3>
+                    Onde tudo começou.
+                </h3>
+
+                <p>
+                    A trajetória profissional começa a ganhar forma a partir
+                    do interesse por comunicação, criatividade e produção
+                    de conteúdo. Uma primeira aproximação com o universo
+                    visual que posteriormente se tornaria parte essencial
+                    de sua carreira.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="biografia-item">
+
+            <div class="biografia-periodo">
+                <span>02</span>
+                <strong>20XX</strong>
+            </div>
+
+            <div class="biografia-conteudo">
+
+                <span class="biografia-area">AUDIOVISUAL</span>
+
+                <h3>
+                    A imagem ganhou movimento.
+                </h3>
+
+                <p>
+                    O audiovisual passa a ocupar um espaço maior em sua
+                    trajetória. Entre captação, direção e edição, surge
+                    uma nova maneira de transformar ideias em narrativas
+                    visuais.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="biografia-item">
+
+            <div class="biografia-periodo">
+                <span>03</span>
+                <strong>20XX</strong>
+            </div>
+
+            <div class="biografia-conteudo">
+
+                <span class="biografia-area">DESIGN & DIGITAL</span>
+
+                <h3>
+                    Criatividade também é estratégia.
+                </h3>
+
+                <p>
+                    A experiência se expande para o design e para o universo
+                    digital, aproximando estética, identidade visual,
+                    posicionamento e comunicação estratégica.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="biografia-item">
+
+            <div class="biografia-periodo">
+                <span>04</span>
+                <strong>20XX</strong>
+            </div>
+
+            <div class="biografia-conteudo">
+
+                <span class="biografia-area">SOCIAL MEDIA</span>
+
+                <h3>
+                    Conteúdo passou a ter propósito.
+                </h3>
+
+                <p>
+                    A atuação em social media amplia a visão sobre marcas,
+                    pessoas e comportamento digital, transformando a criação
+                    de conteúdo em uma ferramenta de conexão e posicionamento.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="biografia-item biografia-atual">
+
+            <div class="biografia-periodo">
+                <span>05</span>
+                <strong>ATUAL</strong>
+            </div>
+
+            <div class="biografia-conteudo">
+
+                <span class="biografia-area">CREATIVE PROFESSIONAL</span>
+
+                <h3>
+                    Hoje, diferentes habilidades trabalham juntas.
+                </h3>
+
+                <p>
+                    Atualmente, Camila atua de forma multidisciplinar,
+                    conectando filmmaking, edição, design, social media
+                    e estratégia para desenvolver projetos completos,
+                    consistentes e visualmente relevantes.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="biografia-frase">
+
+        <span>THE JOURNEY CONTINUES</span>
+
+        <p>
+            “Criar nunca foi apenas sobre fazer algo bonito.
+            É sobre encontrar a melhor forma de fazer uma ideia existir.”
+        </p>
+
+    </div>
+
+</section>
+
+
+            <section class="numeros">
+
+                <div class="numeros-cabecalho">
+                    <span class="numero-secao">06</span>
+                    <span class="titulo-secao">BY THE NUMBERS</span>
+                </div>
+
+                <div class="numeros-lista">
+
+                    <div class="numero-item">
+                        <strong>+24</strong>
+                        <span>Projetos realizados</span>
+                    </div>
+
+                    <div class="numero-item">
+                        <strong>+4</strong>
+                        <span>Marcas atendidas</span>
+                    </div>
+
+                    <div class="numero-item">
+                        <strong>+100</strong>
+                        <span>Conteúdos produzidos</span>
+                    </div>
+
+                    <div class="numero-item">
+                        <strong>02</strong>
+                        <span>Anos criando</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="depoimentos">
+
+                <div class="depoimentos-cabecalho">
+
+                    <div>
+                        <span class="numero-secao">07</span>
+                        <span class="titulo-secao">TESTIMONIALS</span>
+                    </div>
+
+                    <p>
+                        O que acontece quando uma ideia encontra
+                        a pessoa certa para transformá-la em realidade.
+                    </p>
+
+                </div>
+
+
+                <div class="depoimento">
+
+                    <span class="aspas">“</span>
+
+                    <blockquote>
+                        O trabalho da Camila conseguiu traduzir exatamente
+                        aquilo que tínhamos imaginado e ainda trouxe uma
+                        visão que não tínhamos considerado.
+                    </blockquote>
+
+                    <div class="depoimento-autor">
+                        <strong>• Vinicios Santana</strong>
+                        <span>CEO · Nexa Agency Enterprises</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="contato" id="contato">
+
+                <div class="contato-cabecalho">
+
+                    <span class="numero-secao">08</span>
+                    <span class="titulo-secao">LET'S CREATE</span>
+
+                </div>
+
+                <div class="contato-conteudo">
+
+                    <p>
+                        Tem uma ideia?
+                    </p>
+
+                    <h2>
+                        Vamos transformá-la em algo
+                        <em>que possa ser visto.</em>
+                    </h2>
+
+                    <a href="https://mail.google.com/mail/u/0/?hl=pt-BR#inbox?compose=DmwnWtMrlXdMHvKZCFxntrDqtfzxvxWdCFzTFTlbLfvxZtwhJWWcJnMsbgzfjnQkbsDkFsTnKgng" class="contato-email">
+                        camilasousadomingues.12@gmail.com
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+                <div class="contato-links">
+
+                    <a href="https://www.instagram.com/mov.bycamila/">
+                        Instagram
+                        <span>↗</span>
+                    </a>
+
+                    <a href="404.html" target="_blank" rel="noopener noreferrer">
+                        Behance
+                        <span>↗</span>
+                    </a>
+
+                    <a href="404.html" target="_blank" rel="noopener noreferrer">
+                        LinkedIn
+                        <span>↗</span>
+                    </a>
+
+                    <a href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%seus%20serviços" target="_blank" rel="noopener noreferrer">
+                        WhatsApp
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer class="rodape">
+
+            <div class="rodape-superior">
+
+                <div class="rodape-marca">
+
+                    <a href="#inicio" class="logo">
+                        Camila<span>.</span>
+                    </a>
+
+                    <p>
+                        Filmmaker · Social Media · Designer · Editor
+                    </p>
+
+                </div>
+
+
+                <div class="rodape-navegacao">
+
+                    <span>NAVEGAÇÃO</span>
+
+                    <a href="#inicio">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#especialidades">Especialidades</a>
+                    <a href="portfolio.html">Projetos</a>
+                    <a href="#processo">Processo</a>
+                    <a href="#contato">Contato</a>
+
+                </div>
+
+
+                <div class="rodape-social">
+
+                    <span>SOCIAL</span>
+
+                    <a href="https://www.instagram.com/mov.bycamila/" target="_blank" rel="noopener noreferrer">
+                        Instagram ↗
+                    </a>
+
+                    <a href="404.html" target="_blank" rel="noopener noreferrer">
+                        Behance ↗
+                    </a>
+
+                    <a href="404.html" target="_blank" rel="noopener noreferrer">
+                        LinkedIn ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="rodape-inferior">
+
+                <span>© 2026 Camila Domingues</span>
+
+                <span>São Paulo — Brasil</span>
+
+                <span>All rights reserved.</span>
+
+                <span>
+    Site desenvolvido por
+    <a href="https://viniciossantana.github.io/Nexa-Agency-Enterprises/index.html" target="_blank" style="text-decoration: underline; text-underline-offset: 4px;">
+        Nexa Agency Enterprises
+    </a>
+                </span>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

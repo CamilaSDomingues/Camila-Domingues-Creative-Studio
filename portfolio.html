@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Projetos de Camila Domingues — Filmmaker, Social Media, Designer e Editora de Vídeo.">
+    <meta name="author" content="Camila Domingues">
+    <meta name="theme-color" content="#080808">
+
+    <title>Projetos • Camila Domingues</title>
+
+    <link rel="icon" href="Mila 1.jpeg" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --fundo: #080808;
+            --fundo-secundario: #101010;
+            --fundo-terciario: #151515;
+            --branco: #f5f5f2;
+            --branco-suave: #d8d8d2;
+            --cinza: #969690;
+            --cinza-escuro: #5d5d59;
+            --borda: rgba(255, 255, 255, 0.12);
+            --borda-suave: rgba(255, 255, 255, 0.07);
+            --destaque: #9D5CFF;
+            --serif: "Playfair Display", Georgia, serif;
+            --sans: "Manrope", "Inter", sans-serif;
+            --transicao: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: var(--fundo);
+        }
+
+        body {
+            background: var(--fundo);
+            color: var(--branco);
+            font-family: var(--sans);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: var(--fundo);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: var(--destaque);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            border: 0;
+            background: none;
+            color: inherit;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .cabecalho {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            padding: 24px 4vw;
+            transition: var(--transicao);
+        }
+
+        .cabecalho::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: rgba(8, 8, 8, 0);
+            backdrop-filter: blur(0);
+            transition: var(--transicao);
+        }
+
+        .cabecalho.scrolled {
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+
+        .cabecalho.scrolled::before {
+            background: rgba(8, 8, 8, 0.82);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--borda-suave);
+        }
+
+        .cabecalho-conteudo {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: baseline;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -1.4px;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: var(--destaque);
+        }
+
+        .navegacao {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            margin-left: auto;
+        }
+
+        .navegacao a {
+            position: relative;
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color var(--transicao);
+        }
+
+        .navegacao a::after {
+            content: "";
+            position: absolute;
+            bottom: -7px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--destaque);
+            transition: width var(--transicao);
+        }
+
+        .navegacao a:hover,
+        .navegacao a.ativo {
+            color: var(--branco);
+        }
+
+        .navegacao a:hover::after,
+        .navegacao a.ativo::after {
+            width: 100%;
+        }
+
+        .cabecalho-contato {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 17px;
+            border: 1px solid var(--borda);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transicao);
+        }
+
+        .cabecalho-contato span {
+            color: var(--destaque);
+            font-size: 15px;
+            transition: transform var(--transicao);
+        }
+
+        .cabecalho-contato:hover {
+            border-color: rgba(157, 92, 255, 0.5);
+            background: rgba(157, 92, 255, 0.05);
+        }
+
+        .cabecalho-contato:hover span {
+            transform: translate(3px, -3px);
+        }
+
+        .menu-mobile {
+            display: none;
+            width: 38px;
+            height: 38px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid var(--borda);
+        }
+
+        .menu-mobile span {
+            display: block;
+            width: 16px;
+            height: 1px;
+            background: var(--branco);
+            transition: var(--transicao);
+        }
+
+
+        /* =====================================================
+           HERO DO PORTFÓLIO
+        ===================================================== */
+
+        .portfolio-hero {
+            position: relative;
+            min-height: 92vh;
+            padding: 150px 8vw 90px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .portfolio-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -15%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(
+                circle,
+                rgba(157, 92, 255, 0.14),
+                transparent 68%
+            );
+            pointer-events: none;
+        }
+
+        .portfolio-hero::after {
+            content: "WORK";
+            position: absolute;
+            right: -30px;
+            bottom: -95px;
+            color: rgba(255, 255, 255, 0.018);
+            font-size: clamp(180px, 30vw, 500px);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.09em;
+            pointer-events: none;
+        }
+
+        .portfolio-hero-conteudo {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1400px;
+        }
+
+        .portfolio-legenda {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 45px;
+        }
+
+        .portfolio-legenda span {
+            color: var(--cinza);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .portfolio-legenda span:first-child {
+            color: var(--destaque);
+        }
+
+        .portfolio-hero h1 {
+            max-width: 1100px;
+            font-size: clamp(75px, 12vw, 175px);
+            font-weight: 400;
+            line-height: 0.82;
+            letter-spacing: -0.075em;
+        }
+
+        .portfolio-hero h1 em {
+            display: block;
+            margin-left: 12vw;
+            color: var(--cinza);
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: -0.06em;
+        }
+
+        .portfolio-hero-inferior {
+            margin-top: 75px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .portfolio-descricao {
+            max-width: 430px;
+            color: var(--cinza);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        .portfolio-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--cinza);
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .portfolio-meta-linha {
+            width: 55px;
+            height: 1px;
+            background: var(--destaque);
+        }
+
+
+        /* =====================================================
+           FILTROS
+        ===================================================== */
+
+        .filtros {
+            padding: 0 8vw 80px;
+            background: var(--fundo);
+        }
+
+        .filtros-conteudo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 25px 0;
+            border-top: 1px solid var(--borda);
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .filtros-label {
+            color: var(--cinza-escuro);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .filtros-lista {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filtro {
+            padding: 9px 14px;
+            border: 1px solid transparent;
+            color: var(--cinza);
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: var(--transicao);
+        }
+
+        .filtro:hover {
+            color: var(--branco);
+            border-color: var(--borda);
+        }
+
+        .filtro.ativo {
+            color: var(--branco);
+            border-color: var(--destaque);
+            background: rgba(157, 92, 255, 0.08);
+        }
+
+
+        /* =====================================================
+           PORTFÓLIO
+        ===================================================== */
+
+        .portfolio {
+            padding: 20px 8vw 170px;
+            background: var(--fundo);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 30px;
+            row-gap: 150px;
+        }
+
+        .portfolio-projeto {
+            position: relative;
+            display: block;
+        }
+
+        .portfolio-projeto:nth-child(1) {
+            grid-column: 1 / 9;
+        }
+
+        .portfolio-projeto:nth-child(2) {
+            grid-column: 10 / 13;
+            margin-top: 180px;
+        }
+
+        .portfolio-projeto:nth-child(3) {
+            grid-column: 1 / 5;
+        }
+
+        .portfolio-projeto:nth-child(4) {
+            grid-column: 6 / 13;
+            margin-top: 80px;
+        }
+
+        .portfolio-projeto:nth-child(5) {
+            grid-column: 1 / 8;
+            margin-top: 80px;
+        }
+
+        .portfolio-projeto:nth-child(6) {
+            grid-column: 9 / 13;
+            margin-top: 230px;
+        }
+
+        .portfolio-imagem {
+            position: relative;
+            overflow: hidden;
+            background: var(--fundo-terciario);
+        }
+
+        .portfolio-projeto:nth-child(2) .portfolio-imagem,
+        .portfolio-projeto:nth-child(3) .portfolio-imagem,
+        .portfolio-projeto:nth-child(6) .portfolio-imagem {
+            aspect-ratio: 4 / 5;
+        }
+
+        .portfolio-projeto:nth-child(1) .portfolio-imagem,
+        .portfolio-projeto:nth-child(4) .portfolio-imagem,
+        .portfolio-projeto:nth-child(5) .portfolio-imagem {
+            aspect-ratio: 16 / 10;
+        }
+
+        .portfolio-imagem::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(
+                135deg,
+                rgba(157, 92, 255, 0.16),
+                transparent 45%
+            );
+            opacity: 0;
+            transition: var(--transicao);
+            pointer-events: none;
+        }
+
+        .portfolio-imagem::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0);
+            transition: var(--transicao);
+            pointer-events: none;
+        }
+
+        .portfolio-imagem img {
+            filter: grayscale(100%);
+            transform: scale(1.01);
+            transition:
+                transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 1s ease;
+        }
+
+        .portfolio-projeto:hover .portfolio-imagem img {
+            filter: grayscale(0%);
+            transform: scale(1.06);
+        }
+
+        .portfolio-projeto:hover .portfolio-imagem::before {
+            opacity: 1;
+        }
+
+        .portfolio-projeto:hover .portfolio-imagem::after {
+            border-color: rgba(157, 92, 255, 0.4);
+        }
+
+        .portfolio-informacoes {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            padding-top: 20px;
+        }
+
+        .portfolio-categoria {
+            color: var(--cinza);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .portfolio-informacoes h2 {
+            margin-top: 9px;
+            font-size: clamp(20px, 2vw, 30px);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            transition: var(--transicao);
+        }
+
+        .portfolio-projeto:hover .portfolio-informacoes h2 {
+            color: var(--destaque);
+            transform: translateX(7px);
+        }
+
+        .portfolio-resumo {
+            max-width: 420px;
+            margin-top: 14px;
+            color: var(--cinza);
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .portfolio-seta {
+            color: var(--destaque);
+            font-size: 21px;
+            line-height: 1;
+            transition: var(--transicao);
+        }
+
+        .portfolio-projeto:hover .portfolio-seta {
+            transform: translate(5px, -5px);
+        }
+
+        .portfolio-numero {
+            position: absolute;
+            z-index: 3;
+            top: 15px;
+            left: 15px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .portfolio-cta {
+            padding: 150px 8vw;
+            background: var(--destaque);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-cta::after {
+            content: "CREATE";
+            position: absolute;
+            right: -30px;
+            bottom: -100px;
+            color: rgba(0, 0, 0, 0.1);
+            font-size: clamp(170px, 27vw, 450px);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -0.1em;
+            pointer-events: none;
+        }
+
+        .portfolio-cta-conteudo {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+        }
+
+        .portfolio-cta-label {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .portfolio-cta h2 {
+            margin-top: 35px;
+            font-size: clamp(50px, 8vw, 110px);
+            font-weight: 400;
+            line-height: 0.9;
+            letter-spacing: -0.065em;
+        }
+
+        .portfolio-cta h2 em {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .portfolio-cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 28px;
+            margin-top: 60px;
+            padding: 16px 20px;
+            background: #ffffff;
+            color: #080808;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            transition: var(--transicao);
+        }
+
+        .portfolio-cta-link span {
+            color: var(--destaque);
+            font-size: 18px;
+            transition: var(--transicao);
+        }
+
+        .portfolio-cta-link:hover {
+            transform: translateY(-4px);
+            background: #080808;
+            color: #ffffff;
+        }
+
+        .portfolio-cta-link:hover span {
+            color: var(--destaque);
+            transform: translate(4px, -4px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .rodape {
+            padding: 80px 8vw 25px;
+            background: var(--fundo);
+        }
+
+        .rodape-superior {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .rodape-marca h3 {
+            font-size: 27px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+
+        .rodape-marca h3 span {
+            color: var(--destaque);
+        }
+
+        .rodape-marca p {
+            max-width: 300px;
+            margin-top: 20px;
+            color: var(--cinza);
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        .rodape-coluna span {
+            display: block;
+            margin-bottom: 20px;
+            color: var(--cinza-escuro);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .rodape-coluna a {
+            display: block;
+            width: max-content;
+            margin-bottom: 11px;
+            color: var(--cinza);
+            font-size: 10px;
+            transition: var(--transicao);
+        }
+
+        .rodape-coluna a:hover {
+            color: var(--destaque);
+            transform: translateX(4px);
+        }
+
+        .rodape-inferior {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding-top: 25px;
+            color: var(--cinza-escuro);
+            font-size: 8px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .rodape-inferior a {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .navegacao {
+                gap: 20px;
+            }
+
+            .portfolio-projeto:nth-child(1) {
+                grid-column: 1 / 9;
+            }
+
+            .portfolio-projeto:nth-child(2) {
+                grid-column: 10 / 13;
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .cabecalho {
+                padding: 18px 5vw;
+            }
+
+            .navegacao,
+            .cabecalho-contato {
+                display: none;
+            }
+
+            .menu-mobile {
+                display: flex;
+            }
+
+            .portfolio-hero {
+                min-height: 85vh;
+                padding: 130px 7vw 75px;
+            }
+
+            .portfolio-hero h1 {
+                font-size: clamp(58px, 16vw, 105px);
+            }
+
+            .portfolio-hero h1 em {
+                margin-left: 8vw;
+            }
+
+            .portfolio-hero-inferior {
+                display: block;
+                margin-top: 55px;
+            }
+
+            .portfolio-meta {
+                margin-top: 35px;
+            }
+
+            .filtros {
+                padding: 0 7vw 60px;
+            }
+
+            .filtros-conteudo {
+                display: block;
+            }
+
+            .filtros-label {
+                display: block;
+                margin-bottom: 20px;
+            }
+
+            .portfolio {
+                padding: 20px 7vw 110px;
+            }
+
+            .portfolio-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 75px;
+            }
+
+            .portfolio-projeto:nth-child(n) {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .portfolio-projeto:nth-child(2) .portfolio-imagem,
+            .portfolio-projeto:nth-child(3) .portfolio-imagem,
+            .portfolio-projeto:nth-child(6) .portfolio-imagem {
+                aspect-ratio: 16 / 10;
+            }
+
+            .portfolio-informacoes h2 {
+                font-size: 24px;
+            }
+
+            .portfolio-resumo {
+                font-size: 11px;
+            }
+
+            .portfolio-cta {
+                padding: 110px 7vw 90px;
+            }
+
+            .portfolio-cta h2 {
+                font-size: clamp(48px, 13vw, 85px);
+            }
+
+            .rodape {
+                padding: 70px 7vw 25px;
+            }
+
+            .rodape-superior {
+                grid-template-columns: 1fr 1fr;
+                gap: 60px 30px;
+            }
+
+            .rodape-marca {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .portfolio-hero {
+                min-height: 78vh;
+                padding: 120px 7vw 60px;
+            }
+
+            .portfolio-hero h1 {
+                font-size: clamp(53px, 17vw, 78px);
+            }
+
+            .portfolio-hero::after {
+                font-size: 150px;
+                bottom: -30px;
+            }
+
+            .portfolio-descricao {
+                font-size: 12px;
+            }
+
+            .filtros-lista {
+                gap: 6px;
+            }
+
+            .filtro {
+                padding: 8px 10px;
+                font-size: 8px;
+            }
+
+            .portfolio {
+                padding-bottom: 90px;
+            }
+
+            .portfolio-grid {
+                gap: 60px;
+            }
+
+            .portfolio-informacoes {
+                gap: 15px;
+            }
+
+            .portfolio-informacoes h2 {
+                font-size: 21px;
+            }
+
+            .portfolio-resumo {
+                max-width: 280px;
+                font-size: 10px;
+            }
+
+            .portfolio-seta {
+                font-size: 18px;
+            }
+
+            .portfolio-cta {
+                padding: 90px 7vw 75px;
+            }
+
+            .portfolio-cta-link {
+                margin-top: 45px;
+            }
+
+            .rodape-superior {
+                grid-template-columns: 1fr;
+            }
+
+            .rodape-marca {
+                grid-column: auto;
+            }
+
+            .rodape-inferior {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="pagina">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <header class="cabecalho">
+
+            <div class="cabecalho-conteudo">
+
+                <a href="index.html" class="logo">
+                    Camila<span>.</span>
+                </a>
+
+                <nav class="navegacao" aria-label="Navegação principal">
+
+                    <a href="index.html#sobre">
+                        Sobre
+                    </a>
+
+                    <a href="index.html#especialidades">
+                        Especialidades
+                    </a>
+
+                    <a href="projetos.html" class="ativo">
+                        Projetos
+                    </a>
+
+                    <a href="index.html#processo">
+                        Processo
+                    </a>
+
+                    <a href="index.html#contato">
+                        Contato
+                    </a>
+
+                </nav>
+
+                <a
+                    href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%20seus%20serviços"
+                    class="cabecalho-contato"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Vamos conversar
+                    <span>↗</span>
+                </a>
+
+                <button
+                    class="menu-mobile"
+                    type="button"
+                    aria-label="Abrir menu"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ==================================================
+             HERO
+        =================================================== -->
+
+        <main>
+
+            <section class="portfolio-hero">
+
+                <div class="portfolio-hero-conteudo">
+
+                    <div class="portfolio-legenda">
+
+                        <span>03</span>
+
+                        <span>Selected Works</span>
+
+                    </div>
+
+
+                    <h1>
+                        Projetos
+                        <em>que falam.</em>
+                    </h1>
+
+
+                    <div class="portfolio-hero-inferior">
+
+                        <p class="portfolio-descricao">
+                            Uma coleção de trabalhos desenvolvidos entre
+                            estratégia, direção criativa, audiovisual,
+                            design e comunicação digital.
+                        </p>
+
+                        <div class="portfolio-meta">
+
+                            <span class="portfolio-meta-linha"></span>
+
+                            <span>
+                                Portfolio — 2026
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 FILTROS
+            =================================================== -->
+
+            <section class="filtros">
+
+                <div class="filtros-conteudo">
+
+                    <span class="filtros-label">
+                        Filtrar por
+                    </span>
+
+                    <div class="filtros-lista">
+
+                        <button
+                            class="filtro ativo"
+                            data-filtro="todos"
+                        >
+                            Todos
+                        </button>
+
+                        <button
+                            class="filtro"
+                            data-filtro="filmmaking"
+                        >
+                            Filmmaking
+                        </button>
+
+                        <button
+                            class="filtro"
+                            data-filtro="social-media"
+                        >
+                            Social Media
+                        </button>
+
+                        <button
+                            class="filtro"
+                            data-filtro="design"
+                        >
+                            Design
+                        </button>
+
+                        <button
+                            class="filtro"
+                            data-filtro="video-editing"
+                        >
+                            Video Editing
+                        </button>
+
+                        <button
+                            class="filtro"
+                            data-filtro="creative"
+                        >
+                            Creative+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 PROJETOS
+            =================================================== -->
+
+            <section class="portfolio">
+
+                <div class="portfolio-grid">
+
+
+                    <!-- PROJETO 01 -->
+
+                    <a
+                        href="#"
+                        class="portfolio-projeto"
+                        data-categoria="filmmaking"
+                    >
+
+                        <span class="portfolio-numero">
+                            01 / 06
+                        </span>
+
+                        <div class="portfolio-imagem">
+
+                            <img
+                                src="Mila 1.jpeg"
+                                alt="Projeto audiovisual de Camila Domingues"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="portfolio-informacoes">
+
+                            <div>
+
+                                <span class="portfolio-categoria">
+                                    Filmmaking
+                                </span>
+
+                                <h2>
+                                    Projeto Audiovisual
+                                </h2>
+
+                                <p class="portfolio-resumo">
+                                    Direção visual, captação e construção
+                                    de uma narrativa audiovisual pensada
+                                    para criar presença e conexão.
+                                </p>
+
+                            </div>
+
+                            <span class="portfolio-seta">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PROJETO 02 -->
+
+                    <a
+                        href="#"
+                        class="portfolio-projeto"
+                        data-categoria="social-media"
+                    >
+
+                        <span class="portfolio-numero">
+                            02 / 06
+                        </span>
+
+                        <div class="portfolio-imagem">
+
+                            <img
+                                src="Mila 2.jpeg"
+                                alt="Projeto de social media de Camila Domingues"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="portfolio-informacoes">
+
+                            <div>
+
+                                <span class="portfolio-categoria">
+                                    Social Media
+                                </span>
+
+                                <h2>
+                                    Digital Presence
+                                </h2>
+
+                                <p class="portfolio-resumo">
+                                    Estratégia e conteúdo para transformar
+                                    uma presença digital em comunicação
+                                    consistente.
+                                </p>
+
+                            </div>
+
+                            <span class="portfolio-seta">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PROJETO 03 -->
+
+                    <a
+                        href="#"
+                        class="portfolio-projeto"
+                        data-categoria="design"
+                    >
+
+                        <span class="portfolio-numero">
+                            03 / 06
+                        </span>
+
+                        <div class="portfolio-imagem">
+
+                            <img
+                                src="Mila 3.jpeg"
+                                alt="Projeto de design de Camila Domingues"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="portfolio-informacoes">
+
+                            <div>
+
+                                <span class="portfolio-categoria">
+                                    Design
+                                </span>
+
+                                <h2>
+                                    Visual Identity
+                                </h2>
+
+                                <p class="portfolio-resumo">
+                                    Construção visual baseada em conceito,
+                                    personalidade e direção estética.
+                                </p>
+
+                            </div>
+
+                            <span class="portfolio-seta">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PROJETO 04 -->
+
+                    <a
+                        href="#"
+                        class="portfolio-projeto"
+                        data-categoria="video-editing"
+                    >
+
+                        <span class="portfolio-numero">
+                            04 / 06
+                        </span>
+
+                        <div class="portfolio-imagem">
+
+                            <img
+                                src="Mila 1.jpeg"
+                                alt="Projeto de edição de vídeo de Camila Domingues"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="portfolio-informacoes">
+
+                            <div>
+
+                                <span class="portfolio-categoria">
+                                    Video Editing
+                                </span>
+
+                                <h2>
+                                    Visual Storytelling
+                                </h2>
+
+                                <p class="portfolio-resumo">
+                                    Montagem, ritmo e narrativa para transformar
+                                    imagens em uma experiência audiovisual.
+                                </p>
+
+                            </div>
+
+                            <span class="portfolio-seta">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PROJETO 05 -->
+
+                    <a
+                        href="#"
+                        class="portfolio-projeto"
+                        data-categoria="creative"
+                    >
+
+                        <span class="portfolio-numero">
+                            05 / 06
+                        </span>
+
+                        <div class="portfolio-imagem">
+
+                            <img
+                                src="Mila 2.jpeg"
+                                alt="Projeto criativo de Camila Domingues"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="portfolio-informacoes">
+
+                            <div>
+
+                                <span class="portfolio-categoria">
+                                    Creative+
+                                </span>
+
+                                <h2>
+                                    Beyond The Brief
+                                </h2>
+
+                                <p class="portfolio-resumo">
+                                    Um projeto experimental onde estratégia,
+                                    estética e liberdade criativa encontram
+                                    um mesmo espaço.
+                                </p>
+
+                            </div>
+
+                            <span class="portfolio-seta">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- PROJETO 06 -->
+
+                    <a
+                        href="#"
+                        class="portfolio-projeto"
+                        data-categoria="filmmaking"
+                    >
+
+                        <span class="portfolio-numero">
+                            06 / 06
+                        </span>
+
+                        <div class="portfolio-imagem">
+
+                            <img
+                                src="Mila 3.jpeg"
+                                alt="Projeto de filmmaking de Camila Domingues"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="portfolio-informacoes">
+
+                            <div>
+
+                                <span class="portfolio-categoria">
+                                    Filmmaking
+                                </span>
+
+                                <h2>
+                                    Between Frames
+                                </h2>
+
+                                <p class="portfolio-resumo">
+                                    Um estudo visual sobre movimento,
+                                    atmosfera e narrativa através
+                                    da imagem.
+                                </p>
+
+                            </div>
+
+                            <span class="portfolio-seta">
+                                ↗
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 CTA
+            =================================================== -->
+
+            <section class="portfolio-cta">
+
+                <div class="portfolio-cta-conteudo">
+
+                    <span class="portfolio-cta-label">
+                        Have a project in mind?
+                    </span>
+
+                    <h2>
+                        Talvez o próximo
+                        <em>seja o seu.</em>
+                    </h2>
+
+                    <a
+                        href="index.html#contato"
+                        class="portfolio-cta-link"
+                    >
+                        Vamos criar juntos
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- ==================================================
+             FOOTER
+        =================================================== -->
+
+        <footer class="rodape">
+
+            <div class="rodape-superior">
+
+                <div class="rodape-marca">
+
+                    <h3>
+                        Camila<span>.</span>
+                    </h3>
+
+                    <p>
+                        Filmmaker, Social Media, Designer e Editora
+                        de Vídeo. Estratégia, estética e narrativa
+                        para transformar ideias em presença.
+                    </p>
+
+                </div>
+
+
+                <div class="rodape-coluna">
+
+                    <span>
+                        Navegação
+                    </span>
+
+                    <a href="index.html">
+                        Início
+                    </a>
+
+                    <a href="index.html#sobre">
+                        Sobre
+                    </a>
+
+                    <a href="index.html#especialidades">
+                        Especialidades
+                    </a>
+
+                    <a href="projetos.html">
+                        Projetos
+                    </a>
+
+                </div>
+
+
+                <div class="rodape-coluna">
+
+                    <span>
+                        Social
+                    </span>
+
+                    <a href="https://www.instagram.com/mov.bycamila/">
+                        Instagram
+                    </a>
+
+                    <a href="404.html">
+                        TikTok
+                    </a>
+
+                    <a href="404.html">
+                        LinkedIn
+                    </a>
+
+                </div>
+
+
+                <div class="rodape-coluna">
+
+                    <span>
+                        Contato
+                    </span>
+
+                    <a href="index.html#contato">
+                        Trabalhe comigo
+                    </a>
+
+                    <a href="https://mail.google.com/mail/u/0/?hl=pt-BR#inbox?compose=DmwnWtMrlXdMHvKZCFxntrDqtfzxvxWdCFzTFTlbLfvxZtwhJWWcJnMsbgzfjnQkbsDkFsTnKgng">
+                        E-mail
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="rodape-inferior">
+
+                <span>
+                    © <span data-ano>2026</span> Camila Domingues
+                </span>
+
+                <a
+                    href="https://viniciossantana.github.io/Nexa-Agency-Enterprises/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Site desenvolvido por Nexa Agency Enterprises
+                </a>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

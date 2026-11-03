@@ -1,2760 +1,2285 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Camila Domingues — Filmmaker, Social Media, Designer e Editora de Vídeo. Estratégia, estética e narrativa para transformar ideias em presença.">
-    <meta name="author" content="Camila Domingues">
-    <meta name="theme-color" content="#0a0a0a">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f5f0e9">
+<meta name="description" content="Camila Domingues — Marketing Digital. Estratégia, criatividade e conteúdo para marcas que querem crescer com identidade.">
+<title>Camila Domingues | Marketing Digital</title>
 
-    <title>Camila Domingues • Creative Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="icon" href="Mila 1.jpeg" type="image/png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/SEU-KIT-ID.js" crossorigin="anonymous"></script>
-
-    <style>
-
+<style>
 :root {
-    --fundo: #080808;
-    --fundo-secundario: #101010;
-    --fundo-terciario: #151515;
-    --branco: #f5f5f2;
-    --branco-suave: #d8d8d2;
-    --cinza: #969690;
-    --cinza-escuro: #5d5d59;
-    --borda: rgba(255, 255, 255, 0.12);
-    --borda-suave: rgba(255, 255, 255, 0.07);
-    --destaque: #9D5CFF;
-    --serif: "Playfair Display", Georgia, serif;
-    --sans: "Manrope", "Inter", sans-serif;
-    --raio: 2px;
-    --transicao: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    --bg:#f5f0e9;
+    --paper:#fffaf5;
+    --white:#fffdf9;
+    --nude:#e9d9cd;
+    --sand:#d2b8a5;
+    --brown:#765747;
+    --dark:#49372f;
+    --ink:#302923;
+    --muted:#897b71;
+    --line:#e5d9cf;
+    --accent:#a77962;
+    --green:#7b8971;
+    --serif:"Playfair Display",Georgia,serif;
+    --sans:"DM Sans",Arial,sans-serif;
+    --container:1200px;
+    --ease:cubic-bezier(.2,.75,.25,1);
+    --shadow:0 18px 55px rgba(73,49,35,.09);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    color:var(--ink);
+    background:var(--bg);
+    font-family:var(--sans);
+    line-height:1.65;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
+body.menu-open,body.modal-open{overflow:hidden}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--brown);color:white}
+
+.container{width:min(var(--container),89%);margin:auto}
+.serif{font-family:var(--serif)}
+.muted{color:var(--muted)}
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 20px;
+    color:var(--accent);
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.19em;
+    text-transform:uppercase;
+}
+.eyebrow:before{content:"";width:28px;height:1px;background:currentColor}
+.section{padding:105px 0}
+.section.paper{background:var(--paper)}
+.section.dark{background:var(--dark);color:var(--paper)}
+.section-heading{max-width:720px;margin-bottom:48px}
+.section-heading h2{
+    margin:0;
+    font:500 clamp(2.5rem,5.5vw,4.7rem)/1.08 var(--serif);
+    letter-spacing:-.045em;
+}
+.section-heading p{max-width:550px;color:var(--muted);margin:20px 0 0}
+.dark .section-heading p{color:rgba(255,250,245,.7)}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:51px;
+    padding:13px 23px;
+    border:1px solid transparent;
+    border-radius:100px;
+    font-size:.8rem;
+    font-weight:700;
+    transition:.35s var(--ease);
+    overflow:hidden;
+}
+.btn:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.btn i{transition:transform .3s}
+.btn:hover i{transform:translate(3px,-2px)}
+.btn-primary{color:white;background:var(--brown)}
+.btn-primary:hover{background:var(--dark)}
+.btn-outline{border-color:var(--line);color:var(--brown);background:transparent}
+.btn-outline:hover{border-color:var(--brown);background:var(--paper)}
+.btn-light{background:var(--paper);color:var(--dark)}
+.btn-small{min-height:42px;padding:10px 17px;font-size:.72rem}
+
+.scroll-progress{
+    position:fixed;z-index:1200;top:0;left:0;
+    width:100%;height:3px;pointer-events:none;
+}
+.scroll-progress span{
+    display:block;width:0;height:100%;
+    background:var(--accent);transition:width .1s linear;
 }
 
-html {
-    scroll-behavior: smooth;
-    background: var(--fundo);
+/* CARREGAMENTO */
+.loader{
+    position:fixed;z-index:3000;inset:0;
+    display:grid;place-items:center;
+    background:var(--bg);
+    transition:opacity .6s,visibility .6s;
+}
+.loader.hidden{opacity:0;visibility:hidden}
+.loader-mark{
+    width:58px;height:58px;margin:auto auto 15px;
+    display:grid;place-items:center;
+    border:1px solid var(--sand);border-radius:50%;
+    color:var(--brown);font:600 25px var(--serif);
+    animation:breathe 1.5s infinite;
+}
+.loader p{color:var(--muted);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase}
+
+/* CABEÇALHO */
+header{
+    position:sticky;z-index:1000;top:0;
+    background:rgba(245,240,233,.92);
+    border-bottom:1px solid rgba(109,81,68,.1);
+    backdrop-filter:blur(18px);
+    transition:box-shadow .3s,background .3s;
+}
+header.scrolled{background:rgba(255,250,245,.96);box-shadow:0 8px 30px rgba(73,49,35,.07)}
+.nav-wrap{
+    width:min(var(--container),89%);min-height:82px;margin:auto;
+    display:flex;align-items:center;justify-content:space-between;gap:25px;
+}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.brand-mark{
+    width:43px;height:43px;display:grid;place-items:center;
+    border:1px solid var(--sand);border-radius:50%;
+    color:var(--brown);font:600 20px var(--serif);
+    transition:.4s var(--ease);
+}
+.brand:hover .brand-mark{transform:rotate(-12deg);background:var(--nude)}
+.brand-copy{display:grid;line-height:1.2}
+.brand-copy strong{font:600 1rem var(--serif)}
+.brand-copy small{color:var(--muted);font-size:.57rem;letter-spacing:.14em;text-transform:uppercase}
+
+.nav-links{display:flex;align-items:center;gap:clamp(15px,2.4vw,30px)}
+.nav-link{
+    position:relative;padding:10px 0;
+    color:var(--muted);font-size:.76rem;font-weight:700;
+    transition:color .25s;
+}
+.nav-link:after{
+    position:absolute;bottom:3px;left:0;width:100%;height:1px;
+    content:"";background:var(--accent);
+    transform:scaleX(0);transform-origin:right;
+    transition:transform .3s var(--ease);
+}
+.nav-link:hover,.nav-link.active{color:var(--brown)}
+.nav-link:hover:after,.nav-link.active:after{transform:scaleX(1);transform-origin:left}
+.menu-toggle{
+    display:none;width:44px;height:44px;
+    border:1px solid var(--line);border-radius:50%;
+    color:var(--brown);background:var(--paper);
 }
 
-body {
-    background: var(--fundo);
-    color: var(--branco);
-    font-family: var(--sans);
-    font-weight: 400;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
+/* PÁGINAS E TRANSIÇÕES */
+#app{min-height:70vh}
+.page{display:none;animation:pageEnter .55s var(--ease) both}
+.page.active{display:block}
+@keyframes pageEnter{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
-body::-webkit-scrollbar {
-    width: 7px;
+/* HERO */
+.hero{
+    position:relative;min-height:690px;
+    padding:85px 0 65px;overflow:hidden;
 }
-
-body::-webkit-scrollbar-track {
-    background: var(--fundo);
+.hero:before,.hero:after{
+    position:absolute;z-index:0;content:"";
+    border:1px solid rgba(167,121,98,.16);border-radius:50%;
+    pointer-events:none;
 }
-
-body::-webkit-scrollbar-thumb {
-    background: #333;
+.hero:before{width:620px;height:620px;right:-190px;top:-80px}
+.hero:after{width:490px;height:490px;right:-125px;top:-15px}
+.hero-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:1.05fr .85fr;
+    align-items:center;gap:80px;
 }
-
-body::-webkit-scrollbar-thumb:hover {
-    background: var(--destaque);
+.hero-copy{max-width:680px}
+.hero-title{
+    margin:0;font:500 clamp(3.5rem,7.2vw,7rem)/.98 var(--serif);
+    letter-spacing:-.065em;
 }
+.hero-title em{color:var(--accent);font-weight:500}
+.hero-description{max-width:470px;margin:27px 0;color:var(--muted);font-size:1rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{display:flex;align-items:center;gap:12px;margin-top:42px;color:var(--muted);font-size:.72rem}
+.hero-note:before{content:"";width:36px;height:1px;background:var(--sand)}
+.hero-note strong{color:var(--brown)}
 
-a {
-    color: inherit;
-    text-decoration: none;
+.hero-visual{position:relative;max-width:440px;margin:auto;perspective:1000px}
+.hero-frame{
+    padding:13px;border:1px solid var(--sand);
+    border-radius:48% 48% 14px 14px;
+    transform:rotate(2deg);transition:transform .6s var(--ease);
 }
-
-button {
-    border: 0;
-    background: none;
-    color: inherit;
-    font: inherit;
+.hero-visual:hover .hero-frame{transform:rotate(0) translateY(-6px)}
+.hero-image{
+    width:100%;aspect-ratio:4/5;object-fit:cover;
+    border-radius:48% 48% 10px 10px;background:var(--nude);
+    filter:saturate(.78);transition:transform .7s;
 }
-
-img,
-video {
-    display: block;
-    width: 100%;
+.hero-visual:hover .hero-image{transform:scale(1.025)}
+.hero-caption{
+    position:absolute;right:-30px;bottom:35px;
+    display:flex;align-items:center;gap:12px;
+    max-width:225px;padding:17px;
+    border:1px solid var(--line);border-radius:13px;
+    background:rgba(255,250,245,.95);box-shadow:var(--shadow);
+    animation:float 5s ease-in-out infinite;
 }
-
-img {
-    height: auto;
-    object-fit: cover;
+.caption-icon{
+    width:39px;height:39px;display:grid;place-items:center;
+    flex-shrink:0;border-radius:50%;color:var(--brown);background:var(--nude);
 }
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
+.hero-caption strong{display:block;font:600 1rem var(--serif)}
+.hero-caption small{display:block;color:var(--muted);font-size:.67rem}
+.hero-stamp{
+    position:absolute;top:8%;left:-35px;
+    width:88px;height:88px;display:grid;place-items:center;
+    border:1px solid var(--sand);border-radius:50%;
+    color:var(--brown);background:var(--bg);
+    font:italic 1rem var(--serif);text-align:center;
+    transform:rotate(-12deg);
 }
-
-.pagina {
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
+.hero-bottom{
+    display:flex;justify-content:space-between;gap:20px;
+    margin-top:75px;color:var(--muted);
+    font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;
 }
+.hero-bottom i{animation:float 2s infinite}
 
-.cabecalho {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
-    padding: 24px 4vw;
-    transition: var(--transicao);
+/* ELEMENTOS EDITORIAIS */
+.strip{padding:24px 0;border-block:1px solid var(--line);background:rgba(255,250,245,.5)}
+.strip-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.strip-item{display:flex;align-items:center;gap:9px;color:var(--brown);font:500 1rem var(--serif)}
+.strip-item i{color:var(--accent);font-size:.8rem}
+
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pillar{
+    min-height:255px;padding:30px;
+    border:1px solid var(--line);border-radius:15px;
+    background:rgba(255,250,245,.55);
+    transition:.4s var(--ease);
 }
-
-.cabecalho::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(8, 8, 8, 0);
-    backdrop-filter: blur(0);
-    transition: var(--transicao);
-    z-index: -1;
+.pillar:hover{transform:translateY(-9px);border-color:var(--sand);box-shadow:var(--shadow)}
+.pillar-number{color:var(--accent);font-size:.7rem;letter-spacing:.12em}
+.pillar-icon{
+    width:47px;height:47px;display:grid;place-items:center;
+    margin:25px 0 20px;border-radius:50%;
+    color:var(--brown);background:var(--nude);
+    transition:transform .4s;
 }
+.pillar:hover .pillar-icon{transform:rotate(-10deg) scale(1.08)}
+.pillar h3{margin:0 0 9px;font:500 1.45rem var(--serif)}
+.pillar p{margin:0;color:var(--muted);font-size:.85rem}
 
-.cabecalho.scrolled {
-    padding-top: 16px;
-    padding-bottom: 16px;
+.editorial{
+    display:grid;grid-template-columns:.9fr 1.1fr;
+    align-items:center;gap:75px;
 }
-
-.cabecalho.scrolled::before {
-    background: rgba(8, 8, 8, 0.78);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--borda-suave);
+.editorial-image{position:relative;overflow:hidden;border-radius:15px}
+.editorial-image img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;
+    transition:transform .8s var(--ease);
 }
+.editorial-image:hover img{transform:scale(1.06)}
+.editorial-copy h2{margin:0;font:500 clamp(2.7rem,5vw,5rem)/1.05 var(--serif);letter-spacing:-.05em}
+.editorial-copy h2 em{color:var(--accent)}
+.editorial-copy p{color:var(--muted);margin:22px 0}
 
-.cabecalho-conteudo {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+/* PROJETOS */
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:35px 25px}
+.project-card{cursor:pointer}
+.project-image-wrap{
+    position:relative;overflow:hidden;border-radius:13px;
+    background:var(--nude);
 }
-
-.logo {
-    display: inline-flex;
-    align-items: baseline;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -1.4px;
-    line-height: 1;
+.project-image-wrap img{
+    width:100%;aspect-ratio:1.35;object-fit:cover;
+    transition:transform .7s var(--ease),filter .5s;
 }
-
-.logo span {
-    color: var(--destaque);
+.project-card:hover img{transform:scale(1.07);filter:saturate(.85)}
+.project-overlay{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(47,41,37,.18);opacity:0;transition:opacity .35s;
 }
-
-.navegacao {
-    display: flex;
-    align-items: center;
-    gap: 34px;
-    margin-left: auto;
+.project-card:hover .project-overlay{opacity:1}
+.project-open{
+    width:53px;height:53px;display:grid;place-items:center;
+    border-radius:50%;color:var(--brown);background:var(--paper);
+    transform:translateY(10px);transition:transform .35s;
 }
-
-.navegacao a {
-    position: relative;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color var(--transicao);
+.project-card:hover .project-open{transform:translateY(0)}
+.project-meta{display:flex;justify-content:space-between;gap:15px;margin-top:16px}
+.project-category{color:var(--accent);font-size:.65rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.project-title{margin:5px 0;font:500 1.5rem var(--serif)}
+.project-description{margin:0;color:var(--muted);font-size:.8rem}
+.project-number{color:var(--muted);font-size:.7rem}
+.project-filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:32px}
+.filter-btn{
+    padding:9px 17px;border:1px solid var(--line);border-radius:99px;
+    color:var(--muted);background:transparent;font-size:.73rem;font-weight:700;
+    transition:.3s;
 }
+.filter-btn:hover,.filter-btn.active{color:white;border-color:var(--brown);background:var(--brown)}
+.portfolio-disclaimer{margin-top:28px;color:var(--muted);font-size:.73rem}
 
-.navegacao a::after {
-    content: "";
-    position: absolute;
-    bottom: -7px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--destaque);
-    transition: width var(--transicao);
+/* PROCESSO */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.process-step{position:relative}
+.process-number{
+    width:43px;height:43px;display:grid;place-items:center;
+    margin-bottom:25px;border:1px solid var(--sand);border-radius:50%;
+    color:var(--brown);background:var(--paper);font-size:.75rem;
+    transition:.3s;
 }
+.process-step:hover .process-number{color:white;background:var(--brown);transform:rotate(-10deg)}
+.process-step h3{margin:0 0 9px;font:500 1.3rem var(--serif)}
+.process-step p{margin:0;color:var(--muted);font-size:.82rem}
 
-.navegacao a:hover {
-    color: var(--branco);
+/* SERVIÇOS */
+.services-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:75px;align-items:start}
+.services-intro{position:sticky;top:115px}
+.service-list{border-top:1px solid var(--line)}
+.service-item{border-bottom:1px solid var(--line)}
+.service-toggle{
+    width:100%;display:grid;grid-template-columns:42px 1fr 38px;
+    align-items:center;gap:15px;padding:24px 0;
+    border:0;color:var(--ink);background:transparent;text-align:left;
 }
-
-.navegacao a:hover::after {
-    width: 100%;
+.service-index{color:var(--accent);font-size:.72rem}
+.service-name{font:500 clamp(1.25rem,2.5vw,1.8rem) var(--serif);transition:color .25s}
+.service-toggle:hover .service-name{color:var(--accent)}
+.service-price{display:block;margin-top:4px;color:var(--muted);font:400 .7rem var(--sans)}
+.service-plus{
+    width:36px;height:36px;display:grid;place-items:center;
+    border:1px solid var(--line);border-radius:50%;
+    color:var(--brown);transition:.3s;
 }
-
-.cabecalho-contato {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 17px;
-    border: 1px solid var(--borda);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: var(--transicao);
+.service-item.open .service-plus{transform:rotate(45deg);background:var(--nude)}
+.service-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.service-item.open .service-detail{grid-template-rows:1fr}
+.service-detail-inner{overflow:hidden}
+.service-detail-content{padding:0 45px 25px 57px;color:var(--muted);font-size:.84rem}
+.service-detail-content p{margin:0 0 12px}
+.service-detail-content ul{display:grid;grid-template-columns:repeat(2,1fr);gap:7px 15px;padding:0;list-style:none}
+.service-detail-content li:before{content:"↗";margin-right:8px;color:var(--accent)}
+.service-bottom{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    margin-top:32px;padding:25px;border-radius:13px;background:var(--nude);
 }
+.service-bottom p{margin:0;font:500 1.1rem var(--serif)}
+.service-bottom small{display:block;color:var(--brown);font-size:.7rem}
 
-.cabecalho-contato span {
-    color: var(--destaque);
-    font-size: 15px;
-    transition: transform var(--transicao);
+/* CHAMADA */
+.cta-band{position:relative;overflow:hidden}
+.cta-band:after{
+    position:absolute;top:-120px;right:-100px;
+    width:400px;height:400px;border:1px solid rgba(255,255,255,.14);
+    border-radius:50%;content:"";
 }
-
-.cabecalho-contato:hover {
-    border-color: rgba(217, 255, 0, 0.5);
-    background: rgba(217, 255, 0, 0.05);
+.cta-content{
+    position:relative;z-index:1;
+    display:flex;align-items:end;justify-content:space-between;gap:35px;
 }
+.cta-content h2{max-width:760px;margin:0;font:500 clamp(2.5rem,5.5vw,5.2rem)/1.05 var(--serif);letter-spacing:-.05em}
+.cta-content h2 em{color:var(--sand)}
 
-.cabecalho-contato:hover span {
-    transform: translate(3px, -3px);
+/* FEEDBACK */
+.feedback-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:start}
+.rating-summary{display:flex;align-items:center;gap:15px;margin-top:28px}
+.rating-score{font:500 3.5rem/.9 var(--serif)}
+.rating-stars{color:var(--accent);letter-spacing:.12em}
+.rating-caption{margin-top:5px;color:var(--muted);font-size:.7rem}
+.feedback-panel{padding:35px;border:1px solid var(--line);border-radius:20px;background:var(--paper)}
+.feedback-panel h3{margin:0 0 5px;font:500 1.7rem var(--serif)}
+.feedback-panel>p{margin:0 0 25px;color:var(--muted);font-size:.8rem}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{color:var(--brown);font-size:.73rem;font-weight:700}
+.field input,.field textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);
+    border-radius:10px;color:var(--ink);background:var(--white);
+    font-size:.84rem;outline:none;transition:.25s;
 }
-
-.menu-mobile {
-    display: none;
-    width: 38px;
-    height: 38px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 6px;
-    border: 1px solid var(--borda);
-    cursor: pointer;
+.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(167,121,98,.1)}
+.field textarea{min-height:110px;resize:vertical}
+.rating-input{display:flex;align-items:center;gap:6px}
+.rating-star-button{
+    padding:4px;border:0;color:#c9b9ab;background:transparent;
+    font-size:1.5rem;transition:.2s;
 }
+.rating-star-button.active,.rating-star-button:hover{color:var(--accent);transform:scale(1.12)}
+.rating-help{margin-left:8px;color:var(--muted);font-size:.72rem}
+.form-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:20px}
+.form-note{max-width:220px;color:var(--muted);font-size:.67rem}
+.form-status{min-height:20px;margin:12px 0 0;color:var(--green);font-size:.78rem}
+.reviews-list{display:grid;gap:13px;margin-top:22px}
+.review-card{padding:21px;border:1px solid var(--line);border-radius:13px;background:var(--paper);animation:pageEnter .4s}
+.review-top{display:flex;justify-content:space-between;gap:15px}
+.review-name{font-size:.85rem;font-weight:700}
+.review-date{color:var(--muted);font-size:.68rem}
+.review-card p{margin:13px 0 0;color:var(--muted);font-size:.84rem;overflow-wrap:anywhere}
+.reviews-empty{padding:22px;border:1px dashed var(--sand);border-radius:12px;color:var(--muted);font-size:.8rem;text-align:center}
 
-.menu-mobile span {
-    display: block;
-    width: 16px;
-    height: 1px;
-    background: var(--branco);
-    transition: var(--transicao);
+/* CONTATO */
+.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:75px;align-items:center}
+.contact-copy h2{margin:0;font:500 clamp(3rem,6.4vw,6.2rem)/1 var(--serif);letter-spacing:-.06em}
+.contact-copy h2 em{color:var(--accent)}
+.contact-copy>p{max-width:470px;margin:25px 0 30px;color:var(--muted)}
+.contact-methods{display:grid;gap:12px}
+.contact-card{
+    display:flex;align-items:center;gap:15px;padding:18px;
+    border:1px solid var(--line);border-radius:13px;
+    background:rgba(255,250,245,.55);transition:.3s;
 }
-
-.hero {
-    position: relative;
-    min-height: 100svh;
-    display: flex;
-    align-items: stretch;
-    overflow: hidden;
+.contact-card:hover{transform:translateX(6px);border-color:var(--sand);background:var(--paper)}
+.contact-icon{
+    width:43px;height:43px;display:grid;place-items:center;
+    flex-shrink:0;border-radius:50%;color:var(--brown);background:var(--nude);
 }
+.contact-card small{display:block;color:var(--muted);font-size:.68rem}
+.contact-card strong{display:block;margin-top:3px;font-size:.83rem;overflow-wrap:anywhere}
+.contact-arrow{margin-left:auto;color:var(--accent)}
+.contact-art{position:relative;min-height:490px;overflow:hidden;border-radius:48% 48% 13px 13px;background:var(--nude)}
+.contact-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.contact-art:hover img{transform:scale(1.06)}
+.contact-art:after{position:absolute;inset:0;content:"";background:linear-gradient(180deg,transparent 40%,rgba(47,41,37,.5))}
+.contact-art-note{position:absolute;z-index:1;right:22px;bottom:22px;left:22px;color:white}
+.contact-art-note span{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}
+.contact-art-note strong{display:block;font:500 1.8rem var(--serif)}
 
-.hero-video {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: #111;
+/* FORMULÁRIO DE CONTATO */
+.contact-form{
+    margin-top:65px;padding:35px;
+    border:1px solid var(--line);border-radius:18px;background:var(--paper);
 }
+.contact-form h3{margin:0 0 7px;font:500 1.8rem var(--serif)}
+.contact-form>p{margin:0 0 25px;color:var(--muted);font-size:.83rem}
 
-.hero-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.65;
-    filter: grayscale(100%);
-    transform: scale(1.03);
-}
+/* RODAPÉ */
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+
+/* ========================================
+   RODAPÉ — PALETA BEGE, NUDE E MARROM
+   ======================================== */
+
+footer {
+    margin-top: 120px;
+    padding: 70px 0 30px;
+    color: var(--ink);
     background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.15) 32%, rgba(0, 0, 0, 0.35) 62%, rgba(0, 0, 0, 0.94) 100%),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.55), transparent 65%);
-}
-
-.hero-conteudo {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    min-height: 100svh;
-    padding: 135px 4vw 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.hero-superior,
-.hero-inferior {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hero-superior span,
-.hero-inferior span {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-}
-
-.hero-centro {
-    max-width: 1000px;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding: 70px 0;
-}
-
-.hero-legenda {
-    margin-bottom: 22px;
-    color: var(--destaque);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    max-width: 1000px;
-    font-size: clamp(72px, 11vw, 170px);
-    font-weight: 500;
-    line-height: 0.82;
-    letter-spacing: -0.075em;
-}
-
-.hero h1 em {
-    display: block;
-    margin-left: 11vw;
-    font-family: var(--serif);
-    font-weight: 400;
-    letter-spacing: -0.06em;
-}
-
-.hero-descricao {
-    max-width: 450px;
-    margin: 48px 0 32px 11vw;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.75;
-}
-
-.hero-acoes {
-    margin-left: 11vw;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.botao-principal {
-    display: inline-flex;
-    align-items: center;
-    gap: 30px;
-    padding: 16px 20px;
-    background: var(--branco);
-    color: #0a0a0a;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: var(--transicao);
-}
-
-.botao-principal span {
-    font-size: 17px;
-    transition: transform var(--transicao);
-}
-
-.botao-principal:hover {
-    background: var(--destaque);
-    transform: translateY(-3px);
-}
-
-.botao-principal:hover span {
-    transform: translate(4px, -4px);
-}
-
-.botao-secundario {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
-    padding-bottom: 7px;
-    transition: var(--transicao);
-}
-
-.botao-secundario:hover {
-    color: var(--destaque);
-    border-color: var(--destaque);
-}
-
-.hero-inferior {
-    align-items: flex-end;
-}
-
-.hero-indicador {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.linha-indicadora {
-    width: 45px;
-    height: 1px;
-    background: var(--destaque);
-}
-
-.hero-especialidades {
-    display: flex;
-    gap: 24px;
-}
-
-.hero-especialidades span {
-    font-size: 8px;
-}
-
-.numero-secao,
-.titulo-secao {
-    color: var(--cinza);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-}
-
-.numero-secao {
-    color: var(--destaque);
-    margin-right: 18px;
-}
-
-.manifesto {
-    padding: 170px 8vw;
-    background: var(--fundo);
-}
-
-.manifesto-cabecalho,
-.especialidades-cabecalho,
-.projetos-cabecalho,
-.processo-cabecalho,
-.camila-cabecalho,
-.depoimentos-cabecalho,
-.contato-cabecalho {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.manifesto-conteudo {
-    max-width: 1250px;
-    margin: 120px auto 0;
-}
-
-.manifesto h2 {
-    max-width: 1100px;
-    font-size: clamp(48px, 7vw, 105px);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.06em;
-}
-
-.manifesto h2 span {
-    display: block;
-    margin-left: 17vw;
-    color: var(--cinza);
-    font-family: var(--serif);
-    font-style: italic;
-}
-
-.manifesto-textos {
-    max-width: 800px;
-    margin: 100px 0 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-}
-
-.manifesto-textos p {
-    color: var(--cinza);
-    font-size: 14px;
-    line-height: 1.9;
-}
-
-.manifesto-textos .manifesto-destaque {
-    color: var(--branco-suave);
-    font-family: var(--serif);
-    font-size: 22px;
-    line-height: 1.45;
-}
-
-.especialidades {
-    padding: 130px 8vw;
-    background: var(--fundo-secundario);
-}
-
-.especialidades-cabecalho > p {
-    color: var(--cinza);
-    font-family: var(--serif);
-    font-size: 19px;
-    line-height: 1.35;
-    text-align: right;
-}
-
-.especialidades-lista {
-    margin-top: 100px;
-    border-top: 1px solid var(--borda);
-}
-
-.especialidade {
-    display: grid;
-    grid-template-columns: 100px 1fr 60px;
-    gap: 30px;
-    align-items: center;
-    min-height: 150px;
-    padding: 25px 0;
-    border-bottom: 1px solid var(--borda);
-    transition: var(--transicao);
-}
-
-.especialidade-numero {
-    color: var(--cinza-escuro);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    transition: var(--transicao);
-}
-
-.especialidade-conteudo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.especialidade h3 {
-    min-width: 300px;
-    font-size: clamp(32px, 4vw, 58px);
-    font-weight: 400;
-    letter-spacing: -0.05em;
-    transition: var(--transicao);
-}
-
-.especialidade p {
-    max-width: 400px;
-    color: var(--cinza);
-    font-size: 12px;
-    line-height: 1.7;
-}
-
-/* ==============================
-   SETAS — MOBILE
-============================== */
-
-@media (max-width: 800px) {
-
-    .especialidade-seta {
-        font-size: 24px;
-        line-height: 1;
-    }
-
-    .projeto-link {
-        font-size: 20px;
-        line-height: 1;
-    }
-
-    .botao-principal > span {
-        font-size: 18px;
-        line-height: 1;
-    }
-
-    .texto-link > span {
-        font-size: 18px;
-        line-height: 1;
-    }
-
-    .contato-links a > span {
-        font-size: 18px;
-        line-height: 1;
-    }
-
-    .contato-email > span {
-        font-size: 18px;
-        line-height: 1;
-    }
-}
-
-/* ==============================
-   SETAS
-============================== */
-
-.especialidade-seta,
-.projeto-link,
-.botao-principal > span,
-.texto-link > span,
-.contato-links a > span,
-.contato-email > span {
-    font-family: Arial, Helvetica, sans-serif !important;
-    font-variant-emoji: text !important;
-    font-style: normal !important;
-    font-weight: 400 !important;
-    line-height: 1 !important;
-}
-
-.projetos {
-    padding: 170px 8vw;
-    background: var(--fundo);
-}
-
-.projetos-cabecalho {
-    align-items: flex-start;
-}
-
-.projetos-introducao {
-    max-width: 650px;
-}
-
-.projetos-introducao h2 {
-    font-size: clamp(45px, 6vw, 88px);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-}
-
-.projetos-introducao h2 em {
-    display: block;
-    color: var(--cinza);
-    font-family: var(--serif);
-}
-
-.projetos-introducao p {
-    max-width: 390px;
-    margin-top: 35px;
-    color: var(--cinza);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.projetos-galeria {
-    margin-top: 120px;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 30px;
-    row-gap: 120px;
-}
-
-.projeto {
-    display: block;
-}
-
-.projeto-grande:nth-child(1) {
-    grid-column: 1 / 9;
-}
-
-.projeto-pequeno:nth-child(2) {
-    grid-column: 10 / 13;
-    margin-top: 180px;
-}
-
-.projeto-pequeno:nth-child(3) {
-    grid-column: 1 / 5;
-}
-
-.projeto-grande:nth-child(4) {
-    grid-column: 6 / 13;
-    margin-top: 100px;
-}
-
-.projeto-imagem {
-    position: relative;
-    overflow: hidden;
-    background: var(--fundo-terciario);
-}
-
-.projeto-grande .projeto-imagem {
-    aspect-ratio: 16 / 10;
-}
-
-.projeto-pequeno .projeto-imagem {
-    aspect-ratio: 4 / 5;
-}
-
-.projeto-imagem::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(217, 255, 0, 0.08);
-    opacity: 0;
-    transition: var(--transicao);
-}
-
-.projeto-imagem img {
-    width: 100%;
-    height: 100%;
-    filter: grayscale(100%);
-    transform: scale(1.01);
-    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
-}
-
-.projeto:hover .projeto-imagem img {
-    filter: grayscale(0%);
-    transform: scale(1.06);
-}
-
-.projeto:hover .projeto-imagem::after {
-    opacity: 1;
-}
-
-.projeto-informacoes {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    padding-top: 18px;
-}
-
-.projeto-informacoes span {
-    color: var(--cinza);
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-}
-
-.projeto-informacoes h3 {
-    margin-top: 8px;
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-}
-
-.projeto-link {
-    color: var(--destaque) !important;
-    font-size: 20px !important;
-    transition: transform var(--transicao);
-}
-
-.projeto:hover .projeto-link {
-    transform: translate(4px, -4px);
-}
-
-.projetos-rodape {
-    display: flex;
-    justify-content: center;
-    margin-top: 130px;
-}
-
-.processo {
-    padding: 160px 8vw;
-    background: var(--fundo-secundario);
-}
-
-.processo-cabecalho {
-    align-items: flex-end;
-}
-
-.processo-cabecalho h2 {
-    max-width: 700px;
-    font-size: clamp(46px, 6vw, 85px);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-}
-
-.processo-cabecalho h2 em {
-    display: block;
-    color: var(--cinza);
-    font-family: var(--serif);
-}
-
-.processo-etapas {
-    margin-top: 120px;
-    border-top: 1px solid var(--borda);
-}
-
-.processo-etapa {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 40px;
-    padding: 45px 0;
-    border-bottom: 1px solid var(--borda);
-    transition: var(--transicao);
-}
-
-.processo-etapa > span {
-    color: var(--destaque);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-}
-
-.processo-etapa h3 {
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: -0.04em;
-}
-
-.processo-etapa p {
-    max-width: 480px;
-    margin-top: 14px;
-    color: var(--cinza);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.processo-etapa:hover {
-    padding-left: 20px;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.camila {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 850px;
-    background: var(--fundo);
-}
-
-.camila-imagem {
-    min-height: 700px;
-    overflow: hidden;
-}
-
-.camila-imagem img {
-    width: 100%;
-    height: 100%;
-    filter: grayscale(100%);
-    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), filter 1s ease;
-}
-
-.camila:hover .camila-imagem img {
-    transform: scale(1.04);
-    filter: grayscale(0%);
-}
-
-.camila-conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 100px 10vw 100px 8vw;
-}
-
-.camila-cabecalho {
-    justify-content: flex-start;
-}
-
-.camila-conteudo h2 {
-    max-width: 650px;
-    margin-top: 100px;
-    font-size: clamp(45px, 5vw, 75px);
-    font-weight: 400;
-    line-height: 0.98;
-    letter-spacing: -0.06em;
-}
-
-.camila-conteudo h2 em {
-    display: block;
-    color: var(--cinza);
-    font-family: var(--serif);
-}
-
-.camila-conteudo p {
-    max-width: 500px;
-    margin-top: 32px;
-    color: var(--cinza);
-    font-size: 13px;
-    line-height: 1.85;
-}
-
-.camila-conteudo p + p {
-    margin-top: 15px;
-}
-
-.texto-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    width: max-content;
-    margin-top: 50px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--borda);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    transition: var(--transicao);
-}
-
-.texto-link span {
-    color: var(--destaque);
-    font-size: 17px;
-}
-
-.texto-link:hover {
-    border-color: var(--destaque);
-    color: var(--destaque);
-}
-
-.biografia {
-    padding: 170px 8vw;
-    background: var(--fundo-secundario);
-}
-
-.biografia-cabecalho {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 80px;
-    align-items: start;
-}
-
-.biografia-introducao {
-    max-width: 850px;
-}
-
-.biografia-introducao h2 {
-    font-size: clamp(45px, 6vw, 85px);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.06em;
-}
-
-.biografia-introducao h2 em {
-    display: block;
-    color: var(--cinza);
-    font-family: var(--serif);
-    font-weight: 400;
-}
-
-.biografia-introducao p {
-    max-width: 430px;
-    margin-top: 35px;
-    color: var(--cinza);
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.biografia-linha {
-    position: relative;
-    margin-top: 130px;
-    border-top: 1px solid var(--borda);
-}
-
-.biografia-linha::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 160px;
-    width: 1px;
-    background: var(--borda);
-}
-
-.biografia-item {
-    position: relative;
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 70px;
-    padding: 65px 0;
-    border-bottom: 1px solid var(--borda);
-}
-
-.biografia-periodo {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding-right: 30px;
-}
-
-.biografia-periodo span {
-    color: var(--destaque);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-}
-
-.biografia-periodo strong {
-    color: var(--cinza);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-}
-
-.biografia-conteudo {
-    max-width: 720px;
-}
-
-.biografia-area {
-    color: var(--cinza);
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-}
-
-.biografia-conteudo h3 {
-    margin-top: 18px;
-    font-size: clamp(28px, 3vw, 45px);
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.045em;
-    transition: var(--transicao);
-}
-
-.biografia-conteudo p {
-    max-width: 570px;
-    margin-top: 22px;
-    color: var(--cinza);
-    font-size: 13px;
-    line-height: 1.85;
-}
-
-.biografia-item::after {
-    content: "";
-    position: absolute;
-    top: 77px;
-    left: 154px;
-    width: 13px;
-    height: 13px;
-    border: 1px solid var(--destaque);
-    background: var(--fundo-secundario);
-    border-radius: 50%;
-    transition: var(--transicao);
-}
-
-.biografia-item:hover::after {
-    background: var(--destaque);
-    box-shadow: 0 0 0 7px rgba(157, 92, 255, 0.1);
-}
-
-.biografia-item:hover .biografia-conteudo h3 {
-    color: var(--destaque);
-    transform: translateX(8px);
-}
-
-.biografia-atual {
-    padding-bottom: 80px;
-}
-
-.biografia-atual .biografia-periodo strong {
-    color: var(--destaque);
-}
-
-.biografia-frase {
-    max-width: 900px;
-    margin: 130px auto 0;
+        radial-gradient(
+            circle at top center,
+            rgba(210, 184, 165, 0.24),
+            transparent 42%
+        ),
+        linear-gradient(
+            180deg,
+            var(--paper),
+            var(--bg)
+        );
+    border-top: 1px solid var(--line);
+}
+
+/* TÍTULO E APRESENTAÇÃO DAS REDES */
+
+.footer-social-title {
+    margin-bottom: 40px;
     text-align: center;
 }
 
-.biografia-frase > span {
-    color: var(--destaque);
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-}
-
-.biografia-frase p {
-    margin-top: 30px;
-    color: var(--branco-suave);
+.footer-social-title h3 {
+    margin: 0 0 10px;
+    color: var(--dark);
     font-family: var(--serif);
-    font-size: clamp(25px, 3vw, 42px);
-    font-style: italic;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
-@media (max-width: 800px) {
-
-    .biografia {
-        padding: 110px 8vw;
-    }
-
-    .biografia-cabecalho {
-        display: block;
-    }
-
-    .biografia-introducao {
-        margin-top: 70px;
-    }
-
-    .biografia-introducao h2 {
-        font-size: clamp(43px, 10vw, 75px);
-    }
-
-    .biografia-linha {
-        margin-top: 85px;
-    }
-
-    .biografia-linha::before {
-        left: 35px;
-    }
-
-    .biografia-item {
-        grid-template-columns: 70px 1fr;
-        gap: 25px;
-        padding: 50px 0;
-    }
-
-    .biografia-periodo {
-        padding-right: 0;
-    }
-
-    .biografia-periodo strong {
-        font-size: 9px;
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-    }
-
-    .biografia-item::after {
-        top: 61px;
-        left: 29px;
-        width: 11px;
-        height: 11px;
-    }
-
-    .biografia-conteudo h3 {
-        font-size: 28px;
-    }
-
-    .biografia-conteudo p {
-        font-size: 12px;
-    }
-
-    .biografia-frase {
-        margin-top: 90px;
-    }
-
-    .biografia-frase p {
-        font-size: 27px;
-    }
+.footer-social-title p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
 }
 
-@media (max-width: 500px) {
+/* LISTA DE REDES SOCIAIS */
 
-    .biografia {
-        padding-left: 7vw;
-        padding-right: 7vw;
-    }
-
-    .biografia-item {
-        grid-template-columns: 45px 1fr;
-        gap: 20px;
-    }
-
-    .biografia-linha::before {
-        left: 22px;
-    }
-
-    .biografia-item::after {
-        left: 17px;
-    }
-
-    .biografia-periodo span {
-        font-size: 8px;
-    }
-
-    .biografia-conteudo h3 {
-        font-size: 25px;
-    }
-
-    .biografia-conteudo p {
-        font-size: 11px;
-        line-height: 1.75;
-    }
-
-    .biografia-frase p {
-        font-size: 24px;
-    }
-}
-
-.numeros {
-    padding: 120px 8vw;
-    background: var(--fundo-terciario);
-}
-
-.numeros-lista {
-    margin-top: 90px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--borda);
-    border-bottom: 1px solid var(--borda);
-}
-
-.numero-item {
-    padding: 50px 25px 50px 0;
-    border-right: 1px solid var(--borda);
-}
-
-.numero-item:not(:first-child) {
-    padding-left: 35px;
-}
-
-.numero-item:last-child {
-    border-right: 0;
-}
-
-.numero-item strong {
-    display: block;
-    color: var(--branco);
-    font-size: clamp(50px, 6vw, 85px);
-    font-weight: 400;
-    letter-spacing: -0.06em;
-}
-
-.numero-item span {
-    display: block;
-    margin-top: 8px;
-    color: var(--cinza);
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-}
-
-.depoimentos {
-    padding: 170px 8vw;
-    background: var(--fundo);
-}
-
-.depoimentos-cabecalho {
-    align-items: flex-start;
-}
-
-.depoimentos-cabecalho p {
-    max-width: 330px;
-    color: var(--cinza);
-    font-size: 12px;
-    line-height: 1.8;
-    text-align: right;
-}
-
-.depoimento {
-    max-width: 1050px;
-    margin: 130px auto 0;
-}
-
-.aspas {
-    display: block;
-    color: var(--destaque);
-    font-family: Georgia, serif;
-    font-size: 100px;
-    line-height: 0.5;
-}
-
-.depoimento blockquote {
-    font-family: var(--serif);
-    font-size: clamp(30px, 4vw, 58px);
-    font-weight: 400;
-    line-height: 1.18;
-    letter-spacing: -0.035em;
-}
-
-.depoimento-autor {
-    margin-top: 50px;
+.social-list {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.depoimento-autor strong {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 28px;
+    background: rgba(255, 250, 245, 0.8);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(73, 55, 47, 0.06);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.depoimento-autor span {
-    color: var(--cinza);
-    font-size: 10px;
+.social-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--sand);
+    background: var(--white);
+    box-shadow: 0 18px 40px rgba(73, 55, 47, 0.1);
 }
 
-.contato {
-    position: relative;
-    padding: 160px 8vw 110px;
-    background: var(--destaque);
-    color: #0a0a0a;
-    overflow: hidden;
+.social-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
 }
 
-.contato::after {
-    content: "CAMILA";
-    position: absolute;
-    right: -30px;
-    bottom: -110px;
-    color: rgba(0, 0, 0, 0.06);
-    font-size: clamp(180px, 28vw, 500px);
-    font-weight: 700;
-    letter-spacing: -0.09em;
-    line-height: 1;
-    pointer-events: none;
+.social-left > i {
+    flex-shrink: 0;
+    color: var(--brown);
+    font-size: 1.6rem;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.contato .numero-secao,
-.contato .titulo-secao {
-    color: rgba(0, 0, 0, 0.55);
+.social-info {
+    min-width: 0;
 }
 
-.contato .numero-secao {
-    color: #0a0a0a;
-}
-
-.contato-conteudo {
-    position: relative;
-    z-index: 1;
-    max-width: 1050px;
-    margin: 120px auto 0;
-}
-
-.contato-conteudo > p {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.contato h2 {
-    margin-top: 20px;
-    font-size: clamp(55px, 8vw, 125px);
-    font-weight: 500;
-    line-height: 0.88;
-    letter-spacing: -0.075em;
-}
-
-.contato h2 em {
-    display: block;
+.social-info h4 {
+    margin: 0 0 4px;
+    color: var(--dark);
     font-family: var(--serif);
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-.contato-email {
+.social-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+}
+
+/* BOTÕES DAS REDES */
+
+.social-card > a {
     display: inline-flex;
     align-items: center;
-    gap: 25px;
-    margin-top: 65px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.45);
-    font-size: clamp(16px, 2vw, 24px);
-    transition: var(--transicao);
-}
-
-.contato-email span {
-    font-size: 22px;
-    transition: transform var(--transicao);
-}
-
-.contato-email:hover {
-    border-color: #0a0a0a;
-}
-
-.contato-email:hover span {
-    transform: translate(5px, -5px);
-}
-
-.contato-links {
-    position: relative;
-    z-index: 1;
-    margin-top: 130px;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.contato-links a {
-    padding-top: 18px;
-    font-size: 10px;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 12px 20px;
+    border: 1px solid var(--brown);
+    border-radius: 999px;
+    background: var(--brown);
+    color: var(--white);
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    transition: var(--transicao);
+    text-decoration: none;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
 }
 
-.contato-links a span {
-    margin-left: 7px;
+.social-card > a:hover {
+    transform: translateY(-2px);
+    border-color: var(--dark);
+    background: var(--dark);
+    color: var(--white);
 }
 
-.contato-links a:hover {
-    transform: translateY(-4px);
+/* CORES INDIVIDUAIS DAS REDES */
+
+.social-card.whatsapp:hover {
+    border-color: #25D366;
 }
 
-.rodape {
-    padding: 90px 8vw 30px;
-    background: #050505;
+.social-card.whatsapp:hover .social-left > i {
+    color: #25D366;
+    transform: scale(1.08);
 }
 
-.rodape-superior {
+.social-card.instagram:hover {
+    border-color: #C13584;
+}
+
+.social-card.instagram:hover .social-left > i {
+    color: #C13584;
+    transform: scale(1.08);
+}
+
+.social-card.tiktok:hover {
+    border-color: #222222;
+}
+
+.social-card.tiktok:hover .social-left > i {
+    color: #222222;
+    transform: scale(1.08);
+}
+
+.social-card.discord:hover {
+    border-color: #5865F2;
+}
+
+.social-card.discord:hover .social-left > i {
+    color: #5865F2;
+    transform: scale(1.08);
+}
+
+.social-card.youtube:hover {
+    border-color: #FF0000;
+}
+
+.social-card.youtube:hover .social-left > i {
+    color: #FF0000;
+    transform: scale(1.08);
+}
+
+.social-card.nexabot:hover {
+    border-color: var(--accent);
+}
+
+.social-card.nexabot:hover .social-left > i {
+    color: var(--accent);
+    transform: scale(1.08);
+}
+
+/* COLUNAS INSTITUCIONAIS */
+
+.footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 80px;
-    padding-bottom: 100px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: start;
+    gap: 60px;
+    margin-top: 70px;
 }
 
-.rodape-marca .logo {
-    font-size: 34px;
+.footer-brand {
+    max-width: 500px;
 }
 
-.rodape-marca p {
-    max-width: 250px;
-    margin-top: 25px;
-    color: var(--cinza);
-    font-size: 11px;
+.footer-logo {
+    margin: 0 0 18px;
+    color: var(--brown);
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.footer-description {
+    max-width: 420px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* TÍTULOS E LINKS DAS COLUNAS */
+
+.footer-grid h4 {
+    margin: 0 0 22px;
+    color: var(--dark);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 14px;
+}
+
+.footer-links a {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition:
+        padding 0.3s ease,
+        color 0.3s ease;
+}
+
+.footer-links a:hover {
+    padding-left: 6px;
+    color: var(--brown);
+}
+
+/* FAIXA INFERIOR */
+
+.footer-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid var(--line);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.78rem;
     line-height: 1.7;
 }
 
-.rodape-navegacao,
-.rodape-social {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+.footer-bottom > p:first-child {
+    max-width: 300px;
+    text-align: left;
 }
 
-.rodape-navegacao > span,
-.rodape-social > span {
-    margin-bottom: 10px;
-    color: var(--cinza-escuro);
-    font-size: 8px;
+.footer-signature {
+    margin-left: auto;
+    text-align: right;
+}
+
+.footer-signature a {
+    color: var(--brown);
     font-weight: 700;
-    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
 }
 
-.rodape-navegacao a,
-.rodape-social a {
-    color: var(--cinza);
-    font-size: 10px;
-    font-weight: 500;
-    transition: var(--transicao);
+.footer-signature a:hover {
+    color: var(--accent);
+    letter-spacing: 0.3px;
 }
 
-.rodape-navegacao a:hover,
-.rodape-social a:hover {
-    color: var(--destaque);
-    transform: translateX(4px);
-}
+/* RESPONSIVIDADE DO RODAPÉ */
 
-.rodape-inferior {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 25px;
-    border-top: 1px solid var(--borda-suave);
-    color: var(--cinza-escuro);
-    font-size: 8px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-@media (max-width: 1100px) {
-
-    .navegacao {
-        gap: 20px;
-    }
-
-    .hero h1 {
-        font-size: clamp(65px, 10vw, 125px);
-    }
-
-    .manifesto,
-    .especialidades,
-    .projetos,
-    .processo,
-    .depoimentos {
-        padding-left: 6vw;
-        padding-right: 6vw;
-    }
-
-    .projeto-grande:nth-child(1) {
-        grid-column: 1 / 9;
-    }
-
-    .projeto-pequeno:nth-child(2) {
-        grid-column: 10 / 13;
+@media (max-width: 950px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px;
     }
 }
 
-@media (max-width: 800px) {
-
-    .cabecalho {
-        padding: 18px 5vw;
+@media (max-width: 780px) {
+    .footer-grid {
+        gap: 35px 25px;
     }
+}
 
-    .cabecalho.scrolled {
-        padding-top: 14px;
-        padding-bottom: 14px;
-    }
-
-    .navegacao,
-    .cabecalho-contato {
-        display: none;
-    }
-
-    .menu-mobile {
-        display: flex;
-    }
-
-    .hero-conteudo {
-        padding: 110px 5vw 25px;
-    }
-
-    .hero-superior span:last-child {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: clamp(58px, 16vw, 105px);
-    }
-
-    .hero h1 em {
-        margin-left: 8vw;
-    }
-
-    .hero-descricao,
-    .hero-acoes {
-        margin-left: 8vw;
-    }
-
-    .hero-descricao {
-        margin-top: 35px;
-        font-size: 13px;
-    }
-
-    .hero-acoes {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-
-    .hero-especialidades {
-        display: none;
-    }
-
-    .manifesto {
-        padding-top: 110px;
-        padding-bottom: 110px;
-    }
-
-    .manifesto-conteudo {
-        margin-top: 75px;
-    }
-
-    .manifesto h2 {
-        font-size: clamp(43px, 10vw, 75px);
-    }
-
-    .manifesto h2 span {
-        margin-left: 8vw;
-    }
-
-    .manifesto-textos {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 65px;
-    }
-
-    .especialidades {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    .especialidades-cabecalho > p {
-        display: none;
-    }
-
-    .especialidades-lista {
-        margin-top: 70px;
-    }
-
-    .especialidade {
-        grid-template-columns: 45px 1fr 30px;
-        gap: 15px;
-        min-height: 125px;
-    }
-
-    .especialidade-conteudo {
-        display: block;
-    }
-
-    .especialidade h3 {
-        min-width: auto;
-        font-size: 30px;
-    }
-
-    .especialidade p {
-        margin-top: 9px;
-        font-size: 11px;
-    }
-
-    .projetos {
-        padding-top: 110px;
-        padding-bottom: 110px;
-    }
-
-    .projetos-cabecalho {
-        display: block;
-    }
-
-    .projetos-introducao {
-        margin-top: 70px;
-    }
-
-    .projetos-introducao h2 {
-        font-size: clamp(43px, 10vw, 75px);
-    }
-
-    .projetos-galeria {
+@media (max-width: 520px) {
+    footer {
         margin-top: 80px;
-        display: flex;
-        flex-direction: column;
-        gap: 70px;
+        padding: 55px 0 25px;
     }
 
-    .projeto-grande:nth-child(1),
-    .projeto-pequeno:nth-child(2),
-    .projeto-pequeno:nth-child(3),
-    .projeto-grande:nth-child(4) {
-        width: 100%;
-        margin-top: 0;
+    .footer-social-title {
+        margin-bottom: 30px;
     }
 
-    .projeto-pequeno .projeto-imagem {
-        aspect-ratio: 16 / 10;
+    .footer-social-title h3 {
+        font-size: 1.7rem;
     }
 
-    .processo {
-        padding-top: 110px;
-        padding-bottom: 110px;
+    .social-list {
+        gap: 14px;
     }
 
-    .processo-cabecalho {
-        display: block;
+    .social-card {
+        gap: 12px;
+        padding: 17px;
+        border-radius: 16px;
     }
 
-    .processo-cabecalho h2 {
-        margin-top: 70px;
-        font-size: clamp(43px, 10vw, 75px);
-    }
-
-    .processo-etapas {
-        margin-top: 80px;
-    }
-
-    .processo-etapa {
-        grid-template-columns: 45px 1fr;
-        gap: 15px;
-        padding: 35px 0;
-    }
-
-    .processo-etapa h3 {
-        font-size: 28px;
-    }
-
-    .camila {
-        grid-template-columns: 1fr;
-    }
-
-    .camila-imagem {
-        min-height: 100vw;
-        max-height: 700px;
-    }
-
-    .camila-conteudo {
-        padding: 90px 8vw;
-    }
-
-    .camila-conteudo h2 {
-        margin-top: 70px;
-        font-size: clamp(43px, 10vw, 75px);
-    }
-
-    .numeros {
-        padding: 100px 8vw;
-    }
-
-    .numeros-lista {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .numero-item {
-        padding: 35px 15px 35px 0;
-        border-bottom: 1px solid var(--borda);
-    }
-
-    .numero-item:nth-child(2) {
-        border-right: 0;
-        padding-left: 20px;
-    }
-
-    .numero-item:nth-child(3) {
-        padding-left: 0;
-        border-bottom: 0;
-    }
-
-    .numero-item:nth-child(4) {
-        border-right: 0;
-        border-bottom: 0;
-        padding-left: 20px;
-    }
-
-    .depoimentos {
-        padding-top: 110px;
-        padding-bottom: 110px;
-    }
-
-    .depoimentos-cabecalho {
-        display: block;
-    }
-
-    .depoimentos-cabecalho p {
-        margin-top: 40px;
-        text-align: left;
-    }
-
-    .depoimento {
-        margin-top: 90px;
-    }
-
-    .contato {
-        padding: 110px 7vw 70px;
-    }
-
-    .contato-conteudo {
-        margin-top: 90px;
-    }
-
-    .contato h2 {
-        font-size: clamp(50px, 13vw, 90px);
-    }
-
-    .contato-email {
-        margin-top: 50px;
-        font-size: 15px;
-    }
-
-    .contato-links {
-        margin-top: 90px;
-        flex-wrap: wrap;
-        gap: 25px;
-    }
-
-    .rodape {
-        padding: 70px 7vw 25px;
-    }
-
-    .rodape-superior {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px 30px;
-        padding-bottom: 70px;
-    }
-
-    .rodape-marca {
-        grid-column: 1 / -1;
-    }
-
-    .rodape-inferior {
-        flex-wrap: wrap;
-        gap: 12px 25px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .hero {
-        min-height: 100svh;
-    }
-
-    .hero-video video {
-        opacity: 0.5;
-    }
-
-    .hero-centro {
-        padding: 40px 0;
-    }
-
-    .hero h1 {
-        font-size: clamp(53px, 17vw, 78px);
-    }
-
-    .hero-descricao {
-        max-width: 330px;
-    }
-
-    .botao-principal {
-        padding: 15px 17px;
-    }
-
-    .especialidade {
-        grid-template-columns: 35px 1fr 20px;
-        gap: 10px;
-    }
-
-    .especialidade h3 {
-        font-size: 25px;
-    }
-
-    .especialidade p {
-        max-width: 260px;
-    }
-
-    .especialidade-seta {
-        font-size: 18px;
-    }
-
-    .numero-item strong {
-        font-size: 46px;
-    }
-
-    .numero-item span {
-        font-size: 8px;
-        line-height: 1.5;
-    }
-
-    .depoimento blockquote {
-        font-size: 31px;
-    }
-
-    .aspas {
-        font-size: 75px;
-    }
-
-    .contato h2 {
-        font-size: 49px;
-    }
-
-    .contato-email {
-        font-size: 13px;
+    .social-left {
         gap: 12px;
     }
 
-    .rodape-superior {
-        grid-template-columns: 1fr;
+    .social-left > i {
+        font-size: 1.35rem;
     }
 
-    .rodape-marca {
-        grid-column: auto;
+    .social-info h4 {
+        font-size: 1rem;
     }
 
-    .rodape-inferior {
+    .social-info p {
+        font-size: 0.75rem;
+    }
+
+    .social-card > a {
+        padding: 10px 13px;
+        font-size: 0.72rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+        margin-top: 50px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-logo {
+        font-size: 1.8rem;
+    }
+
+    .footer-description {
+        font-size: 0.85rem;
+    }
+
+    .footer-grid h4 {
+        margin-bottom: 16px;
+        font-size: 1.05rem;
+    }
+
+    .footer-links li {
+        margin-bottom: 11px;
+    }
+
+    .footer-links a {
+        font-size: 0.82rem;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
         flex-direction: column;
+        gap: 15px;
+        margin-top: 35px;
+        padding-top: 20px;
     }
 
-    .rodape-inferior a {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    .footer-bottom > p:first-child {
+        max-width: none;
+    }
 
+    .footer-signature {
+        margin-left: 0;
+        text-align: left;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
 
-    html {
-        scroll-behavior: auto;
+/* MODAL */
+.modal{
+    position:fixed;z-index:2000;inset:0;
+    display:grid;place-items:center;padding:22px;
+    background:rgba(36,29,25,.75);backdrop-filter:blur(9px);
+    opacity:0;visibility:hidden;transition:.35s;
+}
+.modal.open{opacity:1;visibility:visible}
+.modal-box{
+    position:relative;width:min(900px,100%);max-height:90vh;
+    display:grid;grid-template-columns:1fr 1fr;
+    overflow:auto;border-radius:17px;background:var(--paper);
+    transform:translateY(20px);transition:.4s var(--ease);
+}
+.modal.open .modal-box{transform:translateY(0)}
+.modal-box img{width:100%;height:100%;min-height:380px;object-fit:cover}
+.modal-content{display:flex;padding:40px;flex-direction:column;justify-content:center}
+.modal-content h2{margin:8px 0;font:500 2.4rem/1.1 var(--serif)}
+.modal-content p{color:var(--muted);font-size:.85rem}
+.modal-close{
+    position:absolute;z-index:2;top:13px;right:13px;
+    width:40px;height:40px;border:1px solid var(--line);
+    border-radius:50%;color:var(--brown);background:var(--paper);
+}
+
+/* NAVEGAÇÃO ENTRE PROJETOS NO MODAL */
+
+.modal-box {
+    position: relative;
+}
+
+.modal-nav {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid rgba(229, 217, 207, 0.8);
+    border-radius: 50%;
+    color: var(--brown);
+    background: rgba(255, 250, 245, 0.95);
+    box-shadow: 0 5px 20px rgba(48, 41, 35, 0.12);
+    transform: translateY(-50%);
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.modal-nav:hover {
+    color: var(--white);
+    background: var(--brown);
+}
+
+.modal-prev {
+    left: 12px;
+}
+
+.modal-next {
+    right: 12px;
+}
+
+.modal-nav:focus-visible,
+.modal-close:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+    .modal-nav {
+        width: 40px;
+        height: 40px;
     }
 
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+    .modal-prev {
+        left: 10px;
     }
+
+    .modal-next {
+        right: 10px;
+    }
+}
+
+/* ANIMAÇÕES */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{transform:translateX(-25px)}
+.reveal-right{transform:translateX(25px)}
+.reveal-left.visible,.reveal-right.visible{transform:translateX(0)}
+@keyframes breathe{50%{transform:scale(1.07);box-shadow:0 0 0 9px rgba(210,184,165,.15)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* RESPONSIVIDADE */
+@media(max-width:950px){
+    .nav-links{gap:14px}
+    .nav-link{font-size:.69rem}
+    .hero-grid{gap:40px}
+    .services-layout,.feedback-layout{gap:38px}
+    .contact-grid{gap:40px}
+}
+@media(max-width:780px){
+    .nav-wrap{min-height:72px}
+    .menu-toggle{display:grid;place-items:center}
+    .nav-links{
+        position:fixed;top:72px;right:0;left:0;
+        display:flex;align-items:stretch;flex-direction:column;
+        gap:0;padding:15px 6% 25px;
+        border-bottom:1px solid var(--line);
+        background:var(--paper);box-shadow:0 20px 30px rgba(73,49,35,.08);
+        opacity:0;visibility:hidden;transform:translateY(-12px);
+        transition:.3s;
+    }
+    .nav-links.open{opacity:1;visibility:visible;transform:translateY(0)}
+    .nav-link{padding:14px 0;font-size:.85rem;border-bottom:1px solid var(--line)}
+    .nav-link:after{display:none}
+    .hero{padding:65px 0 45px}
+    .hero-grid{grid-template-columns:1fr;gap:55px}
+    .hero-copy{max-width:600px}
+    .hero-title{font-size:clamp(3.5rem,13vw,6rem)}
+    .hero-visual{width:min(82%,390px)}
+    .hero-caption{right:-15px}
+    .hero-bottom{margin-top:55px}
+    .section{padding:78px 0}
+    .pillars{grid-template-columns:1fr}
+    .pillar{min-height:auto}
+    .editorial{grid-template-columns:1fr;gap:35px}
+    .editorial-image{max-width:500px}
+    .project-grid{gap:25px 15px}
+    .process-grid{grid-template-columns:repeat(2,1fr);gap:35px 20px}
+    .services-layout,.feedback-layout,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .services-intro{position:static}
+    .contact-art{min-height:420px;max-width:500px;margin:auto}
+    .cta-content{align-items:start;flex-direction:column}
+    .footer-inner{flex-wrap:wrap}
+}
+@media(max-width:520px){
+    .container,.nav-wrap{width:90%}
+    .brand-copy strong{font-size:.9rem}
+    .brand-copy small{font-size:.52rem}
+    .hero-title{font-size:3.5rem}
+    .hero-description{font-size:.9rem}
+    .hero-actions .btn{width:100%}
+    .hero-stamp{left:-19px;width:72px;height:72px;font-size:.8rem}
+    .hero-caption{right:-10px;bottom:20px;padding:12px}
+    .hero-bottom{font-size:.58rem}
+    .strip-inner{justify-content:center}
+    .strip-item{font-size:.9rem}
+    .project-grid{grid-template-columns:1fr}
+    .project-image-wrap img{aspect-ratio:1.25}
+    .process-grid{grid-template-columns:1fr 1fr}
+    .service-toggle{grid-template-columns:30px 1fr 35px;gap:10px}
+    .service-detail-content{padding:0 0 22px 40px}
+    .service-detail-content ul{grid-template-columns:1fr}
+    .service-bottom{align-items:start;flex-direction:column}
+    .feedback-panel,.contact-form{padding:22px}
+    .form-grid{grid-template-columns:1fr}
+    .field.full{grid-column:auto}
+    .form-footer{align-items:start;flex-direction:column}
+    .contact-art{min-height:350px}
+    .modal-box{grid-template-columns:1fr}
+    .modal-box img{height:260px;min-height:260px}
+    .modal-content{padding:25px}
+    .footer-inner{justify-content:center;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
 }
 </style>
-
 </head>
 
 <body>
 
-    <div class="pagina">
+<div class="scroll-progress"><span id="progress"></span></div>
 
-        <header class="cabecalho">
-            <div class="cabecalho-conteudo">
+<div class="loader" id="loader">
+    <div class="loader-inner">
+        <div class="loader-mark">C.</div>
+        <p>Camila Domingues</p>
+    </div>
+</div>
 
-                <a href="Mila 1.jpeg" class="logo">
-                    Camila<span>.</span>
-                </a>
+<header id="header">
+    <div class="nav-wrap">
+        <a class="brand" href="#/inicio" aria-label="Camila Domingues - Início">
+            <span class="brand-mark">C.</span>
+            <span class="brand-copy">
+                <strong>Camila Domingues</strong>
+                <small>Marketing Digital</small>
+            </span>
+        </a>
 
-                <nav class="navegacao" aria-label="Navegação principal">
-                    <a href="#sobre">Sobre</a>
-                    <a href="#especialidades">Especialidades</a>
-                    <a href="portfolio.html">Projetos</a>
-                    <a href="#processo">Processo</a>
-                    <a href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%seus%20serviços">Contato</a>
-                </nav>
+        <nav class="nav-links" id="navLinks">
+            <a class="nav-link" href="#/inicio" data-route="inicio">Início</a>
+            <a class="nav-link" href="#/projetos" data-route="projetos">Projetos</a>
+            <a class="nav-link" href="#/servicos" data-route="servicos">Serviços</a>
+            <a class="nav-link" href="#/feedback" data-route="feedback">Feedback</a>
+            <a class="nav-link" href="#/contato" data-route="contato">Contato</a>
+        </nav>
 
-                <a href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%seus%20serviços" class="WhatsApp" target="_blank" rel="noopener noreferrer">
-                    Vamos conversar
-                    <span>↗</span>
-                </a>
+        <a href="#/contato" class="btn btn-primary btn-small nav-cta">Vamos conversar <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
 
-                <button class="menu-mobile" type="button" aria-label="Abrir menu">
-                    <span></span>
-                    <span></span>
-                </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
 
+<main id="app">
+
+<!-- ==================== INÍCIO ==================== -->
+<section class="page" id="page-inicio" data-page="inicio">
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Estratégia • Criatividade • Presença</span>
+                    <h1 class="hero-title">
+                        Sua marca merece<br>
+                        ser vista com <em>outros olhos.</em>
+                    </h1>
+                    <p class="hero-description">
+                        Transformo ideias em experiências digitais. Estratégia, conteúdo e criatividade para construir uma presença que representa a essência da sua marca.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#/contato" class="btn btn-primary">Vamos trabalhar juntos <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="#/projetos" class="btn btn-outline">Conheça meu trabalho <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="hero-note">
+                        <strong>Marketing com intenção.</strong>
+                        <span>Comunicação com identidade.</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-frame">
+                        <img class="hero-image" src="Mila 1.jpeg" alt="Retrato editorial feminino">
+                    </div>
+                    <div class="hero-stamp">O meu melhor para você!</span></div>
+                    <div class="hero-caption">
+                        <span class="caption-icon"><i class="fa-solid fa-sparkles"></i></span>
+                        <span><strong>Camila Domingues</strong><small>Marketing Digital & Conteúdo</small></span>
+                    </div>
+                </div>
             </div>
-        </header>
 
-
-        <main>
-
-            <section class="hero" id="inicio">
-
-                <div class="hero-video">
-                    <video autoplay muted loop playsinline poster="Mila 1.jpeg">
-                        <source src="404.html".mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="hero-overlay"></div>
-
-                <div class="hero-conteudo">
-
-                    <div class="hero-superior">
-                        <span>CREATIVE PROFESSIONAL</span>
-                        <span>BRASIL — 2026</span>
-                    </div>
-
-                    <div class="hero-centro">
-
-                        <p class="hero-legenda">
-                            Estratégia · Imagem · Narrativa
-                        </p>
-
-                        <h1>
-                            Camila
-                            <em>Domingues</em>
-                        </h1>
-
-                        <p class="hero-descricao">
-                            Filmmaker, social media, designer e editora de vídeo.
-                            Criando experiências visuais que transformam ideias
-                            em presença.
-                        </p>
-
-                        <div class="hero-acoes">
-                            <a href="portfolio.html" class="botao-principal">
-                                Explorar projetos
-                                <span>↗</span>
-                            </a>
-
-                            <a href="#sobre" class="botao-secundario">
-                                Conheça meu trabalho
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="hero-inferior">
-
-                        <div class="hero-indicador">
-                            <span class="linha-indicadora"></span>
-                            <span>SCROLL TO EXPLORE</span>
-                        </div>
-
-                        <div class="hero-especialidades">
-                            <span>FILMMAKING</span>
-                            <span>SOCIAL MEDIA</span>
-                            <span>DESIGN</span>
-                            <span>EDITING</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="manifesto" id="sobre">
-
-                <div class="manifesto-cabecalho">
-                    <span class="numero-secao">01</span>
-                    <span class="titulo-secao">MANIFESTO</span>
-                </div>
-
-                <div class="manifesto-conteudo">
-
-                    <h2>
-                        Por trás de cada imagem,
-                        <span>existe uma intenção.</span>
-                    </h2>
-
-                    <div class="manifesto-textos">
-
-                        <p class="manifesto-destaque">
-                            Comunicação não é apenas aquilo que se vê.
-                            É aquilo que permanece depois que a imagem desaparece.
-                        </p>
-
-                        <p>
-                            Meu trabalho nasce do encontro entre estratégia,
-                            estética e narrativa. Cada projeto é uma oportunidade
-                            de transformar uma ideia em algo visualmente relevante,
-                            emocionalmente conectado e genuinamente memorável.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="especialidades" id="especialidades">
-
-                <div class="especialidades-cabecalho">
-
-                    <div>
-                        <span class="numero-secao">02</span>
-                        <span class="titulo-secao">ESPECIALIDADES</span>
-                    </div>
-
-                    <p>
-                        Diferentes ferramentas.
-                        <br>
-                        Uma mesma visão criativa.
-                    </p>
-
-                </div>
-
-                <div class="especialidades-lista">
-
-                    <article class="especialidade">
-
-                        <div class="especialidade-numero">01</div>
-
-                        <div class="especialidade-conteudo">
-
-                            <h3>Filmmaker</h3>
-
-                            <p>
-                                Imagem em movimento, direção, captação e construção
-                                de narrativas que transformam momentos em histórias.
-                            </p>
-
-                        </div>
-
-                        <span class="especialidade-seta">↗</span>
-
-                    </article>
-
-
-                    <article class="especialidade">
-
-                        <div class="especialidade-numero">02</div>
-
-                        <div class="especialidade-conteudo">
-
-                            <h3>Social Media</h3>
-
-                            <p>
-                                Estratégia, planejamento e criação de conteúdo
-                                para marcas que querem construir presença de verdade.
-                            </p>
-
-                        </div>
-
-                        <span class="especialidade-seta">↗</span>
-
-                    </article>
-
-
-                    <article class="especialidade">
-
-                        <div class="especialidade-numero">03</div>
-
-                        <div class="especialidade-conteudo">
-
-                            <h3>Designer</h3>
-
-                            <p>
-                                Identidade visual, direção estética e peças que
-                                transformam conceitos em comunicação visual.
-                            </p>
-
-                        </div>
-
-                        <span class="especialidade-seta">↗</span>
-
-                    </article>
-
-
-                    <article class="especialidade">
-
-                        <div class="especialidade-numero">04</div>
-
-                        <div class="especialidade-conteudo">
-
-                            <h3>Video Editor</h3>
-
-                            <p>
-                                Montagem, ritmo, storytelling e acabamento para
-                                transformar imagens em experiências.
-                            </p>
-
-                        </div>
-
-                        <span class="especialidade-seta">↗</span>
-
-                    </article>
-
-
-                    <article class="especialidade especialidade-extra">
-
-                        <div class="especialidade-numero">05</div>
-
-                        <div class="especialidade-conteudo">
-
-                            <h3>Creative+</h3>
-
-                            <p>
-                                Um espaço para tudo aquilo que acontece quando
-                                criatividade, estratégia e curiosidade se encontram.
-                            </p>
-
-                        </div>
-
-                        <span class="especialidade-seta">↗</span>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-
-            <section class="projetos" id="projetos">
-
-                <div class="projetos-cabecalho">
-
-                    <div>
-                        <span class="numero-secao">03</span>
-                        <span class="titulo-secao">SELECTED WORKS</span>
-                    </div>
-
-                    <div class="projetos-introducao">
-
-                        <h2>
-                            Ideias que
-                            <em>ganharam forma.</em>
-                        </h2>
-
-                        <p>
-                            Uma seleção de trabalhos que traduzem diferentes
-                            momentos, desafios e possibilidades criativas.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="projetos-galeria">
-
-                    <a href="#" class="projeto projeto-grande">
-
-                        <div class="projeto-imagem">
-                            <img src="Mila 1.jpeg" alt="Projeto audiovisual de Camila Domingues">
-                        </div>
-
-                        <div class="projeto-informacoes">
-
-                            <div>
-                                <span>01 / FILMMAKING</span>
-                                <h3>Projeto Audiovisual</h3>
-                            </div>
-
-                            <span class="projeto-link">↗</span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a href="#" class="projeto projeto-pequeno">
-
-                        <div class="projeto-imagem">
-                            <img src="Mila 2.jpeg" alt="Projeto de social media de Camila Domingues">
-                        </div>
-
-                        <div class="projeto-informacoes">
-
-                            <div>
-                                <span>02 / SOCIAL MEDIA</span>
-                                <h3>Digital Presence</h3>
-                            </div>
-
-                            <span class="projeto-link">↗</span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a href="#" class="projeto projeto-pequeno">
-
-                        <div class="projeto-imagem">
-                            <img src="Mila 3.jpeg" alt="Projeto de design de Camila Domingues">
-                        </div>
-
-                        <div class="projeto-informacoes">
-
-                            <div>
-                                <span>03 / DESIGN</span>
-                                <h3>Visual Identity</h3>
-                            </div>
-
-                            <span class="projeto-link">↗</span>
-
-                        </div>
-
-                    </a>
-
-
-                    <a href="#" class="projeto projeto-grande">
-
-                        <div class="projeto-imagem">
-                            <img src="Mila 1.jpeg" alt="Projeto de edição de vídeo de Camila Domingues">
-                        </div>
-
-                        <div class="projeto-informacoes">
-
-                            <div>
-                                <span>04 / VIDEO EDITING</span>
-                                <h3>Visual Storytelling</h3>
-                            </div>
-
-                            <span class="projeto-link">↗</span>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
-
-                <div class="projetos-rodape">
-                    <a href="portfolio.html" class="botao-principal">
-                        Ver todos os projetos
-                        <span>↗</span>
-                    </a>
-                </div>
-
-            </section>
-
-
-            <section class="processo" id="processo">
-
-                <div class="processo-cabecalho">
-
-                    <div>
-                        <span class="numero-secao">04</span>
-                        <span class="titulo-secao">PROCESSO</span>
-                    </div>
-
-                    <h2>
-                        Do primeiro rabisco
-                        <em>ao resultado final.</em>
-                    </h2>
-
-                </div>
-
-
-                <div class="processo-etapas">
-
-                    <article class="processo-etapa">
-
-                        <span>01</span>
-
-                        <div>
-                            <h3>Discover</h3>
-                            <p>
-                                Entender a marca, o público, o contexto e aquilo
-                                que precisa ser comunicado.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="processo-etapa">
-
-                        <span>02</span>
-
-                        <div>
-                            <h3>Concept</h3>
-                            <p>
-                                Transformar informações em conceito, direção
-                                criativa e linguagem visual.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="processo-etapa">
-
-                        <span>03</span>
-
-                        <div>
-                            <h3>Create</h3>
-                            <p>
-                                Produção, captação, design, edição e desenvolvimento
-                                da solução criativa.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="processo-etapa">
-
-                        <span>04</span>
-
-                        <div>
-                            <h3>Refine</h3>
-                            <p>
-                                Ajustar cada detalhe para encontrar equilíbrio
-                                entre intenção, estética e resultado.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="processo-etapa">
-
-                        <span>05</span>
-
-                        <div>
-                            <h3>Deliver</h3>
-                            <p>
-                                Entregar uma experiência pronta para comunicar,
-                                conectar e gerar presença.
-                            </p>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </section>
-
-
-            <section class="camila" >
-
-                <div class="camila-imagem">
-                    <img src="Mila 3.jpeg" alt="Camila Domingues">
-                </div>
-
-                <div class="camila-conteudo">
-
-                    <div class="camila-cabecalho">
-                        <span class="numero-secao">05</span>
-                        <span class="titulo-secao">ABOUT CAMILA</span>
-                    </div>
-
-                    <h2>
-                        Muito além
-                        <em>do que aparece na tela.</em>
-                    </h2>
-
-                    <p>
-                        Sou Camila Domingues, uma profissional criativa apaixonada
-                        por transformar ideias em experiências visuais.
-                    </p>
-
-                    <p>
-                        Entre câmeras, telas, conceitos e histórias, encontrei
-                        diferentes formas de comunicar aquilo que palavras nem
-                        sempre conseguem dizer.
-                    </p>
-
-                    <a href="#biografia" class="texto-link">
-                        Conheça minha trajetória
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            </section>
-            
-            <section class="biografia" id="biografia">
-
-    <div class="biografia-cabecalho">
-
-        <div>
-            <span class="numero-secao">06</span>
-            <span class="titulo-secao">PROFESSIONAL BIOGRAPHY</span>
+            <div class="hero-bottom">
+                <span>Uma presença digital com propósito</span>
+                <span>Explore <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
         </div>
+    </section>
 
-        <div class="biografia-introducao">
-            <h2>
-                Uma trajetória construída entre
-                <em>criatividade, estratégia e imagem.</em>
-            </h2>
-
-            <p>
-                Cada experiência acrescentou uma nova perspectiva à forma
-                de criar, comunicar e enxergar projetos.
-            </p>
+    <div class="strip">
+        <div class="container strip-inner">
+            <span class="strip-item"><i class="fa-solid fa-asterisk"></i> Estratégia</span>
+            <span class="strip-item"><i class="fa-solid fa-asterisk"></i> Identidade</span>
+            <span class="strip-item"><i class="fa-solid fa-asterisk"></i> Conteúdo</span>
+            <span class="strip-item"><i class="fa-solid fa-asterisk"></i> Posicionamento</span>
         </div>
-
     </div>
 
-
-    <div class="biografia-linha">
-
-
-        <article class="biografia-item">
-
-            <div class="biografia-periodo">
-                <span>01</span>
-                <strong>20XX</strong>
+    <section class="section">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">O que move meu trabalho</span>
+                <h2>Não é apenas sobre aparecer. É sobre <em class="serif">ser lembrado.</em></h2>
+                <p>Uma presença digital consistente nasce quando estratégia e criatividade caminham juntas.</p>
             </div>
 
-            <div class="biografia-conteudo">
-
-                <span class="biografia-area">INÍCIO</span>
-
-                <h3>
-                    Onde tudo começou.
-                </h3>
-
-                <p>
-                    A trajetória profissional começa a ganhar forma a partir
-                    do interesse por comunicação, criatividade e produção
-                    de conteúdo. Uma primeira aproximação com o universo
-                    visual que posteriormente se tornaria parte essencial
-                    de sua carreira.
-                </p>
-
+            <div class="pillars">
+                <article class="pillar reveal">
+                    <span class="pillar-number">01 / ESTRATÉGIA</span>
+                    <span class="pillar-icon"><i class="fa-solid fa-compass"></i></span>
+                    <h3>Direção com propósito</h3>
+                    <p>Planejamento de comunicação alinhado aos objetivos, ao público e à personalidade da sua marca.</p>
+                </article>
+                <article class="pillar reveal">
+                    <span class="pillar-number">02 / CRIATIVIDADE</span>
+                    <span class="pillar-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <h3>Conteúdo com identidade</h3>
+                    <p>Ideias, narrativas e peças visuais que traduzem o valor da sua marca em cada publicação.</p>
+                </article>
+                <article class="pillar reveal">
+                    <span class="pillar-number">03 / CONEXÃO</span>
+                    <span class="pillar-icon"><i class="fa-solid fa-heart"></i></span>
+                    <h3>Relacionamento real</h3>
+                    <p>Comunicação pensada para aproximar pessoas, fortalecer confiança e construir comunidade.</p>
+                </article>
             </div>
+        </div>
+    </section>
 
-        </article>
-
-
-        <article class="biografia-item">
-
-            <div class="biografia-periodo">
-                <span>02</span>
-                <strong>20XX</strong>
+    <section class="section paper">
+        <div class="container editorial">
+            <div class="editorial-image reveal reveal-left">
+                <img src="AE luiz.JPG" alt="Ambiente criativo de trabalho">
             </div>
-
-            <div class="biografia-conteudo">
-
-                <span class="biografia-area">AUDIOVISUAL</span>
-
-                <h3>
-                    A imagem ganhou movimento.
-                </h3>
-
-                <p>
-                    O audiovisual passa a ocupar um espaço maior em sua
-                    trajetória. Entre captação, direção e edição, surge
-                    uma nova maneira de transformar ideias em narrativas
-                    visuais.
-                </p>
-
+            <div class="editorial-copy reveal reveal-right">
+                <span class="eyebrow">O olhar por trás da estratégia</span>
+                <h2>Marcas fortes não nascem do acaso. São construídas com <em>intenção.</em></h2>
+                <p>Cada negócio tem uma história, uma personalidade e algo único a oferecer. Meu trabalho é encontrar a melhor maneira de transformar essa essência em comunicação.</p>
+                <p>Do planejamento à criação, cada detalhe precisa fazer sentido para quem está do outro lado da tela.</p>
+                <a href="#/servicos" class="btn btn-primary">Conheça os serviços <i class="fa-solid fa-arrow-right"></i></a>
             </div>
+        </div>
+    </section>
 
-        </article>
-
-
-        <article class="biografia-item">
-
-            <div class="biografia-periodo">
-                <span>03</span>
-                <strong>20XX</strong>
+    <section class="section">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">Como funciona</span>
+                <h2>Da primeira conversa à presença digital.</h2>
+                <p>Um processo organizado para que cada etapa tenha direção e significado.</p>
             </div>
-
-            <div class="biografia-conteudo">
-
-                <span class="biografia-area">DESIGN & DIGITAL</span>
-
-                <h3>
-                    Criatividade também é estratégia.
-                </h3>
-
-                <p>
-                    A experiência se expande para o design e para o universo
-                    digital, aproximando estética, identidade visual,
-                    posicionamento e comunicação estratégica.
-                </p>
-
+            <div class="process-grid">
+                <article class="process-step reveal">
+                    <span class="process-number">01</span>
+                    <h3>Imersão</h3>
+                    <p>Entendimento do negócio, dos objetivos, do público e do momento da marca.</p>
+                </article>
+                <article class="process-step reveal">
+                    <span class="process-number">02</span>
+                    <h3>Planejamento</h3>
+                    <p>Definição de estratégia, linguagem, pilares editoriais e direcionamento criativo.</p>
+                </article>
+                <article class="process-step reveal">
+                    <span class="process-number">03</span>
+                    <h3>Criação</h3>
+                    <p>Desenvolvimento de conteúdos, materiais e experiências visuais.</p>
+                </article>
+                <article class="process-step reveal">
+                    <span class="process-number">04</span>
+                    <h3>Acompanhamento</h3>
+                    <p>Análise dos resultados e evolução contínua da comunicação.</p>
+                </article>
             </div>
+        </div>
+    </section>
 
-        </article>
-
-
-        <article class="biografia-item">
-
-            <div class="biografia-periodo">
-                <span>04</span>
-                <strong>20XX</strong>
+    <section class="section dark cta-band">
+        <div class="container cta-content reveal">
+            <div>
+                <span class="eyebrow">Seu próximo capítulo começa aqui</span>
+                <h2>Vamos construir uma presença digital que tenha a <em>sua identidade?</em></h2>
             </div>
-
-            <div class="biografia-conteudo">
-
-                <span class="biografia-area">SOCIAL MEDIA</span>
-
-                <h3>
-                    Conteúdo passou a ter propósito.
-                </h3>
-
-                <p>
-                    A atuação em social media amplia a visão sobre marcas,
-                    pessoas e comportamento digital, transformando a criação
-                    de conteúdo em uma ferramenta de conexão e posicionamento.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <article class="biografia-item biografia-atual">
-
-            <div class="biografia-periodo">
-                <span>05</span>
-                <strong>ATUAL</strong>
-            </div>
-
-            <div class="biografia-conteudo">
-
-                <span class="biografia-area">CREATIVE PROFESSIONAL</span>
-
-                <h3>
-                    Hoje, diferentes habilidades trabalham juntas.
-                </h3>
-
-                <p>
-                    Atualmente, Camila atua de forma multidisciplinar,
-                    conectando filmmaking, edição, design, social media
-                    e estratégia para desenvolver projetos completos,
-                    consistentes e visualmente relevantes.
-                </p>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-
-    <div class="biografia-frase">
-
-        <span>THE JOURNEY CONTINUES</span>
-
-        <p>
-            “Criar nunca foi apenas sobre fazer algo bonito.
-            É sobre encontrar a melhor forma de fazer uma ideia existir.”
-        </p>
-
-    </div>
-
+            <a href="#/contato" class="btn btn-light">Entre em contato <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+    </section>
 </section>
 
+<!-- ==================== PROJETOS ==================== -->
+<section class="page" id="page-projetos" data-page="projetos">
+    <section class="section">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">Portfólio criativo</span>
+                <h2>Ideias que ganham forma. Histórias que ganham presença.</h2>
+                <p>Uma seleção de conceitos visuais e propostas criativas para diferentes universos de marca.</p>
+            </div>
 
-            <section class="numeros">
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="social">Social media</button>
+                <button class="filter-btn" data-filter="branding">Identidade visual</button>
+                <button class="filter-btn" data-filter="campanha">Campanhas</button>
+            </div>
 
-                <div class="numeros-cabecalho">
-                    <span class="numero-secao">06</span>
-                    <span class="titulo-secao">BY THE NUMBERS</span>
+            <div class="project-grid" id="projectGrid">
+                <article class="project-card reveal" data-category="social" data-title="Editorial de beleza" data-description="Conceito visual para uma comunicação de beleza com estética editorial, tons naturais e foco em identidade de marca." data-image="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85">
+                    <div class="project-image-wrap">
+                        <img src="DrLuiz.JPG" alt="Dr. Luiz em procedimento cirurgico" loading="lazy">
+                        <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+                    </div>
+                    <div class="project-meta">
+                        <div><span class="project-category">Fotografia</span><h3 class="project-title">Procedimento estético - Dr. Luiz</h3><p class="project-description">Direção visual e conceito de conteúdo.</p></div>
+                        <span class="project-number">01</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="branding" data-title="Identidade natural" data-description="Estudo conceitual de identidade para uma marca que busca transmitir sofisticação, proximidade e naturalidade." data-image="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=85">
+                    <div class="project-image-wrap">
+                        <img src="Mila 1.jpeg" alt="Conceito de identidade visual natural" loading="lazy">
+                        <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+                    </div>
+                    <div class="project-meta">
+                        <div><span class="project-category">Identidade visual</span><h3 class="project-title">Identidade natural</h3><p class="project-description">Conceito de linguagem e universo visual.</p></div>
+                        <span class="project-number">02</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="campanha" data-title="Campanha de lifestyle" data-description="Direção criativa de uma campanha conceitual com foco em lifestyle, conexão emocional e consistência visual." data-image="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85">
+                    <div class="project-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=85" alt="Conceito de campanha lifestyle" loading="lazy">
+                        <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+                    </div>
+                    <div class="project-meta">
+                        <div><span class="project-category">Campanha</span><h3 class="project-title">Campanha de lifestyle</h3><p class="project-description">Conceito criativo e direção de comunicação.</p></div>
+                        <span class="project-number">03</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="social" data-title="Conteúdo gastronômico" data-description="Proposta de comunicação visual para uma marca gastronômica, explorando fotografia, composição e apelo visual." data-image="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=85">
+                    <div class="project-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85" alt="Conteúdo visual gastronômico" loading="lazy">
+                        <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+                    </div>
+                    <div class="project-meta">
+                        <div><span class="project-category">Social media</span><h3 class="project-title">Conteúdo gastronômico</h3><p class="project-description">Direção visual para conteúdo digital.</p></div>
+                        <span class="project-number">04</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="branding" data-title="Universo minimalista" data-description="Estudo de identidade com linguagem minimalista, tipografia elegante e uma paleta de tons terrosos." data-image="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85">
+                    <div class="project-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=85" alt="Composição de identidade minimalista" loading="lazy">
+                        <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+                    </div>
+                    <div class="project-meta">
+                        <div><span class="project-category">Identidade visual</span><h3 class="project-title">Universo minimalista</h3><p class="project-description">Pesquisa estética e direção visual.</p></div>
+                        <span class="project-number">05</span>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="campanha" data-title="Campanha de produto" data-description="Conceito de campanha para apresentação de produto, com composição fotográfica e comunicação objetiva." data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85">
+                    <div class="project-image-wrap">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Conceito de campanha de produto" loading="lazy">
+                        <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
+                    </div>
+                    <div class="project-meta">
+                        <div><span class="project-category">Campanha</span><h3 class="project-title">Campanha de produto</h3><p class="project-description">Conceito de divulgação e posicionamento.</p></div>
+                        <span class="project-number">06</span>
+                    </div>
+                </article>
+            </div>
+
+            <p class="portfolio-disclaimer">Os projetos exibidos são referências visuais e conceitos demonstrativos. Não representam trabalhos realizados para clientes reais.</p>
+        </div>
+    </section>
+
+    <section class="section dark cta-band">
+        <div class="container cta-content">
+            <div>
+                <span class="eyebrow">Vamos criar algo único?</span>
+                <h2>Seu projeto pode ser o próximo a ganhar <em>vida.</em></h2>
+            </div>
+            <a href="#/contato" class="btn btn-light">Fale comigo <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+</section>
+
+<!-- ==================== SERVIÇOS ==================== -->
+<section class="page" id="page-servicos" data-page="servicos">
+    <section class="section">
+        <div class="container services-layout">
+            <div class="services-intro reveal">
+                <span class="eyebrow">O que posso fazer por sua marca</span>
+                <div class="section-heading">
+                    <h2>Estratégia para comunicar. Criatividade para conectar.</h2>
+                    <p>Serviços pensados para fortalecer sua presença digital e transformar comunicação em relacionamento.</p>
                 </div>
+                <p class="muted" style="font-size:.8rem"><i class="fa-solid fa-circle-info"></i> Cada projeto é avaliado de acordo com suas necessidades e objetivos.</p>
+                <a href="#/contato" class="btn btn-primary">Solicitar orçamento <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
 
-                <div class="numeros-lista">
+            <div class="service-list reveal">
+                <article class="service-item open">
+                    <button class="service-toggle" aria-expanded="true">
+                        <span class="service-index">01</span>
+                        <span><span class="service-name">Gestão de redes sociais</span><span class="service-price">Valor a ser negociado</span></span>
+                        <span class="service-plus"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="service-detail"><div class="service-detail-inner"><div class="service-detail-content">
+                        <p>Planejamento e organização da presença digital da marca, com comunicação alinhada ao público e aos objetivos do negócio.</p>
+                        <ul><li>Planejamento editorial</li><li>Organização de calendário</li><li>Estratégia de conteúdo</li><li>Acompanhamento de perfil</li></ul>
+                    </div></div></div>
+                </article>
 
-                    <div class="numero-item">
-                        <strong>+24</strong>
-                        <span>Projetos realizados</span>
-                    </div>
+                <article class="service-item">
+                    <button class="service-toggle" aria-expanded="false">
+                        <span class="service-index">02</span>
+                        <span><span class="service-name">Criação de conteúdo</span><span class="service-price">Valor a ser negociado</span></span>
+                        <span class="service-plus"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="service-detail"><div class="service-detail-inner"><div class="service-detail-content">
+                        <p>Desenvolvimento de conteúdos que informam, despertam interesse e fortalecem a identidade da marca.</p>
+                        <ul><li>Posts para feed</li><li>Stories estratégicos</li><li>Roteiros para vídeos</li><li>Legendas e chamadas</li></ul>
+                    </div></div></div>
+                </article>
 
-                    <div class="numero-item">
-                        <strong>+4</strong>
-                        <span>Marcas atendidas</span>
-                    </div>
+                <article class="service-item">
+                    <button class="service-toggle" aria-expanded="false">
+                        <span class="service-index">03</span>
+                        <span><span class="service-name">Identidade visual digital</span><span class="service-price">Valor a ser negociado</span></span>
+                        <span class="service-plus"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="service-detail"><div class="service-detail-inner"><div class="service-detail-content">
+                        <p>Construção de uma linguagem visual consistente para tornar a comunicação reconhecível e coerente.</p>
+                        <ul><li>Direção estética</li><li>Paleta de cores</li><li>Tipografia</li><li>Templates digitais</li></ul>
+                    </div></div></div>
+                </article>
 
-                    <div class="numero-item">
-                        <strong>+100</strong>
-                        <span>Conteúdos produzidos</span>
-                    </div>
+                <article class="service-item">
+                    <button class="service-toggle" aria-expanded="false">
+                        <span class="service-index">04</span>
+                        <span><span class="service-name">Edição de vídeos</span><span class="service-price">Valor a ser negociado</span></span>
+                        <span class="service-plus"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="service-detail"><div class="service-detail-inner"><div class="service-detail-content">
+                        <p>Edição de materiais audiovisuais para tornar a comunicação mais dinâmica, envolvente e adequada às plataformas digitais.</p>
+                        <ul><li>Reels</li><li>Vídeos curtos</li><li>Cortes e transições</li><li>Legendas e ritmo visual</li></ul>
+                    </div></div></div>
+                </article>
 
-                    <div class="numero-item">
-                        <strong>02</strong>
-                        <span>Anos criando</span>
-                    </div>
+                <article class="service-item">
+                    <button class="service-toggle" aria-expanded="false">
+                        <span class="service-index">05</span>
+                        <span><span class="service-name">Planejamento estratégico</span><span class="service-price">Valor a ser negociado</span></span>
+                        <span class="service-plus"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="service-detail"><div class="service-detail-inner"><div class="service-detail-content">
+                        <p>Diagnóstico e direcionamento para marcas que desejam organizar sua comunicação e tomar decisões mais conscientes.</p>
+                        <ul><li>Análise de presença digital</li><li>Definição de público</li><li>Pilares de conteúdo</li><li>Direcionamento de marca</li></ul>
+                    </div></div></div>
+                </article>
 
+                <div class="service-bottom">
+                    <div><p>Seu projeto, suas necessidades.</p><small>Os valores são definidos após entender o escopo.</small></div>
+                    <a href="#/contato" class="btn btn-primary btn-small">Conversar <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-            </section>
+    <section class="section paper">
+        <div class="container">
+            <div class="section-heading reveal">
+                <span class="eyebrow">Uma parceria com direção</span>
+                <h2>Mais do que entregas: um processo que faz sentido.</h2>
+                <p>O trabalho começa com uma conversa para compreender o que sua marca precisa e como podemos construir isso juntos.</p>
+            </div>
+            <div class="process-grid">
+                <article class="process-step reveal"><span class="process-number">01</span><h3>Conversa</h3><p>Você apresenta sua marca, seus desafios e seus objetivos.</p></article>
+                <article class="process-step reveal"><span class="process-number">02</span><h3>Proposta</h3><p>Definição do escopo e das entregas necessárias.</p></article>
+                <article class="process-step reveal"><span class="process-number">03</span><h3>Desenvolvimento</h3><p>Criação e execução do projeto aprovado.</p></article>
+                <article class="process-step reveal"><span class="process-number">04</span><h3>Entrega</h3><p>Apresentação dos materiais e próximos passos.</p></article>
+            </div>
+        </div>
+    </section>
+</section>
 
-
-            <section class="depoimentos">
-
-                <div class="depoimentos-cabecalho">
-
+<!-- ==================== FEEDBACK ==================== -->
+<section class="page" id="page-feedback" data-page="feedback">
+    <section class="section">
+        <div class="container feedback-layout">
+            <div class="feedback-intro reveal">
+                <span class="eyebrow">Sua opinião importa</span>
+                <div class="section-heading">
+                    <h2>Experiências também fazem parte da construção.</h2>
+                    <p>Um espaço para compartilhar percepções, sugestões e experiências sobre o trabalho desenvolvido.</p>
+                </div>
+                <div class="rating-summary">
+                    <span class="rating-score" id="ratingAverage">—</span>
                     <div>
-                        <span class="numero-secao">07</span>
-                        <span class="titulo-secao">TESTIMONIALS</span>
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-caption" id="ratingCount">Seja a primeira pessoa a avaliar</div>
                     </div>
-
-                    <p>
-                        O que acontece quando uma ideia encontra
-                        a pessoa certa para transformá-la em realidade.
-                    </p>
-
                 </div>
-
-
-                <div class="depoimento">
-
-                    <span class="aspas">“</span>
-
-                    <blockquote>
-                        O trabalho da Camila conseguiu traduzir exatamente
-                        aquilo que tínhamos imaginado e ainda trouxe uma
-                        visão que não tínhamos considerado.
-                    </blockquote>
-
-                    <div class="depoimento-autor">
-                        <strong>• Vinicios Santana</strong>
-                        <span>CEO · Nexa Agency Enterprises</span>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <section class="contato" id="contato">
-
-                <div class="contato-cabecalho">
-
-                    <span class="numero-secao">08</span>
-                    <span class="titulo-secao">LET'S CREATE</span>
-
-                </div>
-
-                <div class="contato-conteudo">
-
-                    <p>
-                        Tem uma ideia?
-                    </p>
-
-                    <h2>
-                        Vamos transformá-la em algo
-                        <em>que possa ser visto.</em>
-                    </h2>
-
-                    <a href="https://mail.google.com/mail/u/0/?hl=pt-BR#inbox?compose=DmwnWtMrlXdMHvKZCFxntrDqtfzxvxWdCFzTFTlbLfvxZtwhJWWcJnMsbgzfjnQkbsDkFsTnKgng" class="contato-email">
-                        camilasousadomingues.12@gmail.com
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-                <div class="contato-links">
-
-                    <a href="https://www.instagram.com/mov.bycamila/">
-                        Instagram
-                        <span>↗</span>
-                    </a>
-
-                    <a href="404.html" target="_blank" rel="noopener noreferrer">
-                        Behance
-                        <span>↗</span>
-                    </a>
-
-                    <a href="404.html" target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                        <span>↗</span>
-                    </a>
-
-                    <a href="https://wa.me/5511988869139?text=Olá,%20Gostaria%20de%20contratar%20os%seus%20serviços" target="_blank" rel="noopener noreferrer">
-                        WhatsApp
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            </section>
-
-        </main>
-
-
-        <footer class="rodape">
-
-            <div class="rodape-superior">
-
-                <div class="rodape-marca">
-
-                    <a href="#inicio" class="logo">
-                        Camila<span>.</span>
-                    </a>
-
-                    <p>
-                        Filmmaker · Social Media · Designer · Editor
-                    </p>
-
-                </div>
-
-
-                <div class="rodape-navegacao">
-
-                    <span>NAVEGAÇÃO</span>
-
-                    <a href="#inicio">Início</a>
-                    <a href="#sobre">Sobre</a>
-                    <a href="#especialidades">Especialidades</a>
-                    <a href="portfolio.html">Projetos</a>
-                    <a href="#processo">Processo</a>
-                    <a href="#contato">Contato</a>
-
-                </div>
-
-
-                <div class="rodape-social">
-
-                    <span>SOCIAL</span>
-
-                    <a href="https://www.instagram.com/mov.bycamila/" target="_blank" rel="noopener noreferrer">
-                        Instagram ↗
-                    </a>
-
-                    <a href="404.html" target="_blank" rel="noopener noreferrer">
-                        Behance ↗
-                    </a>
-
-                    <a href="404.html" target="_blank" rel="noopener noreferrer">
-                        LinkedIn ↗
-                    </a>
-
-                </div>
-
             </div>
 
+            <div class="feedback-panel reveal">
+                <h3>Compartilhe seu feedback</h3>
+                <p>Conte como foi sua experiência.</p>
+                <form id="feedbackForm">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="feedbackName">Seu nome</label>
+                            <input id="feedbackName" name="name" type="text" placeholder="Como podemos chamar você?" required maxlength="70">
+                        </div>
+                        <div class="field">
+                            <label for="feedbackEmail">E-mail</label>
+                            <input id="feedbackEmail" name="email" type="email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="field full">
+                            <label>Sua avaliação</label>
+                            <div class="rating-input" id="ratingInput">
+                                <button type="button" class="rating-star-button" data-rating="1" aria-label="1 estrela">★</button>
+                                <button type="button" class="rating-star-button" data-rating="2" aria-label="2 estrelas">★</button>
+                                <button type="button" class="rating-star-button" data-rating="3" aria-label="3 estrelas">★</button>
+                                <button type="button" class="rating-star-button" data-rating="4" aria-label="4 estrelas">★</button>
+                                <button type="button" class="rating-star-button" data-rating="5" aria-label="5 estrelas">★</button>
+                                <span class="rating-help" id="ratingHelp">Selecione uma nota</span>
+                            </div>
+                        </div>
+                        <div class="field full">
+                            <label for="feedbackMessage">Seu comentário</label>
+                            <textarea id="feedbackMessage" name="message" placeholder="Escreva sua experiência..." required maxlength="600"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <span class="form-note">O envio desta avaliação registra o comentário neste navegador.</span>
+                        <button class="btn btn-primary" type="submit">Enviar avaliação <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    <p class="form-status" id="feedbackStatus" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
 
-            <div class="rodape-inferior">
+        <div class="container">
+            <div class="reviews-list" id="reviewsList"></div>
+        </div>
+    </section>
+</section>
 
-                <span>© 2026 Camila Domingues</span>
+<!-- ==================== CONTATO ==================== -->
+<section class="page" id="page-contato" data-page="contato">
+    <section class="section">
+        <div class="container contact-grid">
+            <div class="contact-copy reveal">
+                <span class="eyebrow">Vamos conversar?</span>
+                <h2>Uma boa ideia merece <em>começar.</em></h2>
+                <p>Tem um projeto em mente ou quer entender como o marketing digital pode ajudar sua marca? Entre em contato. Será um prazer conhecer sua ideia.</p>
 
-                <span>São Paulo — Brasil</span>
-
-                <span>All rights reserved.</span>
-
-                <span>
-    Site desenvolvido por
-    <a href="https://viniciossantana.github.io/Nexa-Agency-Enterprises/index.html" target="_blank" style="text-decoration: underline; text-underline-offset: 4px;">
-        Nexa Agency Enterprises
-    </a>
-                </span>
-
+                <div class="contact-methods">
+                    <a class="contact-card" href="mailto:caadominguesmarketingdigital@gmail.com">
+                        <span class="contact-icon"><i class="fa-regular fa-envelope"></i></span>
+                        <span><small>E-mail</small><strong>caadominguesmarketingdigital@gmail.com</strong></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+                    <a class="contact-card" href="https://wa.me/5511988869139" target="_blank" rel="noopener">
+                        <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                        <span><small>WhatsApp</small><strong>(11) 98886-9139</strong></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+                </div>
             </div>
 
-        </footer>
+            <div class="contact-art reveal reveal-right">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85" alt="Ambiente de trabalho criativo" loading="lazy">
+                <div class="contact-art-note">
+                    <span>Ideias se tornam projetos</span>
+                    <strong>Vamos criar algo com identidade.</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="contact-form reveal">
+                <h3>Conte um pouco sobre seu projeto.</h3>
+                <p>Preencha os campos e sua mensagem será preparada para envio pelo WhatsApp.</p>
+                <form id="contactForm">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="contactName">Nome</label>
+                            <input id="contactName" type="text" placeholder="Seu nome" required maxlength="90">
+                        </div>
+                        <div class="field">
+                            <label for="contactEmail">E-mail</label>
+                            <input id="contactEmail" type="email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="field full">
+                            <label for="contactSubject">O que você procura?</label>
+                            <input id="contactSubject" type="text" placeholder="Ex.: Gestão de redes sociais, criação de conteúdo..." required maxlength="150">
+                        </div>
+                        <div class="field full">
+                            <label for="contactMessage">Mensagem</label>
+                            <textarea id="contactMessage" placeholder="Conte um pouco sobre sua marca e seu projeto..." required maxlength="1200"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <span class="form-note">Você será direcionado ao WhatsApp para concluir o envio.</span>
+                        <button class="btn btn-primary" type="submit">Enviar mensagem <i class="fa-brands fa-whatsapp"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+
+    <div class="footer-social-title">
+      <h3>Fale diretamente comigo!</h3>
+      <p>Disponivel nas principais redes</p>
+    </div>
+
+    <div class="social-list">
+
+      <!-- WHATSAPP -->
+      <div class="social-card whatsapp">
+        <div class="social-left">
+          <i class="fab fa-whatsapp"></i>
+          <div class="social-info">
+            <h4>WhatsApp</h4>
+            <p>Atendimento rápido e prático</p>
+          </div>
+        </div>
+        <a href="https://wa.me/5511981332616?text=Olá,%20Gostaria%20de%20contratar%20os%20serviços%20da%20Nexa" target="_blank">Conversar</a>
+      </div>
+
+      <!-- INSTAGRAM -->
+      <div class="social-card instagram">
+        <div class="social-left">
+          <i class="fab fa-instagram"></i>
+          <div class="social-info">
+            <h4>Instagram</h4>
+            <p>Branding, posicionamento e muito mais</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/agencynexaenterprises/" target="_blank">Acessar</a>
+      </div>
+
+      <!-- YOUTUBE -->
+      <div class="social-card tiktok">
+        <div class="social-left">
+          <i class="fab fa-tiktok"></i>
+          <div class="social-info">
+            <h4>TikTok</h4>
+            <p>Conteúdo completo e estratégico</p>
+          </div>
+        </div>
+        <a href="https://www.tiktok.com/@mov.bycamila" target="_blank">Acessar</a>
+      </div>
 
     </div>
 
-    <script src="js/script.js"></script>
+<!-- COLUNAS -->
+<div class="footer-grid">
 
+<div class="footer-brand">
+
+<h3 class="footer-logo">
+MOV.BYCAMILA
+</h3>
+
+<p class="footer-description">
+Filha de um Deus criativo demais para não gostar de criar!
+</p>
+
+</div>
+
+<div>
+
+<h4>Navegação</h4>
+
+<ul class="footer-links">
+<li><a href="AAA.html#/inicio">Início</a></li>
+<li><a href="AAA.html#/projetos">Projetos</a></li>
+<li><a href="AAA.html#/portfolio">Portfólio</a></li>
+<li><a href="AAA.html#/feedback">Feedback</a></li>
+<li><a href="AAA.html#/contato">Contato</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h4>Empresa</h4>
+
+<ul class="footer-links">
+<li><a href="404.html">Sobre</a></li>
+<li><a href="404.html">Visão</a></li>
+<li><a href="404.html">Missão</a></li>
+<li><a href="AAA.html#/contato">Contato</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h4>Comunidade</h4>
+
+<ul class="footer-links">
+<li><a href="https://wa.me/5511988869139">WhatsApp</a></li>
+<li><a href="https://www.instagram.com/mov.bycamila/">Instagram</a></li>
+<li><a href="https://www.tiktok.com/@mov.bycamila">TikTok</a></li>
+</ul>
+
+</div>
+
+</div> <!-- FECHA footer-grid -->
+
+<div class="footer-bottom">
+
+<p>
+© 2026 mov.byCamila
+Todos os direitos reservados.
+</p>
+
+<p class="footer-signature">
+Fundada por
+<a href="https://contatoceonexaenterprises.carrd.co/">
+Nexa Agency <Em></Em>
+</a>
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+<!-- MODAL DE PROJETO -->
+<div
+    class="modal"
+    id="projectModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Detalhes do projeto"
+>
+    <div class="modal-box">
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+            aria-label="Fechar"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button
+            class="modal-nav modal-prev"
+            id="modalPrev"
+            type="button"
+            aria-label="Projeto anterior"
+        >
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <img id="modalImage" src="" alt="">
+
+        <button
+            class="modal-nav modal-next"
+            id="modalNext"
+            type="button"
+            aria-label="Próximo projeto"
+        >
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="modal-content">
+            <span class="eyebrow">Projeto selecionado</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+
+            <a href="#/contato" class="btn btn-primary">
+                Quero um projeto assim
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            type="button"
+            aria-label="Fechar"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button
+            class="modal-nav modal-prev"
+            id="modalPrev"
+            type="button"
+            aria-label="Projeto anterior"
+        >
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <img id="modalImage" src="" alt="">
+
+        <button
+            class="modal-nav modal-next"
+            id="modalNext"
+            type="button"
+            aria-label="Próximo projeto"
+        >
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        
+    </div>
+</div>
+
+<script>
+/* =========================================
+   NAVEGAÇÃO ENTRE AS CINCO PÁGINAS
+   ========================================= */
+
+const pages = document.querySelectorAll(".page");
+const navLinks = document.querySelectorAll(".nav-link");
+const navMenu = document.getElementById("navLinks");
+const menuToggle = document.getElementById("menuToggle");
+
+function navigate(){
+    const route = location.hash.replace("#/","") || "inicio";
+    const validRoutes = ["inicio","projetos","servicos","feedback","contato"];
+    const current = validRoutes.includes(route) ? route : "inicio";
+
+    pages.forEach(page=>{
+        const active = page.dataset.page === current;
+        page.classList.toggle("active",active);
+        page.setAttribute("aria-hidden",String(!active));
+    });
+
+    navLinks.forEach(link=>{
+        const active = link.dataset.route === current;
+        link.classList.toggle("active",active);
+        if(active) link.setAttribute("aria-current","page");
+        else link.removeAttribute("aria-current");
+    });
+
+    navMenu.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded","false");
+    menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+
+    window.scrollTo({top:0,behavior:"instant"});
+
+    setTimeout(()=>{
+        observeReveals();
+        updateProgress();
+    },80);
+}
+
+window.addEventListener("hashchange",navigate);
+window.addEventListener("DOMContentLoaded",navigate);
+
+/* MENU MOBILE */
+menuToggle.addEventListener("click",()=>{
+    const open = navMenu.classList.toggle("open");
+    document.body.classList.toggle("menu-open",open);
+    menuToggle.setAttribute("aria-expanded",String(open));
+    menuToggle.innerHTML = open
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+});
+
+/* FECHAR MENU AO CLICAR FORA */
+document.addEventListener("click",event=>{
+    if(!navMenu.contains(event.target) && !menuToggle.contains(event.target)){
+        navMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded","false");
+        menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+    }
+});
+
+/* =========================================
+   CARREGAMENTO
+   ========================================= */
+
+window.addEventListener("load",()=>{
+    setTimeout(()=>{
+        document.getElementById("loader").classList.add("hidden");
+    },500);
+});
+
+setTimeout(()=>{
+    document.getElementById("loader").classList.add("hidden");
+},2500);
+
+/* =========================================
+   HEADER E PROGRESSO DE ROLAGEM
+   ========================================= */
+
+const header = document.getElementById("header");
+const progress = document.getElementById("progress");
+
+function updateProgress(){
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const value = total > 0 ? (window.scrollY / total) * 100 : 0;
+    progress.style.width = value + "%";
+    header.classList.toggle("scrolled",window.scrollY > 25);
+}
+
+window.addEventListener("scroll",updateProgress,{passive:true});
+
+/* =========================================
+   ANIMAÇÕES DE ENTRADA
+   ========================================= */
+
+let revealObserver;
+
+function observeReveals(){
+    if(revealObserver) revealObserver.disconnect();
+
+    const activePage = document.querySelector(".page.active");
+    if(!activePage) return;
+
+    const elements = activePage.querySelectorAll(".reveal");
+
+    if(!("IntersectionObserver" in window)){
+        elements.forEach(el=>el.classList.add("visible"));
+        return;
+    }
+
+    revealObserver = new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },{threshold:.12});
+
+    elements.forEach(el=>revealObserver.observe(el));
+}
+
+/* =========================================
+   FILTROS DO PORTFÓLIO
+   ========================================= */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterButtons.forEach(button=>{
+    button.addEventListener("click",()=>{
+        filterButtons.forEach(item=>item.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        projectCards.forEach(card=>{
+            const show = filter === "todos" || card.dataset.category === filter;
+            card.style.display = show ? "" : "none";
+            if(show){
+                card.classList.remove("visible");
+                requestAnimationFrame(()=>card.classList.add("visible"));
+            }
+        });
+    });
+});
+
+/* =========================================
+   MODAL DO PORTFÓLIO
+   ========================================= */
+
+/* =========================================
+   MODAL DO PORTFÓLIO E NAVEGAÇÃO
+   ========================================= */
+
+const modal = document.getElementById("projectModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalClose = document.getElementById("modalClose");
+const modalPrev = document.getElementById("modalPrev");
+const modalNext = document.getElementById("modalNext");
+
+let currentProject = null;
+
+/* Obtém somente os projetos que estão visíveis no filtro atual. */
+function getVisibleProjects() {
+    return Array.from(projectCards).filter(card => {
+        return card.style.display !== "none";
+    });
+}
+
+/* Abre um projeto usando a imagem real do card. */
+function openProject(card) {
+    const image = card.querySelector(".project-image-wrap img");
+
+    if (!image) {
+        return;
+    }
+
+    currentProject = card;
+
+    /*
+     * Usa a imagem que está efetivamente no card.
+     * Não usa card.dataset.image, que pode conter
+     * o endereço antigo do Unsplash.
+     */
+    modalImage.src = image.currentSrc || image.src;
+    modalImage.alt = image.alt || card.dataset.title || "Imagem do projeto";
+
+    modalTitle.textContent = card.dataset.title || "";
+    modalDescription.textContent = card.dataset.description || "";
+
+    modal.classList.add("open");
+    document.body.classList.add("modal-open");
+
+    updateModalNavigation();
+
+    modalClose.focus();
+}
+
+/* Atualiza as setas conforme os projetos disponíveis. */
+function updateModalNavigation() {
+    const visibleProjects = getVisibleProjects();
+    const hasMultipleProjects = visibleProjects.length > 1;
+
+    modalPrev.hidden = !hasMultipleProjects;
+    modalNext.hidden = !hasMultipleProjects;
+}
+
+/* Navega para o projeto anterior ou seguinte. */
+function navigateProject(direction) {
+    const visibleProjects = getVisibleProjects();
+
+    if (visibleProjects.length < 2 || !currentProject) {
+        return;
+    }
+
+    const currentIndex = visibleProjects.indexOf(currentProject);
+
+    if (currentIndex === -1) {
+        openProject(visibleProjects[0]);
+        return;
+    }
+
+    const nextIndex =
+        (currentIndex + direction + visibleProjects.length)
+        % visibleProjects.length;
+
+    openProject(visibleProjects[nextIndex]);
+}
+
+/* Fecha o modal e restaura a página. */
+function closeProject() {
+    modal.classList.remove("open");
+    document.body.classList.remove("modal-open");
+    currentProject = null;
+}
+
+/* Abre o projeto clicado. */
+projectCards.forEach(card => {
+    card.addEventListener("click", () => {
+        openProject(card);
+    });
+});
+
+/* Controles do modal. */
+modalClose.addEventListener("click", closeProject);
+
+modalPrev.addEventListener("click", () => {
+    navigateProject(-1);
+});
+
+modalNext.addEventListener("click", () => {
+    navigateProject(1);
+});
+
+/* Fecha ao clicar no fundo escuro. */
+modal.addEventListener("click", event => {
+    if (event.target === modal) {
+        closeProject();
+    }
+});
+
+/* Teclado: Escape fecha; setas navegam pelos projetos. */
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+        closeProject();
+
+        navMenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        return;
+    }
+
+    if (!modal.classList.contains("open")) {
+        return;
+    }
+
+    if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        navigateProject(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+        event.preventDefault();
+        navigateProject(1);
+    }
+});
+
+/* =========================================
+   ACORDEÃO DE SERVIÇOS
+   ========================================= */
+
+document.querySelectorAll(".service-toggle").forEach(button=>{
+    button.addEventListener("click",()=>{
+        const item = button.closest(".service-item");
+        const wasOpen = item.classList.contains("open");
+
+        document.querySelectorAll(".service-item").forEach(other=>{
+            other.classList.remove("open");
+            other.querySelector(".service-toggle").setAttribute("aria-expanded","false");
+        });
+
+        if(!wasOpen){
+            item.classList.add("open");
+            button.setAttribute("aria-expanded","true");
+        }
+    });
+});
+
+/* =========================================
+   SISTEMA DE AVALIAÇÃO
+   ========================================= */
+
+let selectedRating = 0;
+
+const ratingButtons = document.querySelectorAll(".rating-star-button");
+const ratingHelp = document.getElementById("ratingHelp");
+
+ratingButtons.forEach(button=>{
+    button.addEventListener("click",()=>{
+        selectedRating = Number(button.dataset.rating);
+
+        ratingButtons.forEach(star=>{
+            star.classList.toggle("active",Number(star.dataset.rating) <= selectedRating);
+        });
+
+        ratingHelp.textContent = selectedRating + " de 5 estrelas";
+    });
+});
+
+function loadReviews(){
+    const list = document.getElementById("reviewsList");
+    const average = document.getElementById("ratingAverage");
+    const count = document.getElementById("ratingCount");
+
+    let reviews = [];
+
+    try{
+        reviews = JSON.parse(localStorage.getItem("camilaFeedbacks") || "[]");
+    }catch(error){
+        reviews = [];
+    }
+
+    if(!Array.isArray(reviews)) reviews = [];
+
+    if(reviews.length){
+        const total = reviews.reduce((sum,item)=>sum + Number(item.rating || 0),0);
+        const avg = total / reviews.length;
+        average.textContent = avg.toFixed(1).replace(".",",");
+        count.textContent = reviews.length === 1
+            ? "1 avaliação registrada neste navegador"
+            : reviews.length + " avaliações registradas neste navegador";
+
+        list.innerHTML = "";
+
+        reviews.slice().reverse().forEach(review=>{
+            const card = document.createElement("article");
+            card.className = "review-card";
+
+            const top = document.createElement("div");
+            top.className = "review-top";
+
+            const identity = document.createElement("div");
+            const name = document.createElement("div");
+            name.className = "review-name";
+            name.textContent = review.name;
+
+            const date = document.createElement("div");
+            date.className = "review-date";
+            date.textContent = review.date;
+
+            identity.append(name,date);
+
+            const stars = document.createElement("span");
+            stars.className = "rating-stars";
+            stars.textContent = "★".repeat(review.rating) + "☆".repeat(5-review.rating);
+
+            top.append(identity,stars);
+
+            const comment = document.createElement("p");
+            comment.textContent = review.message;
+
+            card.append(top,comment);
+            list.append(card);
+        });
+    }else{
+        average.textContent = "—";
+        count.textContent = "Seja a primeira pessoa a avaliar";
+        list.innerHTML = '<div class="reviews-empty">As avaliações enviadas aparecerão aqui neste navegador.</div>';
+    }
+}
+
+document.getElementById("feedbackForm").addEventListener("submit",event=>{
+    event.preventDefault();
+
+    const status = document.getElementById("feedbackStatus");
+
+    if(selectedRating < 1){
+        status.textContent = "Por favor, selecione uma avaliação de 1 a 5 estrelas.";
+        return;
+    }
+
+    const name = document.getElementById("feedbackName").value.trim();
+    const email = document.getElementById("feedbackEmail").value.trim();
+    const message = document.getElementById("feedbackMessage").value.trim();
+
+    if(!name || !email || !message){
+        status.textContent = "Preencha todos os campos.";
+        return;
+    }
+
+    let reviews = [];
+
+    try{
+        reviews = JSON.parse(localStorage.getItem("camilaFeedbacks") || "[]");
+    }catch(error){
+        reviews = [];
+    }
+
+    reviews.push({
+        name,
+        email,
+        message,
+        rating:selectedRating,
+        date:new Date().toLocaleDateString("pt-BR")
+    });
+
+    try{
+        localStorage.setItem("camilaFeedbacks",JSON.stringify(reviews));
+    }catch(error){
+        status.textContent = "Não foi possível salvar a avaliação neste navegador.";
+        return;
+    }
+
+    event.target.reset();
+    selectedRating = 0;
+    ratingButtons.forEach(star=>star.classList.remove("active"));
+    ratingHelp.textContent = "Selecione uma nota";
+    status.textContent = "Obrigado! Sua avaliação foi registrada neste navegador.";
+
+    loadReviews();
+});
+
+loadReviews();
+
+/* =========================================
+   FORMULÁRIO DE CONTATO — WHATSAPP
+   ========================================= */
+
+document.getElementById("contactForm").addEventListener("submit",event=>{
+    event.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const subject = document.getElementById("contactSubject").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+
+    if(!name || !email || !subject || !message) return;
+
+    const text = [
+        "Olá, Camila! Vim pelo seu site.",
+        "",
+        "Nome: " + name,
+        "E-mail: " + email,
+        "Serviço de interesse: " + subject,
+        "",
+        "Mensagem:",
+        message
+    ].join("\n");
+
+    const url = "https://wa.me/5511988869139?text=" + encodeURIComponent(text);
+    window.open(url,"_blank","noopener,noreferrer");
+});
+
+/* =========================================
+   ANO AUTOMÁTICO
+   ========================================= */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* =========================================
+   NAVEGAÇÃO INICIAL
+   ========================================= */
+
+if(!location.hash){
+    location.hash = "/inicio";
+}else{
+    navigate();
+}
+
+</script>
 </body>
 </html>

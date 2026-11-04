@@ -2099,53 +2099,151 @@ document.querySelectorAll(".service-toggle").forEach(button=>{
     });
 });
 
+
 /* =========================================
-   SISTEMA DE AVALIAÇÃO
+   SISTEMA DE AVALIAÇÃO — SUPABASE
+   MOV.BYCAMILA
    ========================================= */
+
+// Credenciais públicas do projeto Supabase.
+// A publishable key pode ser usada no navegador
+// quando as políticas RLS estão configuradas.
+const SUPABASE_URL = "https://ktcsibbabmlptnswacde.supabase.co";
+const SUPABASE_KEY = "sb_publishable_lzWU9u0hhcPKSmW4sfEByg_1wu2F6Bb";
+
+const FEEDBACKS_ENDPOINT =
+    `${SUPABASE_URL}/rest/v1/movbycamila_feedbacks`;
 
 let selectedRating = 0;
 
 const ratingButtons = document.querySelectorAll(".rating-star-button");
 const ratingHelp = document.getElementById("ratingHelp");
+const feedbackForm = document.getElementById("feedbackForm");
+const feedbackStatus = document.getElementById("feedbackStatus");
 
-ratingButtons.forEach(button=>{
-    button.addEventListener("click",()=>{
+const reviewsList = document.getElementById("reviewsList");
+const ratingAverage = document.getElementById("ratingAverage");
+const ratingCount = document.getElementById("ratingCount");
+
+/* =========================================
+   REQUISIÇÕES AO SUPABASE
+   ========================================= */
+
+async function supabaseRequest(path = "", options = {}) {
+    const response = await fetch(`${FEEDBACKS_ENDPOINT}${path}`, {
+        ...options,
+        headers: {
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`,
+            ...(options.body ? { "Content-Type": "application/json" } : {}),
+            ...options.headers
+        }
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(
+            `Supabase (${response.status}): ${errorText}`
+        );
+    }
+
+    if (response.status === 204) {
+        return null;
+    }
+
+    const contentType = response.headers.get("content-type") || "";
+
+    if (contentType.includes("application/json")) {
+        return response.json();
+    }
+
+    return null;
+}
+
+/* =========================================
+   SELEÇÃO DE ESTRELAS
+   ========================================= */
+
+ratingButtons.forEach(button => {
+    button.addEventListener("click", () => {
         selectedRating = Number(button.dataset.rating);
 
-        ratingButtons.forEach(star=>{
-            star.classList.toggle("active",Number(star.dataset.rating) <= selectedRating);
+        ratingButtons.forEach(star => {
+            const active =
+                Number(star.dataset.rating) <= selectedRating;
+
+            star.classList.toggle("active", active);
+            star.setAttribute("aria-pressed", String(active));
         });
 
-        ratingHelp.textContent = selectedRating + " de 5 estrelas";
+        ratingHelp.textContent = `${selectedRating} de 5 estrelas`;
     });
 });
 
-function loadReviews(){
-    const list = document.getElementById("reviewsList");
-    const average = document.getElementById("ratingAverage");
-    const count = document.getElementById("ratingCount");
+/* =========================================
+   ESTADO VAZIO
+   ========================================= */
 
-    let reviews = [];
+function showEmptyReviews(message) {
+    reviewsList.replaceChildren();
 
-    try{
-        reviews = JSON.parse(localStorage.getItem("camilaFeedbacks") || "[]");
-    }catch(error){
-        reviews = [];
-    }
+    const empty = document.createElement("div");
+    empty.className = "reviews-empty";
+    empty.textContent = message;
 
-    if(!Array.isArray(reviews)) reviews = [];
+    reviewsList.append(empty);
+}
 
-    if(reviews.length){
-        const total = reviews.reduce((sum,item)=>sum + Number(item.rating || 0),0);
-        const avg = total / reviews.length;
-        average.textContent = avg.toFixed(1).replace(".",",");
-        count.textContent = reviews.length === 1
-            ? "1 avaliação registrada neste navegador"
-            : reviews.length + " avaliações registradas neste navegador";
+/* =========================================
+   EXIBIR AVALIAÇÕES APROVADAS
+   ========================================= */
 
-        list.innerHTML = "";
+async function loadReviews() {
+    ratingAverage.textContent = "—";
+    ratingCount.textContent = "Carregando avaliações...";
 
-        reviews.slice().reverse().forEach(review=>{
+    try {
+        const query = new URLSearchParams({
+            select: "id,name,comment,rating,created_at",
+            approved: "eq.true",
+            order: "created_at.desc",
+            limit: "100"
+        });
+
+        const reviews = await supabaseRequest(`?${query.toString()}`);
+
+        if (!Array.isArray(reviews)) {
+            throw new Error("Resposta inesperada do banco de dados.");
+        }
+
+        reviewsList.replaceChildren();
+
+        if (reviews.length === 0) {
+            ratingAverage.textContent = "—";
+            ratingCount.textContent = "Seja a primeira pessoa a avaliar";
+
+            showEmptyReviews(
+                "Ainda não temos avaliações publicadas. Que tal deixar a sua?"
+            );
+
+            return;
+        }
+
+        const total = reviews.reduce(
+            (sum, review) => sum + Number(review.rating),
+            0
+        );
+
+        const average = total / reviews.length;
+
+        ratingAverage.textContent = average.toFixed(1).replace(".", ",");
+
+        ratingCount.textContent =
+            reviews.length === 1
+                ? "1 avaliação publicada"
+                : `${reviews.length} avaliações publicadas`;
+
+        reviews.forEach(review => {
             const card = document.createElement("article");
             card.className = "review-card";
 
@@ -2153,87 +2251,170 @@ function loadReviews(){
             top.className = "review-top";
 
             const identity = document.createElement("div");
+
             const name = document.createElement("div");
             name.className = "review-name";
             name.textContent = review.name;
 
             const date = document.createElement("div");
             date.className = "review-date";
-            date.textContent = review.date;
 
-            identity.append(name,date);
+            const parsedDate = new Date(review.created_at);
+
+            date.textContent = Number.isNaN(parsedDate.getTime())
+                ? ""
+                : parsedDate.toLocaleDateString("pt-BR");
+
+            identity.append(name, date);
 
             const stars = document.createElement("span");
             stars.className = "rating-stars";
-            stars.textContent = "★".repeat(review.rating) + "☆".repeat(5-review.rating);
+            stars.setAttribute(
+                "aria-label",
+                `${review.rating} de 5 estrelas`
+            );
 
-            top.append(identity,stars);
+            stars.textContent =
+                "★".repeat(Number(review.rating)) +
+                "☆".repeat(5 - Number(review.rating));
+
+            top.append(identity, stars);
 
             const comment = document.createElement("p");
-            comment.textContent = review.message;
+            comment.textContent = review.comment;
 
-            card.append(top,comment);
-            list.append(card);
+            card.append(top, comment);
+            reviewsList.append(card);
         });
-    }else{
-        average.textContent = "—";
-        count.textContent = "Seja a primeira pessoa a avaliar";
-        list.innerHTML = '<div class="reviews-empty">As avaliações enviadas aparecerão aqui neste navegador.</div>';
+
+    } catch (error) {
+        console.error("Erro ao carregar avaliações:", error);
+
+        ratingAverage.textContent = "—";
+        ratingCount.textContent = "Não foi possível carregar as avaliações";
+
+        showEmptyReviews(
+            "Tivemos um problema ao carregar os feedbacks. Tente novamente em instantes."
+        );
     }
 }
 
-document.getElementById("feedbackForm").addEventListener("submit",event=>{
+/* =========================================
+   ENVIAR UMA NOVA AVALIAÇÃO
+   ========================================= */
+
+feedbackForm.addEventListener("submit", async event => {
     event.preventDefault();
 
-    const status = document.getElementById("feedbackStatus");
-
-    if(selectedRating < 1){
-        status.textContent = "Por favor, selecione uma avaliação de 1 a 5 estrelas.";
+    if (selectedRating < 1 || selectedRating > 5) {
+        feedbackStatus.textContent =
+            "Por favor, selecione uma avaliação de 1 a 5 estrelas.";
         return;
     }
 
-    const name = document.getElementById("feedbackName").value.trim();
-    const email = document.getElementById("feedbackEmail").value.trim();
-    const message = document.getElementById("feedbackMessage").value.trim();
+    const name = document
+        .getElementById("feedbackName")
+        .value.trim();
 
-    if(!name || !email || !message){
-        status.textContent = "Preencha todos os campos.";
+    const email = document
+        .getElementById("feedbackEmail")
+        .value.trim();
+
+    const message = document
+        .getElementById("feedbackMessage")
+        .value.trim();
+
+    if (
+        name.length < 2 ||
+        name.length > 80 ||
+        message.length < 5 ||
+        message.length > 1500
+    ) {
+        feedbackStatus.textContent =
+            "Confira seu nome e comentário. O nome deve ter entre 2 e 80 caracteres, e o comentário entre 5 e 1500.";
         return;
     }
 
-    let reviews = [];
+    // O e-mail não é enviado nem armazenado.
+    // A tabela guarda apenas nome, comentário e nota.
+    void email;
 
-    try{
-        reviews = JSON.parse(localStorage.getItem("camilaFeedbacks") || "[]");
-    }catch(error){
-        reviews = [];
+    const submitButton = feedbackForm.querySelector(
+        'button[type="submit"], input[type="submit"]'
+    );
+
+    const originalButtonText = submitButton
+        ? (submitButton.tagName === "INPUT"
+            ? submitButton.value
+            : submitButton.textContent)
+        : "";
+
+    if (submitButton) {
+        submitButton.disabled = true;
+
+        if (submitButton.tagName === "INPUT") {
+            submitButton.value = "Enviando...";
+        } else {
+            submitButton.textContent = "Enviando...";
+        }
     }
 
-    reviews.push({
-        name,
-        email,
-        message,
-        rating:selectedRating,
-        date:new Date().toLocaleDateString("pt-BR")
-    });
+    feedbackStatus.textContent = "Enviando sua avaliação...";
 
-    try{
-        localStorage.setItem("camilaFeedbacks",JSON.stringify(reviews));
-    }catch(error){
-        status.textContent = "Não foi possível salvar a avaliação neste navegador.";
-        return;
+    try {
+        await supabaseRequest("", {
+            method: "POST",
+            headers: {
+                "Prefer": "return=minimal"
+            },
+            body: JSON.stringify({
+                name,
+                comment: message,
+                rating: selectedRating
+            })
+        });
+
+        feedbackForm.reset();
+        selectedRating = 0;
+
+        ratingButtons.forEach(star => {
+            star.classList.remove("active");
+            star.setAttribute("aria-pressed", "false");
+        });
+
+        ratingHelp.textContent = "Selecione uma nota";
+
+        feedbackStatus.textContent =
+            "Obrigado pelo carinho! Sua avaliação foi recebida e ficará disponível após a aprovação.";
+
+        // Atualiza a lista. A avaliação recém-enviada
+        // continuará oculta até ser aprovada.
+        await loadReviews();
+
+    } catch (error) {
+        console.error("Erro ao enviar avaliação:", error);
+
+        feedbackStatus.textContent =
+            "Não conseguimos enviar sua avaliação. Verifique sua conexão e tente novamente.";
+    } finally {
+        if (submitButton) {
+            submitButton.disabled = false;
+
+            if (submitButton.tagName === "INPUT") {
+                submitButton.value = originalButtonText;
+            } else {
+                submitButton.textContent = originalButtonText;
+            }
+        }
     }
-
-    event.target.reset();
-    selectedRating = 0;
-    ratingButtons.forEach(star=>star.classList.remove("active"));
-    ratingHelp.textContent = "Selecione uma nota";
-    status.textContent = "Obrigado! Sua avaliação foi registrada neste navegador.";
-
-    loadReviews();
 });
 
+/* =========================================
+   CARREGAMENTO INICIAL
+   ========================================= */
+
 loadReviews();
+
 
 /* =========================================
    FORMULÁRIO DE CONTATO — WHATSAPP

@@ -1055,6 +1055,42 @@ footer {
     *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
     .reveal{opacity:1;transform:none}
 }
+
+.feedback-status.success {
+    display: block;
+    margin-top: 18px;
+    padding: 16px 20px;
+    border: 1px solid rgba(123, 137, 113, 0.25);
+    border-radius: 14px;
+    background: rgba(123, 137, 113, 0.09);
+    color: #59684f;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: center;
+    animation: feedbackAppear 0.4s ease both;
+}
+
+@keyframes feedbackAppear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .feedback-status.success {
+        margin-top: 14px;
+        padding: 14px 16px;
+        font-size: 0.85rem;
+        border-radius: 12px;
+    }
+}
 </style>
 </head>
 
@@ -1257,7 +1293,7 @@ footer {
             </div>
 
             <div class="project-grid" id="projectGrid">
-                <article class="project-card reveal" data-category="social" data-title="Editorial de beleza" data-description="Conceito visual para uma comunicação de beleza com estética editorial, tons naturais e foco em identidade de marca." data-image="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85">
+                <article class="project-card reveal" data-category="campanha" data-title="Dr. Luiz Fernando" data-description="Acompanhando o Dr. Luiz em uma cirurgia de abdominoplastia + mastopexia com prótese. Uma equipe de excelência, unida pela dedicação, técnica e cuidado em cada detalhe." data-image="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85">
                     <div class="project-image-wrap">
                         <img src="DrLuiz.JPG" alt="Dr. Luiz em procedimento cirurgico" loading="lazy">
                         <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
@@ -1268,7 +1304,7 @@ footer {
                     </div>
                 </article>
 
-                <article class="project-card reveal" data-category="branding" data-title="Identidade natural" data-description="Estudo conceitual de identidade para uma marca que busca transmitir sofisticação, proximidade e naturalidade." data-image="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=85">
+                <article class="project-card reveal" data-category="branding" data-title="Identidade natural" data-description="O verdadeiro marketing está na transparência da sua marca e na expressão de sua identidade única e memorável. A partir dessa perspectiva, atuo na análise estratégica de marcas e mercados, identificando diferenciais competitivos, oportunidades de posicionamento e caminhos para o crescimento digital. Por meio de inteligência de mercado e planejamento estratégico, transformo características autênticas em vantagens competitivas, orientando decisões que fortalecem a presença da marca, ampliam sua visibilidade e impulsionam seus resultados comerciais." data-image="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=85">
                     <div class="project-image-wrap">
                         <img src="Mila 1.jpeg" alt="Conceito de identidade visual natural" loading="lazy">
                         <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
@@ -1279,20 +1315,20 @@ footer {
                     </div>
                 </article>
 
-                <article class="project-card reveal" data-category="campanha" data-title="Campanha de lifestyle" data-description="Direção criativa de uma campanha conceitual com foco em lifestyle, conexão emocional e consistência visual." data-image="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85">
+                <article class="project-card reveal" data-category="campanha" data-title="Aura Wear" data-description="Direção criativa de uma campanha conceitual com foco em lifestyle, conexão emocional e consistência visual." data-image="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85">
                     <div class="project-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=85" alt="Conceito de campanha lifestyle" loading="lazy">
+                        <img src="fit.jpeg" alt="Conceito de campanha lifestyle" loading="lazy">
                         <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
                     </div>
                     <div class="project-meta">
-                        <div><span class="project-category">Campanha</span><h3 class="project-title">Campanha de lifestyle</h3><p class="project-description">Conceito criativo e direção de comunicação.</p></div>
+                        <div><span class="project-category">Model Maker</span><h3 class="project-title">Aura Wear</h3><p class="project-description">Conceito criativo e direção de comunicação.</p></div>
                         <span class="project-number">03</span>
                     </div>
                 </article>
 
                 <article class="project-card reveal" data-category="social" data-title="Conteúdo gastronômico" data-description="Proposta de comunicação visual para uma marca gastronômica, explorando fotografia, composição e apelo visual." data-image="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=85">
                     <div class="project-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85" alt="Conteúdo visual gastronômico" loading="lazy">
+                        <img src="gastronomico.jpeg" alt="Conteúdo visual gastronômico" loading="lazy">
                         <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
                     </div>
                     <div class="project-meta">
@@ -1303,22 +1339,22 @@ footer {
 
                 <article class="project-card reveal" data-category="branding" data-title="Universo minimalista" data-description="Estudo de identidade com linguagem minimalista, tipografia elegante e uma paleta de tons terrosos." data-image="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85">
                     <div class="project-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=85" alt="Composição de identidade minimalista" loading="lazy">
+                        <img src="evt.jpeg" alt="Composição de identidade minimalista" loading="lazy">
                         <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
                     </div>
                     <div class="project-meta">
-                        <div><span class="project-category">Identidade visual</span><h3 class="project-title">Universo minimalista</h3><p class="project-description">Pesquisa estética e direção visual.</p></div>
+                        <div><span class="project-category">Audiovisual</span><h3 class="project-title">Eventos</h3><p class="project-description">Pesquisa estética e direção visual.</p></div>
                         <span class="project-number">05</span>
                     </div>
                 </article>
 
-                <article class="project-card reveal" data-category="campanha" data-title="Campanha de produto" data-description="Conceito de campanha para apresentação de produto, com composição fotográfica e comunicação objetiva." data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85">
+                <article class="project-card reveal" data-category="social" data-title="Campanha de produto" data-description="Conceito de campanha para apresentação de produto, com composição fotográfica e comunicação objetiva." data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85">
                     <div class="project-image-wrap">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85" alt="Conceito de campanha de produto" loading="lazy">
+                        <img src="aikibom.PNG" alt="Conceito de campanha de produto" loading="lazy">
                         <div class="project-overlay"><span class="project-open"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></div>
                     </div>
                     <div class="project-meta">
-                        <div><span class="project-category">Campanha</span><h3 class="project-title">Campanha de produto</h3><p class="project-description">Conceito de divulgação e posicionamento.</p></div>
+                        <div><span class="project-category">Social Media</span><h3 class="project-title">Supermercado AikiBom</h3><p class="project-description">Conceito de divulgação e posicionamento.</p></div>
                         <span class="project-number">06</span>
                     </div>
                 </article>
@@ -1683,7 +1719,7 @@ Todos os direitos reservados.
 
 <p class="footer-signature">
 Fundada por
-<a href="https://contatoceonexaenterprises.carrd.co/">
+<a href="https://viniciossantana.github.io/Nexa-Agency-Enterprises/inicio.html" target="_blank">
 Nexa Agency <Em></Em>
 </a>
 </p>
@@ -1743,10 +1779,12 @@ Nexa Agency <Em></Em>
             <h2 id="modalTitle"></h2>
             <p id="modalDescription"></p>
 
-            <a href="#/contato" class="btn btn-primary">
-                Quero um projeto assim
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            
+<a href="#/contato" class="btn btn-primary" id="modalProjectContact">
+    Quero um projeto assim
+    <i class="fa-solid fa-arrow-right"></i>
+</a>
+
         </div>
     </div>
 </div>
@@ -1934,9 +1972,6 @@ filterButtons.forEach(button=>{
     });
 });
 
-/* =========================================
-   MODAL DO PORTFÓLIO
-   ========================================= */
 
 /* =========================================
    MODAL DO PORTFÓLIO E NAVEGAÇÃO
@@ -1949,31 +1984,25 @@ const modalDescription = document.getElementById("modalDescription");
 const modalClose = document.getElementById("modalClose");
 const modalPrev = document.getElementById("modalPrev");
 const modalNext = document.getElementById("modalNext");
+const modalProjectContact = document.getElementById("modalProjectContact");
 
 let currentProject = null;
 
-/* Obtém somente os projetos que estão visíveis no filtro atual. */
+/* Obtém somente os projetos visíveis no filtro atual. */
 function getVisibleProjects() {
     return Array.from(projectCards).filter(card => {
         return card.style.display !== "none";
     });
 }
 
-/* Abre um projeto usando a imagem real do card. */
+/* Abre o projeto selecionado no modal. */
 function openProject(card) {
     const image = card.querySelector(".project-image-wrap img");
 
-    if (!image) {
-        return;
-    }
+    if (!image) return;
 
     currentProject = card;
 
-    /*
-     * Usa a imagem que está efetivamente no card.
-     * Não usa card.dataset.image, que pode conter
-     * o endereço antigo do Unsplash.
-     */
     modalImage.src = image.currentSrc || image.src;
     modalImage.alt = image.alt || card.dataset.title || "Imagem do projeto";
 
@@ -1988,7 +2017,7 @@ function openProject(card) {
     modalClose.focus();
 }
 
-/* Atualiza as setas conforme os projetos disponíveis. */
+/* Atualiza a navegação entre projetos. */
 function updateModalNavigation() {
     const visibleProjects = getVisibleProjects();
     const hasMultipleProjects = visibleProjects.length > 1;
@@ -1997,13 +2026,11 @@ function updateModalNavigation() {
     modalNext.hidden = !hasMultipleProjects;
 }
 
-/* Navega para o projeto anterior ou seguinte. */
+/* Navega entre os projetos visíveis. */
 function navigateProject(direction) {
     const visibleProjects = getVisibleProjects();
 
-    if (visibleProjects.length < 2 || !currentProject) {
-        return;
-    }
+    if (visibleProjects.length < 2 || !currentProject) return;
 
     const currentIndex = visibleProjects.indexOf(currentProject);
 
@@ -2019,19 +2046,39 @@ function navigateProject(direction) {
     openProject(visibleProjects[nextIndex]);
 }
 
-/* Fecha o modal e restaura a página. */
+/* Fecha o modal. */
 function closeProject() {
     modal.classList.remove("open");
     document.body.classList.remove("modal-open");
     currentProject = null;
 }
 
-/* Abre o projeto clicado. */
+/* Clique nos cards para abrir os projetos. */
 projectCards.forEach(card => {
     card.addEventListener("click", () => {
         openProject(card);
     });
 });
+
+
+/* Botão: Quero um projeto assim. */
+if (modalProjectContact) {
+    modalProjectContact.addEventListener("click", () => {
+        if (!currentProject) return;
+
+        const projectName =
+            currentProject.querySelector(".project-title")?.textContent.trim()
+            || currentProject.dataset.title
+            || "Projeto do portfólio";
+
+        // Guarda o nome do projeto escolhido.
+        sessionStorage.setItem("selectedProject", projectName);
+
+        // Fecha o modal antes de abrir a página de contato.
+        closeProject();
+    });
+}
+
 
 /* Controles do modal. */
 modalClose.addEventListener("click", closeProject);
@@ -2044,28 +2091,29 @@ modalNext.addEventListener("click", () => {
     navigateProject(1);
 });
 
-/* Fecha ao clicar no fundo escuro. */
+/* Fecha ao clicar fora do conteúdo do modal. */
 modal.addEventListener("click", event => {
     if (event.target === modal) {
         closeProject();
     }
 });
 
-/* Teclado: Escape fecha; setas navegam pelos projetos. */
+/* Teclado: Escape fecha; setas navegam. */
 document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
-        closeProject();
+        if (modal.classList.contains("open")) {
+            closeProject();
+        }
 
         navMenu.classList.remove("open");
         document.body.classList.remove("menu-open");
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
         return;
     }
 
-    if (!modal.classList.contains("open")) {
-        return;
-    }
+    if (!modal.classList.contains("open")) return;
 
     if (event.key === "ArrowLeft") {
         event.preventDefault();
@@ -2077,6 +2125,7 @@ document.addEventListener("keydown", event => {
         navigateProject(1);
     }
 });
+
 
 /* =========================================
    ACORDEÃO DE SERVIÇOS
@@ -2385,7 +2434,10 @@ feedbackForm.addEventListener("submit", async event => {
         ratingHelp.textContent = "Selecione uma nota";
 
         feedbackStatus.textContent =
-            "Obrigado pelo carinho! Sua avaliação foi recebida e ficará disponível após a aprovação.";
+    'Obrigada pelo feedback! Recebemos sua avaliação com carinho, e ela ficará disponível assim que for aprovada.';
+
+feedbackStatus.className = 'feedback-status success';
+feedbackStatus.style.display = 'block';
 
         // Atualiza a lista. A avaliação recém-enviada
         // continuará oculta até ser aprovada.
